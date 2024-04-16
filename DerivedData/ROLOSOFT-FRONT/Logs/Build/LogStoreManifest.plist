@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>11</integer>
+	<key>logs</key>
+	<dict>
+		<key>A0231EDD-5C9D-4C9B-B173-4F36AF787EBB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A0231EDD-5C9D-4C9B-B173-4F36AF787EBB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ROLOSOFT-FRONT project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ROLOSOFT-FRONT</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews ROLOSOFT-FRONT</string>
+			<key>timeStartedRecording</key>
+			<real>734928450.53607595</real>
+			<key>timeStoppedRecording</key>
+			<real>734928457.27926004</real>
+			<key>title</key>
+			<string>Build for Previews ROLOSOFT-FRONT</string>
+			<key>uniqueIdentifier</key>
+			<string>A0231EDD-5C9D-4C9B-B173-4F36AF787EBB</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
