@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523923F42BCF5D2F0054F9BD /* LoginView.swift */; };
 		523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */; };
 		523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BF1E52BCE1E3E003138DC /* ContentView.swift */; };
 		523BF1E82BCE1E40003138DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1E72BCE1E40003138DC /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		523923F42BCF5D2F0054F9BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		523BF1E02BCE1E3E003138DC /* ROLOSOFT-FRONT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLOSOFT-FRONT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLOSOFT_FRONTApp.swift; sourceTree = "<group>"; };
 		523BF1E52BCE1E3E003138DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523923EB2BCF5C470054F9BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		523923ED2BCF5C6B0054F9BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				523923F32BCF5CAB0054F9BD /* Modules */,
+				523923F22BCF5CA40054F9BD /* Home */,
+				523923F12BCF5C9A0054F9BD /* Authentication */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		523923EE2BCF5C720054F9BD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		523923EF2BCF5C830054F9BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		523923F02BCF5C8C0054F9BD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		523923F12BCF5C9A0054F9BD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				523923F42BCF5D2F0054F9BD /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		523923F22BCF5CA40054F9BD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		523923F32BCF5CAB0054F9BD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		523BF1D72BCE1E3E003138DC = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +113,11 @@
 		523BF1E22BCE1E3E003138DC /* ROLOSOFT-FRONT */ = {
 			isa = PBXGroup;
 			children = (
+				523923F02BCF5C8C0054F9BD /* Helpers */,
+				523923EF2BCF5C830054F9BD /* Services */,
+				523923EE2BCF5C720054F9BD /* ViewModels */,
+				523923ED2BCF5C6B0054F9BD /* Views */,
+				523923EB2BCF5C470054F9BD /* Models */,
 				523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */,
 				523BF1E52BCE1E3E003138DC /* ContentView.swift */,
 				523BF1E72BCE1E40003138DC /* Assets.xcassets */,
@@ -137,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 			);
