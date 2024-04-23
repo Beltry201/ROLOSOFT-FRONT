@@ -25,6 +25,16 @@
     "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ContentView.swiftdeps",
     "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
   },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Models/UserModel.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/UserModel~partial.swiftmodule"
+  },
   "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ROLOSOFT_FRONTApp.swift" : {
     "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT_FRONTApp.swiftconstvalues",
     "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT_FRONTApp.d",
@@ -34,6 +44,16 @@
     "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT_FRONTApp.o",
     "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT_FRONTApp.swiftdeps",
     "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT_FRONTApp~partial.swiftmodule"
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService~partial.swiftmodule"
   },
   "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift" : {
     "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView.swiftconstvalues",

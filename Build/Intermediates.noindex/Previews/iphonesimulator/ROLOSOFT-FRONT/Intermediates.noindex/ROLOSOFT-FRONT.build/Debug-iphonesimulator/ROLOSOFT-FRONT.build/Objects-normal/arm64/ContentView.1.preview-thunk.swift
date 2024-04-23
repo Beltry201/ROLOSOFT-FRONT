@@ -10,8 +10,22 @@ import SwiftUI
 
 extension ContentView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 12)
-        LoginView() // Display LoginView as the initial view
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 14)
+        NavigationView {
+            Group {
+                if authService.isAuthenticated {
+                    HomeView()
+                } else {
+                    LoginView(authService: authService)
+                }
+            }
+            .onAppear {
+                // Check authentication status when ContentView appears
+                authService.checkAuthentication()
+            }
+            .navigationTitle(authService.isAuthenticated ? __designTimeString("#3639.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.then", fallback: "Home") : __designTimeString("#3639.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.else", fallback: "Login"))
+        }
+        .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle for better navigation behavior
     
 #sourceLocation()
     }

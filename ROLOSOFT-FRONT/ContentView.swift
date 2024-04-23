@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var authService = AuthService()
+        
     var body: some View {
-        LoginView() // Display LoginView as the initial view
+        NavigationView {
+            Group {
+                if authService.isAuthenticated {
+                    HomeView()
+                } else {
+                    LoginView(authService: authService)
+                }
+            }
+            .onAppear {
+                // Check authentication status when ContentView appears
+                authService.checkAuthentication()
+            }
+            .navigationTitle(authService.isAuthenticated ? "Home" : "Login")
+        }
+        .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle for better navigation behavior
     }
 }
 

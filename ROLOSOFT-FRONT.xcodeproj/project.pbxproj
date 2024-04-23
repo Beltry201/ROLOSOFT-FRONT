@@ -12,6 +12,10 @@
 		523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BF1E52BCE1E3E003138DC /* ContentView.swift */; };
 		523BF1E82BCE1E40003138DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1E72BCE1E40003138DC /* Assets.xcassets */; };
 		523BF1EB2BCE1E40003138DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */; };
+		5255745B2BD84D0000881C57 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745A2BD84D0000881C57 /* AuthService.swift */; };
+		5255745D2BD8521E00881C57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745C2BD8521D00881C57 /* HomeView.swift */; };
+		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
+		52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		523BF1E52BCE1E3E003138DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		523BF1E72BCE1E40003138DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5255745A2BD84D0000881C57 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5255745C2BD8521D00881C57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		52CBB6F92BD5A41600DD0410 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 		523923EB2BCF5C470054F9BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				52CBB6F92BD5A41600DD0410 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -61,6 +70,8 @@
 		523923EF2BCF5C830054F9BD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				52CBB6F72BD5A39600DD0410 /* APIService.swift */,
+				5255745A2BD84D0000881C57 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -83,6 +94,7 @@
 		523923F22BCF5CA40054F9BD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5255745C2BD8521D00881C57 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -205,7 +217,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
+				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
+				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
+				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
+				52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
