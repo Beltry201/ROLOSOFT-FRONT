@@ -6,6 +6,67 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
+		<key>9D4B2829-9F90-47B0-A197-F30BCCD30864</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>DF1583F0-7315-43E3-9636-6405ED2D5D7E</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-ROLOSOFT-FRONT-2024.04.24_15-46-22--0600.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ROLOSOFT-FRONT project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ROLOSOFT-FRONT</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ROLOSOFT-FRONT</string>
+			<key>timeStartedRecording</key>
+			<real>735687982.10306501</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run ROLOSOFT-FRONT</string>
+			<key>uniqueIdentifier</key>
+			<string>9D4B2829-9F90-47B0-A197-F30BCCD30864</string>
+		</dict>
 		<key>9EB67805-311F-42A7-A05E-AB572A9FC766</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
@@ -66,67 +127,6 @@
 			<string>Run ROLOSOFT-FRONT</string>
 			<key>uniqueIdentifier</key>
 			<string>9EB67805-311F-42A7-A05E-AB572A9FC766</string>
-		</dict>
-		<key>BD433262-B610-4EF0-B1A2-59A564628983</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>D8A315D6-5DA9-4855-80CA-FC6F8B47C978</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>1</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.04.21_17-59-34--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>1</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>735436774.56338</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>BD433262-B610-4EF0-B1A2-59A564628983</string>
 		</dict>
 	</dict>
 </dict>

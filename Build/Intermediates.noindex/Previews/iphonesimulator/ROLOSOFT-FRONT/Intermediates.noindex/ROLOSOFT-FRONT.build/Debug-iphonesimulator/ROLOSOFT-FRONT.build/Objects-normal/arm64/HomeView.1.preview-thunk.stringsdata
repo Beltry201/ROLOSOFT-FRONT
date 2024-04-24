@@ -4,7 +4,27 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Hello, World!"
+        "key": "Profile"
+      },
+      {
+        "comment": "",
+        "key": "Settings"
+      },
+      {
+        "comment": "",
+        "key": "Latest Articles"
+      },
+      {
+        "comment": "",
+        "key": "Day %lld"
+      },
+      {
+        "comment": "",
+        "key": "This Week's Events"
+      },
+      {
+        "comment": "",
+        "key": "Home"
       }
     ]
   },

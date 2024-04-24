@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var authService = AuthService()
-        
+    
     var body: some View {
         NavigationView {
             Group {
@@ -25,14 +25,9 @@ struct ContentView: View {
             }
             .navigationTitle(authService.isAuthenticated ? "Home" : "Login")
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle for better navigation behavior
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-
 #Preview {
     ContentView()
 }
-
-
-
-

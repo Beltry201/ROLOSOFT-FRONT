@@ -23,9 +23,9 @@ extension ContentView {
                 // Check authentication status when ContentView appears
                 authService.checkAuthentication()
             }
-            .navigationTitle(authService.isAuthenticated ? __designTimeString("#3639.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.then", fallback: "Home") : __designTimeString("#3639.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.else", fallback: "Login"))
+            .navigationTitle(authService.isAuthenticated ? __designTimeString("#11595.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.then", fallback: "Home") : __designTimeString("#11595.[1].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.else", fallback: "Login"))
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Use StackNavigationViewStyle for better navigation behavior
+        .navigationViewStyle(StackNavigationViewStyle())
     
 #sourceLocation()
     }
