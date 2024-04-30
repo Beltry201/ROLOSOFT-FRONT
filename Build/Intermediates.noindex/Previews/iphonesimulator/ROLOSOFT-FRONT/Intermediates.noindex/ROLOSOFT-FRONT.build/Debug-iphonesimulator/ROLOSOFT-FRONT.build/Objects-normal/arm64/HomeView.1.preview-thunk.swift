@@ -77,7 +77,7 @@ extension HeaderView {
                 Image(__designTimeString("#6132.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: .infinity, height: __designTimeInteger("#6132.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[1].value", fallback: 30))
+                    .frame(height: __designTimeInteger("#6132.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
                 Spacer()
                 // Notifications icon view
                 Image(systemName: __designTimeString("#6132.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))

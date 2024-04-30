@@ -11,7 +11,7 @@ import SwiftUI
 
 extension Date {
     @_dynamicReplacement(for: dayOfMonth()) private func __preview__dayOfMonth() -> Int {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 90)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 89)
             let calendar = Calendar.current
             return calendar.component(.day, from: self)
         
@@ -21,7 +21,7 @@ extension Date {
 
 extension Date {
     @_dynamicReplacement(for: dayOfWeek()) private func __preview__dayOfWeek() -> String {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 85)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 84)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = __designTimeString("#10884.[3].[3].[1].[0]", fallback: "E")
         return dateFormatter.string(from: self)
@@ -32,7 +32,7 @@ extension Date {
 
 extension Date {
     @_dynamicReplacement(for: daysOfMonth()) private func __preview__daysOfMonth() -> [String] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 79)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 78)
             let calendar = Calendar.current
             let range = calendar.range(of: .day, in: .month, for: self)!
             let days = range.lowerBound..<range.upperBound
@@ -44,7 +44,7 @@ extension Date {
 
 extension Date {
     @_dynamicReplacement(for: daysOfWeek()) private func __preview__daysOfWeek() -> [String] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 74)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 73)
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: __designTimeString("#10884.[3].[1].[1].[0]", fallback: "en_US_POSIX"))
             return dateFormatter.shortWeekdaySymbols
@@ -55,7 +55,7 @@ extension Date {
 
 extension Date {
     @_dynamicReplacement(for: monthName()) private func __preview__monthName() -> String {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 69)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 68)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = __designTimeString("#10884.[3].[0].[1].[0]", fallback: "MMMM")
         return dateFormatter.string(from: self)
@@ -66,7 +66,7 @@ extension Date {
 
 extension CalendarComponent {
     @_dynamicReplacement(for: daysOfWeek(currentDate:)) private func __preview__daysOfWeek(currentDate: Date) -> [Date] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 60)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift", line: 59)
         let calendar = Calendar.current
         let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: currentDate))
         let days = (__designTimeInteger("#10884.[2].[2].[2].value.[0].[0]", fallback: 0)..<__designTimeInteger("#10884.[2].[2].[2].value.[0].[1]", fallback: 7)).compactMap { calendar.date(byAdding: .day, value: $0, to: startOfWeek!) }
@@ -117,7 +117,6 @@ extension CalendarComponent {
                     .padding(.horizontal)
                 }
             }
-            .frame(width: .infinity)
         }
     
 #sourceLocation()

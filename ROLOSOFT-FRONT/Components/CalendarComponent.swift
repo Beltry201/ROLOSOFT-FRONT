@@ -51,7 +51,6 @@ struct CalendarComponent: View {
                     .padding(.horizontal)
                 }
             }
-            .frame(width: .infinity)
         }
     }
     

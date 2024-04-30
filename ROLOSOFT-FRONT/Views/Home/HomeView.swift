@@ -27,7 +27,7 @@ struct HeaderView: View {
                 Image("frisa-logox4")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: .infinity, height: 30)
+                    .frame(height: 30)
                 Spacer()
                 // Notifications icon view
                 Image(systemName: "bell")
