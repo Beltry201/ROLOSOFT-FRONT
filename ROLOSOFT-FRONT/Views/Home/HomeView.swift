@@ -12,11 +12,8 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 HeaderView()
-                Divider()
                 BodyView()
             }
-            .navigationTitle("Home")
-            .navigationBarItems(trailing: NavigationBarItemView())
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -25,33 +22,21 @@ struct HomeView: View {
 struct HeaderView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("This Week's Events")
-                .font(.headline)
-                .padding(.horizontal)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(0..<7) { day in
-                        DayCard(day: day)
-                    }
-                }
-                .padding(.horizontal)
+            HStack {
+                // Logo view
+                Image("frisa-logox4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: .infinity, height: 30)
+                Spacer()
+                // Notifications icon view
+                Image(systemName: "bell")
+                    .font(.title)
+                    .foregroundColor(.blue) // Customize color as needed
             }
-        }
-    }
-}
-
-struct DayCard: View {
-    let day: Int // Index of the day in the week
-    
-    var body: some View {
-        VStack {
-            Text("Day \(day + 1)")
-                .font(.headline)
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+            .padding(.horizontal)
+            
+            CalendarComponent().padding()
         }
     }
 }
@@ -59,10 +44,6 @@ struct DayCard: View {
 struct BodyView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Latest Articles")
-                .font(.headline)
-                .padding(.horizontal)
-            
             List {
                 ForEach(1..<6) { index in
                     ArticleRow(title: "Article \(index)")

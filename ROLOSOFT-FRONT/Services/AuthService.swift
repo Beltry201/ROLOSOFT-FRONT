@@ -8,7 +8,7 @@
 import Foundation
 
 class AuthService: ObservableObject {
-    private let baseURL = URL(string: "https://e6fe-131-178-102-220.ngrok-free.app")
+    private let baseURL = URL(string: "https://25e0-131-178-102-196.ngrok-free.app")
     private let jwtTokenKey = ""
     
     @Published var isAuthenticated = false
@@ -90,18 +90,24 @@ class AuthService: ObservableObject {
         }.resume()
     }
     
-    func checkAuthentication() {
+    func checkAuthentication(completion: @escaping (Bool) -> Void) {
         print("Checking authentication")
         // Check if JWT token exists in UserDefaults
         if let jwt = UserDefaults.standard.string(forKey: jwtTokenKey) {
-            print("Token found: ",jwt)
-            validateToken(jwt: jwt)
+            print("Token found: ", jwt)
+            validateToken(jwt: jwt) { isValid in
+                // Call the completion handler with the authentication status
+                completion(isValid)
+            }
         } else {
             isAuthenticated = false
+            // Call the completion handler with the authentication status
+            completion(false)
         }
     }
+
     
-    private func validateToken(jwt: String) {
+    private func validateToken(jwt: String, completion: @escaping (Bool) -> Void) {
         // Construct the URL for the token validation endpoint using the base URL
         guard let baseURL = baseURL,
               let url = URL(string: "/users/validate-token", relativeTo: baseURL) else {
@@ -118,6 +124,7 @@ class AuthService: ObservableObject {
         URLSession.shared.dataTask(with: request) { _, response, error in
             guard let httpResponse = response as? HTTPURLResponse, error == nil else {
                 print("Error:", error?.localizedDescription ?? "Unknown error")
+                completion(false) // Call the completion handler with false if there's an error
                 return
             }
             
@@ -125,10 +132,13 @@ class AuthService: ObservableObject {
             case 200..<300: // Token is valid
                 self.isAuthenticated = true
                 print("Token is valid")
+                completion(true) // Call the completion handler with true
             default: // Token is invalid
                 self.isAuthenticated = false
                 print("Token is invalid")
+                completion(false) // Call the completion handler with false
             }
         }.resume()
     }
+
 }

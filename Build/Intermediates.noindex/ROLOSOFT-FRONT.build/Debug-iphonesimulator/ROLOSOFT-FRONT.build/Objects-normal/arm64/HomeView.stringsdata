@@ -4,22 +4,6 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Home"
-      },
-      {
-        "comment": "",
-        "key": "This Week's Events"
-      },
-      {
-        "comment": "",
-        "key": "Day %lld"
-      },
-      {
-        "comment": "",
-        "key": "Latest Articles"
-      },
-      {
-        "comment": "",
         "key": "Profile"
       },
       {

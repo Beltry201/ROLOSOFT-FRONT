@@ -47,7 +47,6 @@ struct LoginView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Login")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true) // Hide back button
         }

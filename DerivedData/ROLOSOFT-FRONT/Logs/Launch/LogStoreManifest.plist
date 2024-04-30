@@ -67,67 +67,6 @@
 			<key>uniqueIdentifier</key>
 			<string>9D4B2829-9F90-47B0-A197-F30BCCD30864</string>
 		</dict>
-		<key>9EB67805-311F-42A7-A05E-AB572A9FC766</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>14024CE5-F62C-4B98-A845-E23BAE54C9D4</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.04.23_13-50-08--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>735594608.80863798</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>9EB67805-311F-42A7-A05E-AB572A9FC766</string>
-		</dict>
 	</dict>
 </dict>
 </plist>
