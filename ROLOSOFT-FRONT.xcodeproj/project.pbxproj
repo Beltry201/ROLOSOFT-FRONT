@@ -12,6 +12,8 @@
 		523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BF1E52BCE1E3E003138DC /* ContentView.swift */; };
 		523BF1E82BCE1E40003138DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1E72BCE1E40003138DC /* Assets.xcassets */; };
 		523BF1EB2BCE1E40003138DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */; };
+		5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252EEF82BE0760D00095F22 /* LoadingView.swift */; };
+		5252EEFC2BE07ADD00095F22 /* CalendarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */; };
 		5255745B2BD84D0000881C57 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745A2BD84D0000881C57 /* AuthService.swift */; };
 		5255745D2BD8521E00881C57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745C2BD8521D00881C57 /* HomeView.swift */; };
 		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
@@ -19,12 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521A79442BE5BCFB000FBAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		523923F42BCF5D2F0054F9BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		523BF1E02BCE1E3E003138DC /* ROLOSOFT-FRONT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLOSOFT-FRONT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLOSOFT_FRONTApp.swift; sourceTree = "<group>"; };
 		523BF1E52BCE1E3E003138DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		523BF1E72BCE1E40003138DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5252EEF82BE0760D00095F22 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponent.swift; sourceTree = "<group>"; };
 		5255745A2BD84D0000881C57 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5255745C2BD8521D00881C57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 				523923F32BCF5CAB0054F9BD /* Modules */,
 				523923F22BCF5CA40054F9BD /* Home */,
 				523923F12BCF5C9A0054F9BD /* Authentication */,
+				5252EEF82BE0760D00095F22 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +131,8 @@
 		523BF1E22BCE1E3E003138DC /* ROLOSOFT-FRONT */ = {
 			isa = PBXGroup;
 			children = (
+				521A79442BE5BCFB000FBAC7 /* Info.plist */,
+				5252EEFA2BE07AB800095F22 /* Components */,
 				523923F02BCF5C8C0054F9BD /* Helpers */,
 				523923EF2BCF5C830054F9BD /* Services */,
 				523923EE2BCF5C720054F9BD /* ViewModels */,
@@ -144,6 +152,14 @@
 				523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5252EEFA2BE07AB800095F22 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,11 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5252EEFC2BE07ADD00095F22 /* CalendarComponent.swift in Sources */,
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
 				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
+				5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */,
 				52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 			);
@@ -359,6 +377,7 @@
 				DEVELOPMENT_TEAM = 28UD3SH48C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ROLOSOFT-FRONT/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,6 +407,7 @@
 				DEVELOPMENT_TEAM = 28UD3SH48C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ROLOSOFT-FRONT/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

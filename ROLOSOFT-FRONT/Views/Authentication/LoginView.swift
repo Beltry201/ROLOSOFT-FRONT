@@ -32,7 +32,7 @@ struct LoginView: View {
                 Button(action: {
                     // Call API service to perform login
                     authService.logIn(username: username, password: password) { user in
-                        print("Logged in user: \(user)")
+                        print("Logged in user: \(user.id)")
                     }
                 }) {
                     Text("Login")
@@ -47,7 +47,6 @@ struct LoginView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Login")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true) // Hide back button
         }

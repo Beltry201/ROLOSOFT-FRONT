@@ -15,6 +15,16 @@
     "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
     "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
   },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/CalendarComponent~partial.swiftmodule"
+  },
   "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift" : {
     "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ContentView.swiftconstvalues",
     "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ContentView.d",
@@ -55,6 +65,16 @@
     "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService.swiftdeps",
     "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/APIService~partial.swiftmodule"
   },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/AuthService.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/AuthService~partial.swiftmodule"
+  },
   "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift" : {
     "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView.swiftconstvalues",
     "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView.d",
@@ -64,5 +84,25 @@
     "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView.o",
     "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView.swiftdeps",
     "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LoadingView.swift" : {
+    "const-values" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.swiftconstvalues",
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.dia",
+    "index-unit-output-path" : "/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.o",
+    "llvm-bc" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.bc",
+    "object" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.o",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView.swiftdeps",
+    "swiftmodule" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/LoadingView~partial.swiftmodule"
   }
 }

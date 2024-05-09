@@ -4,7 +4,11 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Hello, World!"
+        "key": "Profile"
+      },
+      {
+        "comment": "",
+        "key": "Settings"
       }
     ]
   },
