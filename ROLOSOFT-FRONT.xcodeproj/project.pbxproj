@@ -18,6 +18,8 @@
 		5255745D2BD8521E00881C57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745C2BD8521D00881C57 /* HomeView.swift */; };
 		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
 		52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserModel.swift */; };
+		FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */; };
+		FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FF2BEC5EB700170E54 /* TextFieldModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5255745C2BD8521D00881C57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		52CBB6F92BD5A41600DD0410 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		FEAB41FF2BEC5EB700170E54 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		523BF1E22BCE1E3E003138DC /* ROLOSOFT-FRONT */ = {
 			isa = PBXGroup;
 			children = (
+				FEAB41FC2BEC5E6500170E54 /* Modifiers */,
 				521A79442BE5BCFB000FBAC7 /* Info.plist */,
 				5252EEFA2BE07AB800095F22 /* Components */,
 				523923F02BCF5C8C0054F9BD /* Helpers */,
@@ -160,6 +165,15 @@
 				5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FEAB41FC2BEC5E6500170E54 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */,
+				FEAB41FF2BEC5EB700170E54 /* TextFieldModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,10 +250,12 @@
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
+				FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */,
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
 				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
 				5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */,
 				52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */,
+				FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
