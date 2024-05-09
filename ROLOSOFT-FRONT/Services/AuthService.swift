@@ -8,11 +8,10 @@
 import Foundation
 
 class AuthService: ObservableObject {
-    private let baseURL = URL(string: "https://25e0-131-178-102-196.ngrok-free.app")
+    private let baseURL = URL(string: "http://34.125.172.132:3000")
     private let jwtTokenKey = ""
     
     @Published var isAuthenticated = false
-    
     
     func logIn(username: String, password: String, completion: @escaping (User) -> Void) {
         

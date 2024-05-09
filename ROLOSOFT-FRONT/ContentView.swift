@@ -25,16 +25,13 @@ struct ContentView: View {
                     }
             } else {
                 // Main content
-                NavigationView {
-                    Group {
-                        if authService.isAuthenticated {
-                            HomeView()
-                        } else {
-                            LoginView(authService: authService)
-                        }
+                Group {
+                    if authService.isAuthenticated {
+                        HomeView()
+                    } else {
+                        LoginView(authService: authService)
                     }
                 }
-                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
     }

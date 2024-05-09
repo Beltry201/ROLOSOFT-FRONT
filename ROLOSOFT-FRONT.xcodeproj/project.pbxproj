@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521A79442BE5BCFB000FBAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		523923F42BCF5D2F0054F9BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		523BF1E02BCE1E3E003138DC /* ROLOSOFT-FRONT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROLOSOFT-FRONT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLOSOFT_FRONTApp.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		523BF1E22BCE1E3E003138DC /* ROLOSOFT-FRONT */ = {
 			isa = PBXGroup;
 			children = (
+				521A79442BE5BCFB000FBAC7 /* Info.plist */,
 				5252EEFA2BE07AB800095F22 /* Components */,
 				523923F02BCF5C8C0054F9BD /* Helpers */,
 				523923EF2BCF5C830054F9BD /* Services */,
@@ -375,6 +377,7 @@
 				DEVELOPMENT_TEAM = 28UD3SH48C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ROLOSOFT-FRONT/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,6 +407,7 @@
 				DEVELOPMENT_TEAM = 28UD3SH48C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ROLOSOFT-FRONT/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

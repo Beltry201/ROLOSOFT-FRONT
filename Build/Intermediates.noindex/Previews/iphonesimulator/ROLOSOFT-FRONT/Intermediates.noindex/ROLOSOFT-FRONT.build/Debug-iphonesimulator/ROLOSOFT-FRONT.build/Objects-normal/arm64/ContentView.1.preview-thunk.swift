@@ -20,21 +20,18 @@ extension ContentView {
                         // Perform authentication check when ContentView appears
                         authService.checkAuthentication { isAuthenticated in 
                             // Update isLoading state based on authentication result
-                            isLoading = __designTimeBoolean("#5822.[1].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[0].arg[0].value.[0].modifier[0].arg[0].value.[0].[0]", fallback: false)
+                            isLoading = __designTimeBoolean("#7992.[1].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[0].arg[0].value.[0].modifier[0].arg[0].value.[0].[0]", fallback: false)
                         }
                     }
             } else {
                 // Main content
-                NavigationView {
-                    Group {
-                        if authService.isAuthenticated {
-                            HomeView()
-                        } else {
-                            LoginView(authService: authService)
-                        }
+                Group {
+                    if authService.isAuthenticated {
+                        HomeView()
+                    } else {
+                        LoginView(authService: authService)
                     }
                 }
-                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
     
