@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FootballScoreCard: View {
+struct ScoreCard: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
@@ -48,9 +48,9 @@ struct TeamScoreView: View {
     }
 }
 
-struct FootballScoreCardPreview: PreviewProvider {
+struct ScoreCardPreview: PreviewProvider {
     static var previews: some View {
-        FootballScoreCard()
+        ScoreCard()
             .padding()
     }
 }
