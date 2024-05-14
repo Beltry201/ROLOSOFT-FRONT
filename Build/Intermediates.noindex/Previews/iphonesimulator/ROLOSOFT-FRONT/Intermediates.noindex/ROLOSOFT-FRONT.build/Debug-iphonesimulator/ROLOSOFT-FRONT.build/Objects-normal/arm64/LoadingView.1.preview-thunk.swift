@@ -16,11 +16,11 @@ extension LoadingView {
                 .progressViewStyle(CircularProgressViewStyle()) // Customize the progress view style
                 .padding()
             
-            Text(__designTimeString("#6917.[1].[0].property.[0].[0].arg[0].value.[1].arg[0].value", fallback: "Loading...")) // Display a loading text
+            Text(__designTimeString("#14287.[1].[0].property.[0].[0].arg[0].value.[1].arg[0].value", fallback: "Loading...")) // Display a loading text
                 .font(.headline)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white.opacity(__designTimeFloat("#6917.[1].[0].property.[0].[0].modifier[1].arg[0].value.modifier[0].arg[0].value", fallback: 0.8))) // Semi-transparent white background
+        .background(Color.white.opacity(__designTimeFloat("#14287.[1].[0].property.[0].[0].modifier[1].arg[0].value.modifier[0].arg[0].value", fallback: 0.8))) // Semi-transparent white background
     
 #sourceLocation()
     }

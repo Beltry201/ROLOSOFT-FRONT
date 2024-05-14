@@ -6,15 +6,13 @@
 //
 import SwiftUI
 
-import SwiftUI
-
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     @ObservedObject var authService = AuthService()
     @State private var isLogged = false // Boolean to trigger navigation
-    @State private var emailErrorMessage: String? = "Error"
-    @State private var passwordErrorMessage: String? = "Error"
+    @State private var emailErrorMessage: String? = nil
+    @State private var passwordErrorMessage: String? = nil
 
     var body: some View {
         NavigationView {
@@ -28,8 +26,8 @@ struct LoginView: View {
 
                     TextField("Correo electrónico", text: $username)
                         .modifier(TextFieldModifier())
+                        .padding(.bottom, 8)
                     
-                    // Email error message
                     if let emailErrorMessage = emailErrorMessage {
                         Text(emailErrorMessage)
                             .foregroundColor(.red)
@@ -40,7 +38,9 @@ struct LoginView: View {
 
                     SecureField("Contraseña", text: $password)
                         .modifier(TextFieldModifier())
+                        .padding(.bottom, 8)
                     
+                    // Password error message
                     if let passwordErrorMessage = passwordErrorMessage {
                         Text(passwordErrorMessage)
                             .foregroundColor(.red)
@@ -51,10 +51,25 @@ struct LoginView: View {
                     
                     Button(action: {
                         // Call API service to perform login
-                        authService.logIn(username: username, password: password) { user in
-                            print("Logged in user: \(user.id)")
+                        authService.logIn(username: username, password: password) { result in
+                            switch result {
+                            case .success(let user):
+                                print("Logged in user: \(user.id)")
+                            case .failure(let error):
+                                switch error {
+                                case .unauthorized:
+                                    passwordErrorMessage = "Invalid password."
+                                    emailErrorMessage = nil
+                                case .notFound:
+                                    emailErrorMessage = "User not found."
+                                    passwordErrorMessage = nil
+                                case .clientError, .serverError, .unknown:
+                                    // Handle other errors if necessary
+                                    break
+                                }
+                            }
                         }
-                    }) {
+                    }){
                         Text("Login")
                             .modifier(ButtonModifier())
                     }

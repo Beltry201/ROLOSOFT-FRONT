@@ -8,11 +8,11 @@
       },
       {
         "comment": "",
-        "key": "Username"
+        "key": "Correo electrónico"
       },
       {
         "comment": "",
-        "key": "Password"
+        "key": "Contraseña"
       }
     ]
   },

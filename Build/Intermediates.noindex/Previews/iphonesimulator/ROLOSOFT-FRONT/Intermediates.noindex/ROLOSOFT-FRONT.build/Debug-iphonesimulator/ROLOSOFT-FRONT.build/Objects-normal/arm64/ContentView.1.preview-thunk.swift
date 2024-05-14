@@ -8,31 +8,37 @@ import struct SwiftUI.EmptyView
 import protocol SwiftUI.View
 import SwiftUI
 
+extension ContentView_Previews {
+    @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 40)
+        ContentView()
+    
+#sourceLocation()
+    }
+}
+
 extension ContentView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 14)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 13)
         // Use ZStack to overlay loading screen over the main content
         ZStack {
-            if isLoading {
-                // Loading screen
-                LoadingView()
-                    .onAppear {
-                        // Perform authentication check when ContentView appears
-                        authService.checkAuthentication { isAuthenticated in 
-                            // Update isLoading state based on authentication result
-                            isLoading = __designTimeBoolean("#7992.[1].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[0].arg[0].value.[0].modifier[0].arg[0].value.[0].[0]", fallback: false)
-                        }
-                    }
-            } else {
-                // Main content
-                Group {
-                    if authService.isAuthenticated {
-                        HomeView()
-                    } else {
-                        LoginView(authService: authService)
-                    }
+            // Main content
+            if authService.isAuthenticated {
+                NavigationView {
+                    HomeView(authService: authService) // Pass authService to HomeView
                 }
+            } else {
+                LoginView(authService: authService)
             }
+            
+            // Loading screen
+            if authService.isLoading {
+                LoadingView()
+            }
+        }
+        // Reset isLoading when authentication status changes
+        .onChange(of: authService.isAuthenticated) { newValue in
+            authService.isLoading = __designTimeBoolean("#9045.[1].[1].property.[0].[0].modifier[0].arg[1].value.[0].[0]", fallback: false)
         }
     
 #sourceLocation()
@@ -40,9 +46,5 @@ extension ContentView {
 }
 
 import struct ROLOSOFT_FRONT.ContentView
-#Preview {
-    ContentView()
-}
-
-
+import struct ROLOSOFT_FRONT.ContentView_Previews
 

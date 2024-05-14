@@ -10,7 +10,7 @@ import SwiftUI
 
 extension LoginView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 58)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 92)
         LoginView()
     
 #sourceLocation()
@@ -19,43 +19,75 @@ extension LoginView_Previews {
 
 extension LoginView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 16)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 18)
         NavigationView {
             VStack {
-                Text(__designTimeString("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "Login"))
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.bottom, __designTimeInteger("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
+                Spacer()
+                VStack {
+                    Text(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Login"))
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
 
-                TextField(__designTimeString("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value", fallback: "Username"), text: $username)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-
-                SecureField(__designTimeString("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[2].arg[0].value", fallback: "Password"), text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                Button(action: {
-                    // Call API service to perform login
-                    authService.logIn(username: username, password: password) { user in
-                        print("Logged in user: \(user.id)")
+                    TextField(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].arg[0].value", fallback: "Correo electrónico"), text: $username)
+                        .modifier(TextFieldModifier())
+                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].modifier[1].arg[1].value", fallback: 8))
+                    
+                    if let emailErrorMessage = emailErrorMessage {
+                        Text(emailErrorMessage)
+                            .foregroundColor(.red)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                            .font(.subheadline)
                     }
-                }) {
-                    Text(__designTimeString("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[3].arg[1].value.[0].arg[0].value", fallback: "Login"))
-                        .frame(minWidth: __designTimeInteger("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[3].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0), maxWidth: .infinity)
-                        .frame(height: __designTimeInteger("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[3].arg[1].value.[0].modifier[1].arg[0].value", fallback: 50))
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(__designTimeInteger("#7345.[1].[4].property.[0].[0].arg[0].value.[0].arg[0].value.[3].arg[1].value.[0].modifier[4].arg[0].value", fallback: 10))
-                        .padding()
-                }
 
+                    SecureField(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].arg[0].value", fallback: "Contraseña"), text: $password)
+                        .modifier(TextFieldModifier())
+                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].modifier[1].arg[1].value", fallback: 8))
+                    
+                    // Password error message
+                    if let passwordErrorMessage = passwordErrorMessage {
+                        Text(passwordErrorMessage)
+                            .foregroundColor(.red)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                            .font(.subheadline)
+                    }
+                    
+                    Button(action: {
+                        // Call API service to perform login
+                        authService.logIn(username: username, password: password) { result in
+                            switch result {
+                            case .success(let user):
+                                print("Logged in user: \(user.id)")
+                            case .failure(let error):
+                                switch error {
+                                case .unauthorized:
+                                    passwordErrorMessage = __designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[0].[0].[0]", fallback: "Invalid password.")
+                                    emailErrorMessage = nil
+                                case .notFound:
+                                    emailErrorMessage = __designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[1].[0].[0]", fallback: "User not found.")
+                                    passwordErrorMessage = nil
+                                case .clientError, .serverError, .unknown:
+                                    // Handle other errors if necessary
+                                    break
+                                }
+                            }
+                        }
+                    }){
+                        Text(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[1].value.[0].arg[0].value", fallback: "Login"))
+                            .modifier(ButtonModifier())
+                    }
+                    .padding(.top, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].modifier[0].arg[1].value", fallback: 8))
+                }
+                .padding()
+                .navigationTitle(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: "Login"))
+                .navigationBarHidden(__designTimeBoolean("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: true))
+                .navigationBarBackButtonHidden(__designTimeBoolean("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[3].arg[0].value", fallback: true)) // Hide back button
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
                 Spacer()
             }
-            .padding()
-            .navigationBarHidden(__designTimeBoolean("#7345.[1].[4].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: true))
-            .navigationBarBackButtonHidden(__designTimeBoolean("#7345.[1].[4].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: true)) // Hide back button
         }
     
 #sourceLocation()

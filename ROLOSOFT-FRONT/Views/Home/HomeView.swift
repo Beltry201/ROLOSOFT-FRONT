@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var authService: AuthService // Add authService as an observed object
+    
     var body: some View {
         NavigationView {
             VStack {
                 HeaderView()
                 BodyView()
+                LogoutButton(authService: authService) // Pass authService to LogoutButton
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -85,8 +89,28 @@ struct NavigationBarItemView: View {
     }
 }
 
+struct LogoutButton: View {
+    @ObservedObject var authService: AuthService // Add authService as an observed object
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    var body: some View {
+        Button(action: {
+            authService.logOut() // Call logOut method from AuthService
+            presentationMode.wrappedValue.dismiss() // Dismiss the current view
+        }) {
+            Text("Logout")
+                .foregroundColor(.red)
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(10)
+        }
+        .padding()
+    }
+}
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let authService = AuthService() // Create an instance of AuthService
+        return HomeView(authService: authService) // Pass authService to HomeView
     }
 }

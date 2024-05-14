@@ -8,34 +8,35 @@
 import SwiftUI
 struct ContentView: View {
     @StateObject var authService = AuthService()
-    @State private var isLoading = true // Add a state to track loading status
-    
+
     var body: some View {
         // Use ZStack to overlay loading screen over the main content
         ZStack {
-            if isLoading {
-                // Loading screen
-                LoadingView()
-                    .onAppear {
-                        // Perform authentication check when ContentView appears
-                        authService.checkAuthentication { isAuthenticated in 
-                            // Update isLoading state based on authentication result
-                            isLoading = false
-                        }
-                    }
-            } else {
-                // Main content
-                Group {
-                    if authService.isAuthenticated {
-                        HomeView()
-                    } else {
-                        LoginView(authService: authService)
-                    }
+            // Main content
+            if authService.isAuthenticated {
+                NavigationView {
+                    HomeView(authService: authService) // Pass authService to HomeView
                 }
+            } else {
+                LoginView(authService: authService)
             }
+            
+            // Loading screen
+            if authService.isLoading {
+                LoadingView()
+            }
+        }
+        // Reset isLoading when authentication status changes
+        .onChange(of: authService.isAuthenticated) { newValue in
+            authService.isLoading = false
         }
     }
 }
-#Preview {
-    ContentView()
+
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
