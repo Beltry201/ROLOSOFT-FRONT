@@ -8,7 +8,7 @@
 import Foundation
 
 class AuthService: ObservableObject {
-    private let baseURL = URL(string: "http://34.125.172.132:3000")
+    private let baseURL = URL(string: "http://34.125.102.164:3000")
     private let jwtTokenKey = ""
     
     @Published var isAuthenticated = false
@@ -164,7 +164,7 @@ class AuthService: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "jwtToken")
         
         // Update authentication status
-        isAuthenticated = false
+        self.isAuthenticated = false
         
         print("Logged out")
     }
@@ -202,5 +202,4 @@ class AuthService: ObservableObject {
             }
         }.resume()
     }
-
 }

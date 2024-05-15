@@ -6,10 +6,10 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>0E388F51-D1D6-458C-9993-A40A890E616B</key>
+		<key>C435DBD3-CB06-4A43-B6EB-D5FC7A422486</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>952DF35E-3007-4F1A-B50D-D169E7B40F5E</string>
+			<string>88E393AC-C364-4AE8-85F9-EDE11AF7877D</string>
 			<key>auxiliaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -30,7 +30,7 @@
 			<key>domainType</key>
 			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
 			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.13_19-19-52--0600.xcresult</string>
+			<string>Run-ROLOSOFT-FRONT-2024.05.13_20-17-40--0600.xcresult</string>
 			<key>hasAuxiliaryLog</key>
 			<true/>
 			<key>hasConsoleLog</key>
@@ -59,257 +59,13 @@
 			<key>signature</key>
 			<string>Run ROLOSOFT-FRONT</string>
 			<key>timeStartedRecording</key>
-			<real>737342392.88594103</real>
+			<real>737345860.20850694</real>
 			<key>timeStoppedRecording</key>
 			<real>0.0</real>
 			<key>title</key>
 			<string>Run ROLOSOFT-FRONT</string>
 			<key>uniqueIdentifier</key>
-			<string>0E388F51-D1D6-458C-9993-A40A890E616B</string>
-		</dict>
-		<key>5C68980E-2155-4880-B9B6-285943BA2581</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>856F9BA1-4417-4C28-B2AA-986E30CDBFA3</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.13_19-11-57--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>737341917.910622</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>5C68980E-2155-4880-B9B6-285943BA2581</string>
-		</dict>
-		<key>9BB23147-144E-41F1-8241-7E55DE8EAD90</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>27DE00EB-6102-488B-9665-26BD2CF2CD2A</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.13_19-13-27--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>737342007.91977</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>9BB23147-144E-41F1-8241-7E55DE8EAD90</string>
-		</dict>
-		<key>B399200A-34D2-4F0C-9514-0D4BA8F60F31</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>88EE9FA1-4BE1-4427-8167-59F9B65433ED</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.13_19-08-50--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>737341730.44686604</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>B399200A-34D2-4F0C-9514-0D4BA8F60F31</string>
-		</dict>
-		<key>E3A8535B-D0A7-472B-B7B6-A9902644DA34</key>
-		<dict>
-			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>B53813A5-7843-4DFF-8D83-8C1620931261</string>
-			<key>auxiliaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>2</integer>
-			</dict>
-			<key>className</key>
-			<string>IDESchemeActionsInvocationRecord</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
-			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.08_21-21-26--0600.xcresult</string>
-			<key>hasAuxiliaryLog</key>
-			<true/>
-			<key>hasConsoleLog</key>
-			<true/>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>2</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ROLOSOFT-FRONT project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ROLOSOFT-FRONT</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>timeStartedRecording</key>
-			<real>736917686.31659806</real>
-			<key>timeStoppedRecording</key>
-			<real>0.0</real>
-			<key>title</key>
-			<string>Run ROLOSOFT-FRONT</string>
-			<key>uniqueIdentifier</key>
-			<string>E3A8535B-D0A7-472B-B7B6-A9902644DA34</string>
+			<string>C435DBD3-CB06-4A43-B6EB-D5FC7A422486</string>
 		</dict>
 	</dict>
 </dict>

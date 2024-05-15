@@ -31,6 +31,24 @@ extension DeveloperToolsSupport.ColorResource {
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 extension DeveloperToolsSupport.ImageResource {
 
+    /// The "Home" asset catalog image resource.
+    static let home = DeveloperToolsSupport.ImageResource(name: "Home", bundle: resourceBundle)
+
+    /// The "News" asset catalog image resource.
+    static let news = DeveloperToolsSupport.ImageResource(name: "News", bundle: resourceBundle)
+
+    /// The "Profile" asset catalog image resource.
+    static let profile = DeveloperToolsSupport.ImageResource(name: "Profile", bundle: resourceBundle)
+
+    /// The "Search" asset catalog image resource.
+    static let search = DeveloperToolsSupport.ImageResource(name: "Search", bundle: resourceBundle)
+
+    /// The "Teams" asset catalog image resource.
+    static let teams = DeveloperToolsSupport.ImageResource(name: "Teams", bundle: resourceBundle)
+
+    /// The "escudo-santa-fe" asset catalog image resource.
+    static let escudoSantaFe = DeveloperToolsSupport.ImageResource(name: "escudo-santa-fe", bundle: resourceBundle)
+
     /// The "frisa-logox4" asset catalog image resource.
     static let frisaLogox4 = DeveloperToolsSupport.ImageResource(name: "frisa-logox4", bundle: resourceBundle)
 
@@ -73,6 +91,60 @@ extension SwiftUI.ShapeStyle where Self == SwiftUI.Color {
 @available(macCatalyst, unavailable)
 extension AppKit.NSImage {
 
+    /// The "Home" asset catalog image.
+    static var home: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .home)
+#else
+        .init()
+#endif
+    }
+
+    /// The "News" asset catalog image.
+    static var news: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .news)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Profile" asset catalog image.
+    static var profile: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .profile)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Search" asset catalog image.
+    static var search: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .search)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Teams" asset catalog image.
+    static var teams: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .teams)
+#else
+        .init()
+#endif
+    }
+
+    /// The "escudo-santa-fe" asset catalog image.
+    static var escudoSantaFe: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .escudoSantaFe)
+#else
+        .init()
+#endif
+    }
+
     /// The "frisa-logox4" asset catalog image.
     static var frisaLogox4: AppKit.NSImage {
 #if !targetEnvironment(macCatalyst)
@@ -89,6 +161,60 @@ extension AppKit.NSImage {
 @available(iOS 17.0, tvOS 17.0, *)
 @available(watchOS, unavailable)
 extension UIKit.UIImage {
+
+    /// The "Home" asset catalog image.
+    static var home: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .home)
+#else
+        .init()
+#endif
+    }
+
+    /// The "News" asset catalog image.
+    static var news: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .news)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Profile" asset catalog image.
+    static var profile: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .profile)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Search" asset catalog image.
+    static var search: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .search)
+#else
+        .init()
+#endif
+    }
+
+    /// The "Teams" asset catalog image.
+    static var teams: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .teams)
+#else
+        .init()
+#endif
+    }
+
+    /// The "escudo-santa-fe" asset catalog image.
+    static var escudoSantaFe: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .escudoSantaFe)
+#else
+        .init()
+#endif
+    }
 
     /// The "frisa-logox4" asset catalog image.
     static var frisaLogox4: UIKit.UIImage {

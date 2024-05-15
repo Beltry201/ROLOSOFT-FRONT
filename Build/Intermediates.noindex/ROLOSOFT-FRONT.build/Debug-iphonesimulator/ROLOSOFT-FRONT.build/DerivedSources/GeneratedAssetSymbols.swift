@@ -31,6 +31,9 @@ extension DeveloperToolsSupport.ColorResource {
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 extension DeveloperToolsSupport.ImageResource {
 
+    /// The "escudo-santa-fe" asset catalog image resource.
+    static let escudoSantaFe = DeveloperToolsSupport.ImageResource(name: "escudo-santa-fe", bundle: resourceBundle)
+
     /// The "frisa-logox4" asset catalog image resource.
     static let frisaLogox4 = DeveloperToolsSupport.ImageResource(name: "frisa-logox4", bundle: resourceBundle)
 
@@ -73,6 +76,15 @@ extension SwiftUI.ShapeStyle where Self == SwiftUI.Color {
 @available(macCatalyst, unavailable)
 extension AppKit.NSImage {
 
+    /// The "escudo-santa-fe" asset catalog image.
+    static var escudoSantaFe: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .escudoSantaFe)
+#else
+        .init()
+#endif
+    }
+
     /// The "frisa-logox4" asset catalog image.
     static var frisaLogox4: AppKit.NSImage {
 #if !targetEnvironment(macCatalyst)
@@ -89,6 +101,15 @@ extension AppKit.NSImage {
 @available(iOS 17.0, tvOS 17.0, *)
 @available(watchOS, unavailable)
 extension UIKit.UIImage {
+
+    /// The "escudo-santa-fe" asset catalog image.
+    static var escudoSantaFe: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .escudoSantaFe)
+#else
+        .init()
+#endif
+    }
 
     /// The "frisa-logox4" asset catalog image.
     static var frisaLogox4: UIKit.UIImage {

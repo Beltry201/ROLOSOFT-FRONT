@@ -10,6 +10,16 @@
 			<key>catalogPath</key>
 			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
 			<key>objcSymbol</key>
+			<string>ACImageNameEscudoSantaFe</string>
+			<key>relativePath</key>
+			<string>./escudo-santa-fe.imageset</string>
+			<key>swiftSymbol</key>
+			<string>escudoSantaFe</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
 			<string>ACImageNameFrisaLogox4</string>
 			<key>relativePath</key>
 			<string>./frisa-logox4.imageset</string>

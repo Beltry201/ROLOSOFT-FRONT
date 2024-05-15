@@ -10,6 +10,66 @@
 			<key>catalogPath</key>
 			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
 			<key>objcSymbol</key>
+			<string>ACImageNameHome</string>
+			<key>relativePath</key>
+			<string>./Home.imageset</string>
+			<key>swiftSymbol</key>
+			<string>home</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameNews</string>
+			<key>relativePath</key>
+			<string>./News.imageset</string>
+			<key>swiftSymbol</key>
+			<string>news</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameProfile</string>
+			<key>relativePath</key>
+			<string>./Profile.imageset</string>
+			<key>swiftSymbol</key>
+			<string>profile</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSearch</string>
+			<key>relativePath</key>
+			<string>./Search.imageset</string>
+			<key>swiftSymbol</key>
+			<string>search</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameTeams</string>
+			<key>relativePath</key>
+			<string>./Teams.imageset</string>
+			<key>swiftSymbol</key>
+			<string>teams</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameEscudoSantaFe</string>
+			<key>relativePath</key>
+			<string>./escudo-santa-fe.imageset</string>
+			<key>swiftSymbol</key>
+			<string>escudoSantaFe</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Assets.xcassets</string>
+			<key>objcSymbol</key>
 			<string>ACImageNameFrisaLogox4</string>
 			<key>relativePath</key>
 			<string>./frisa-logox4.imageset</string>

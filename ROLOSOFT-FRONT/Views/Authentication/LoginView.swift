@@ -64,7 +64,6 @@ struct LoginView: View {
                                     emailErrorMessage = "User not found."
                                     passwordErrorMessage = nil
                                 case .clientError, .serverError, .unknown:
-                                    // Handle other errors if necessary
                                     break
                                 }
                             }

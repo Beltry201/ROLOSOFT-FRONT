@@ -3,6 +3,7 @@
 <plist version="1.0">
 <array>
 	<string>SwiftUI</string>
+	<string>Combine</string>
 	<string>Foundation</string>
 </array>
 </plist>

@@ -10,7 +10,7 @@ import SwiftUI
 
 extension LoginView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 92)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift", line: 91)
         LoginView()
     
 #sourceLocation()
@@ -24,14 +24,14 @@ extension LoginView {
             VStack {
                 Spacer()
                 VStack {
-                    Text(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Login"))
+                    Text(__designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Login"))
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
+                        .padding(.bottom, __designTimeInteger("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
 
-                    TextField(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].arg[0].value", fallback: "Correo electrónico"), text: $username)
+                    TextField(__designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].arg[0].value", fallback: "Correo electrónico"), text: $username)
                         .modifier(TextFieldModifier())
-                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].modifier[1].arg[1].value", fallback: 8))
+                        .padding(.bottom, __designTimeInteger("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].modifier[1].arg[1].value", fallback: 8))
                     
                     if let emailErrorMessage = emailErrorMessage {
                         Text(emailErrorMessage)
@@ -41,9 +41,9 @@ extension LoginView {
                             .font(.subheadline)
                     }
 
-                    SecureField(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].arg[0].value", fallback: "Contraseña"), text: $password)
+                    SecureField(__designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].arg[0].value", fallback: "Contraseña"), text: $password)
                         .modifier(TextFieldModifier())
-                        .padding(.bottom, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].modifier[1].arg[1].value", fallback: 8))
+                        .padding(.bottom, __designTimeInteger("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].modifier[1].arg[1].value", fallback: 8))
                     
                     // Password error message
                     if let passwordErrorMessage = passwordErrorMessage {
@@ -63,27 +63,26 @@ extension LoginView {
                             case .failure(let error):
                                 switch error {
                                 case .unauthorized:
-                                    passwordErrorMessage = __designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[0].[0].[0]", fallback: "Invalid password.")
+                                    passwordErrorMessage = __designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[0].[0].[0]", fallback: "Invalid password.")
                                     emailErrorMessage = nil
                                 case .notFound:
-                                    emailErrorMessage = __designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[1].[0].[0]", fallback: "User not found.")
+                                    emailErrorMessage = __designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[1].[0].[0]", fallback: "User not found.")
                                     passwordErrorMessage = nil
                                 case .clientError, .serverError, .unknown:
-                                    // Handle other errors if necessary
                                     break
                                 }
                             }
                         }
                     }){
-                        Text(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[1].value.[0].arg[0].value", fallback: "Login"))
+                        Text(__designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].arg[1].value.[0].arg[0].value", fallback: "Login"))
                             .modifier(ButtonModifier())
                     }
-                    .padding(.top, __designTimeInteger("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].modifier[0].arg[1].value", fallback: 8))
+                    .padding(.top, __designTimeInteger("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[5].modifier[0].arg[1].value", fallback: 8))
                 }
                 .padding()
-                .navigationTitle(__designTimeString("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: "Login"))
-                .navigationBarHidden(__designTimeBoolean("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: true))
-                .navigationBarBackButtonHidden(__designTimeBoolean("#9137.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[3].arg[0].value", fallback: true)) // Hide back button
+                .navigationTitle(__designTimeString("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: "Login"))
+                .navigationBarHidden(__designTimeBoolean("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: true))
+                .navigationBarBackButtonHidden(__designTimeBoolean("#8783.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[3].arg[0].value", fallback: true)) // Hide back button
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 Spacer()
