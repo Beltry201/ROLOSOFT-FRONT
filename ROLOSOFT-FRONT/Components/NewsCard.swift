@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct NewsCard: View {
+    var title: String
+    var date: String
+    var desc: String
+    var imgUrl: String
+    
     var body: some View {
         HStack(spacing: 20) {
-            Rectangle()
-                .fill(Color.gray.opacity(0.3))
+            URLImage(url: imgUrl)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
 
             VStack(alignment: .leading, spacing: 8) {
-                Text("Titulo")
+                Text(title)
                     .font(.headline)
                     .foregroundColor(.black)
                 
@@ -24,7 +28,7 @@ struct NewsCard: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut")
+                Text(desc)
                     .font(.body)
                     .foregroundColor(.gray)
             }
@@ -40,5 +44,5 @@ struct NewsCard: View {
 }
 
 #Preview {
-    NewsCard()
+    NewsCard(title: "Titulo", date: "Fecha", desc: "Descripcion", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png")
 }

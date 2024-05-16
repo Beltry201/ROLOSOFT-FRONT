@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ScoreCard: View {
+    var teamA: ScoreCardTeamData
+    var teamB: ScoreCardTeamData
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
@@ -20,18 +23,18 @@ struct ScoreCard: View {
                     .shadow(color: Color.black.opacity(0.10), radius: 24, x: 0, y: 0)
 
             HStack {
-                TeamScoreView(teamName: "Independiente Santa Fé", teamLogo: "santafe_logo")
+                TeamScoreView(name: teamA.name, logoUrl: teamA.logo)
                 
                 VStack {
                     Spacer()
-                    Text("2 - 1")
+                    Text("\(teamA.score) - \(teamB.score)")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     Spacer()
                 }
                 
-                TeamScoreView(teamName: "América de Cali", teamLogo: "americadecali_logo")
+                TeamScoreView(name: teamB.name, logoUrl: teamB.logo)
             }
             .padding()
         }
@@ -40,14 +43,14 @@ struct ScoreCard: View {
 }
 
 struct TeamScoreView: View {
-    var teamName: String
-    var teamLogo: String
+    var name: String
+    var logoUrl: String
 
     var body: some View {
         VStack(alignment: .center) {
-            URLImage(url: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png")
+            URLImage(url: logoUrl)
                 .frame(width: 50, height: 50)
-            Text(teamName)
+            Text(name)
                 .font(.footnote)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -65,9 +68,15 @@ struct TeamScoreView: View {
     }
 }
 
+struct ScoreCardTeamData {
+    var name: String
+    var logo: String
+    var score: Int
+}
+
 struct ScoreCardPreview: PreviewProvider {
     static var previews: some View {
-        ScoreCard()
+        ScoreCard(teamA: ScoreCardTeamData(name: "EquipoA", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 2), teamB: ScoreCardTeamData(name: "EquipoB", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 1))
             .padding()
     }
 }
