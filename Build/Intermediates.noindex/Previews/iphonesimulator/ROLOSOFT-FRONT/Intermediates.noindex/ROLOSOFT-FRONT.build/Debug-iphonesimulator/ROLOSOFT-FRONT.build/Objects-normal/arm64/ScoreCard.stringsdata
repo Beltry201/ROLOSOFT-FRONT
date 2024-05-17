@@ -4,7 +4,11 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "2 - 1"
+        "key": "%lld - %lld"
+      },
+      {
+        "comment": "",
+        "key": "(12' Jugador)"
       }
     ]
   },

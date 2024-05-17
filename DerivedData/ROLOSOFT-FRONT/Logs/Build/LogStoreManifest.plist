@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>5CDBD874-0A4B-4C3B-B7E3-F6C807A4D118</key>
+		<key>BC1EC4BA-F2F7-44F0-9D22-44C3BC2DC324</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5CDBD874-0A4B-4C3B-B7E3-F6C807A4D118.xcactivitylog</string>
+			<string>BC1EC4BA-F2F7-44F0-9D22-44C3BC2DC324.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,13 +40,13 @@
 			<key>signature</key>
 			<string>Build for Previews ROLOSOFT-FRONT</string>
 			<key>timeStartedRecording</key>
-			<real>737426403.41098499</real>
+			<real>737667473.63469601</real>
 			<key>timeStoppedRecording</key>
-			<real>737426407.94912696</real>
+			<real>737667481.039711</real>
 			<key>title</key>
 			<string>Build for Previews ROLOSOFT-FRONT</string>
 			<key>uniqueIdentifier</key>
-			<string>5CDBD874-0A4B-4C3B-B7E3-F6C807A4D118</string>
+			<string>BC1EC4BA-F2F7-44F0-9D22-44C3BC2DC324</string>
 		</dict>
 	</dict>
 </dict>
