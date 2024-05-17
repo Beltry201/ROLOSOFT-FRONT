@@ -51,10 +51,8 @@ struct ContentView: View {
                         Image("Search")
                     }
                     .tag(Tab.search)
-
-                    NavigationView {
-                        Text("Other View")
-                    }
+                    
+                    ProfileView(authService: authService)
                     .tabItem {
                         Image("Profile")
                     }
@@ -71,7 +69,7 @@ struct ContentView: View {
             }
         }
         // Reset isLoading when authentication status changes
-        .onChange(of: authService.isAuthenticated) { newValue in
+        .onChange(of: authService.isAuthenticated) { newValue, oldValue in
             authService.isLoading = false
         }
         .onAppear {

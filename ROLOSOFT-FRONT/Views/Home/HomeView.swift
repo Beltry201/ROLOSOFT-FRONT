@@ -16,7 +16,6 @@ struct HomeView: View {
             VStack {
                 HeaderView()
                 BodyView()
-                LogoutButton(authService: authService) // Pass authService to LogoutButton
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -25,7 +24,7 @@ struct HomeView: View {
 
 struct HeaderView: View {
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             HStack {
                 // Logo view
                 Image("frisa-logox4")
@@ -39,38 +38,53 @@ struct HeaderView: View {
                     .foregroundColor(.blue) // Customize color as needed
             }
             .padding(.horizontal)
-            
+    
             CalendarComponent().padding()
+            
+            // Create dummy team data
+            let teamA = ScoreCardTeamData(
+                name: "IDS",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png",
+                score: 2
+            )
+            
+            let teamB = ScoreCardTeamData(
+                name: "AN",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png",
+                score: 1
+            )
+            
+            // Use the ScoreCard with dummy data
+            ScoreCard(teamA: teamA, teamB: teamB)
+                .padding(.horizontal)
         }
+        .padding(.bottom)
     }
 }
 
+
 struct BodyView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            List {
-                ForEach(1..<6) { index in
-                    ArticleRow(title: "Article \(index)")
-                }
+        List {
+            ForEach(newsData, id: \.title) { news in
+                NewsCard(
+                    title: news.title,
+                    date: news.date,
+                    desc: news.desc,
+                    imgUrl: news.imgUrl
+                )
             }
         }
     }
 }
 
-struct ArticleRow: View {
-    let title: String
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.title3)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-        }
-        .padding(.vertical, 5)
-    }
-}
+let newsData = [
+    (title: "Title 1", date: "Date 1", desc: "Description 1", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
+    (title: "Title 2", date: "Date 2", desc: "Description 2", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
+    (title: "Title 3", date: "Date 3", desc: "Description 3", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
+    (title: "Title 4", date: "Date 4", desc: "Description 4", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
+    (title: "Title 5", date: "Date 5", desc: "Description 5", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png")
+]
 
 struct NavigationBarItemView: View {
     var body: some View {
@@ -85,7 +99,6 @@ struct NavigationBarItemView: View {
             }
             .padding(.horizontal)
         }
-        .foregroundColor(.blue)
     }
 }
 
