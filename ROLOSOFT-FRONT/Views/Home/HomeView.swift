@@ -55,13 +55,12 @@ struct HeaderView: View {
             )
             
             // Use the ScoreCard with dummy data
-            ScoreCard(teamA: teamA, teamB: teamB)
+            ScoreCard(teamA: teamA, teamB: teamB, hour: "4:00 PM")
                 .padding(.horizontal)
         }
         .padding(.bottom)
     }
 }
-
 
 struct BodyView: View {
     var body: some View {

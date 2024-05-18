@@ -10,41 +10,51 @@ import SwiftUI
 struct ScoreCard: View {
     var teamA: ScoreCardTeamData
     var teamB: ScoreCardTeamData
+    var hour: String
+    var isMyMatch: Bool = true
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(LinearGradient(
-                        gradient: Gradient(colors: [Color(red: 0.854, green: 0.000, blue: 0.176, opacity: 0.85),
-                                                    Color(red: 0.882, green: 0.341, blue: 0.008, opacity: 0.85)]),
-                        startPoint: .bottom,
-                        endPoint: .top))
-                    .frame(height: 180)
-                    .shadow(color: Color.black.opacity(0.10), radius: 24, x: 0, y: 0)
-
-            HStack {
-                TeamScoreView(name: teamA.name, logoUrl: teamA.logo)
+        VStack {
+            Text(hour)
+                .foregroundColor(isMyMatch ? .white : .black)
+                .font(.caption)
+            
+            HStack(alignment: .top) {
+                TeamBox(name: teamA.name, logoUrl: teamA.logo, isMyMatch: isMyMatch)
+                
+                Spacer()
                 
                 VStack {
-                    Spacer()
-                    Text("\(teamA.score) - \(teamB.score)")
+                    Text("VS")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
+                        .foregroundColor(isMyMatch ? .white : .black)
                 }
                 
-                TeamScoreView(name: teamB.name, logoUrl: teamB.logo)
+                Spacer()
+                
+                TeamBox(name: teamB.name, logoUrl: teamB.logo, isMyMatch: isMyMatch)
             }
-            .padding()
         }
-        .frame(height: 180)
+        .padding()
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: isMyMatch == true ?
+                                   [Color(red: 0.854, green: 0.000, blue: 0.176, opacity: 0.85), Color(red: 0.882, green: 0.341, blue: 0.008, opacity: 0.85)] :
+                                    [Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0), Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0)]
+                ),
+                startPoint: .bottom,
+                endPoint: .top
+            )
+        )
+        .cornerRadius(10)
     }
 }
 
-struct TeamScoreView: View {
+struct TeamBox: View {
     var name: String
     var logoUrl: String
+    var isMyMatch: Bool = false
 
     var body: some View {
         VStack(alignment: .center) {
@@ -53,16 +63,8 @@ struct TeamScoreView: View {
             Text(name)
                 .font(.footnote)
                 .multilineTextAlignment(.center)
-                .foregroundColor(.white)
+                .foregroundColor(isMyMatch ? .white : .black)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.bottom, 2)
-            Text("(12' Jugador)")
-                .font(.caption2)
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
-                .fontWeight(.light)
-                .fixedSize(horizontal: false, vertical: true)
-            Spacer()
         }
         .frame(maxWidth: 120)
     }
@@ -76,7 +78,6 @@ struct ScoreCardTeamData {
 
 struct ScoreCardPreview: PreviewProvider {
     static var previews: some View {
-        ScoreCard(teamA: ScoreCardTeamData(name: "EquipoA", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 2), teamB: ScoreCardTeamData(name: "EquipoB", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 1))
-            .padding()
+        ScoreCard(teamA: ScoreCardTeamData(name: "EquipoA ak adkadla da", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 2), teamB: ScoreCardTeamData(name: "EquipoB", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", score: 1), hour: "4:00 PM")
     }
 }
