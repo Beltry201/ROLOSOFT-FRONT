@@ -51,18 +51,6 @@ struct HeaderView: View {
     
             CalendarComponent().padding()
             
-            // Dummy team data
-            let teamA = ScoreCardTeamData(
-                name: "IDS",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png",
-                score: 2
-            )
-            
-            let teamB = ScoreCardTeamData(
-                name: "AN",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png",
-                score: 1
-            )
             MatchCard(teamA: teamA, teamB: teamB, dateString: "4:00 PM", isMyMatch: true)
                 .padding(.horizontal)
         }

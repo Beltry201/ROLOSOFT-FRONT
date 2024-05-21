@@ -10,7 +10,7 @@ import SwiftUI
 
 extension HomeView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 106)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 107)
         let authService = AuthService()
         return HomeView(authService: authService)
     
@@ -20,15 +20,15 @@ extension HomeView_Previews {
 
 extension NavigationBarItemView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 90)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 91)
         HStack {
-            NavigationLink(destination: Text(__designTimeString("#10703.[5].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
-                Image(systemName: __designTimeString("#10703.[5].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
+            NavigationLink(destination: Text(__designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
+                Image(systemName: __designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
             }
             .padding(.horizontal)
             
-            NavigationLink(destination: Text(__designTimeString("#10703.[5].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
-                Image(systemName: __designTimeString("#10703.[5].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
+            NavigationLink(destination: Text(__designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
+                Image(systemName: __designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
             }
             .padding(.horizontal)
         }
@@ -39,16 +39,22 @@ extension NavigationBarItemView {
 
 extension BodyView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 67)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 63)
         List {
-            ForEach(newsData, id: \.title) { news in
-                NewsCard(
-                    title: news.title,
-                    date: news.date,
-                    desc: news.desc,
-                    imgUrl: news.imgUrl
+            ForEach(matchCardsData, id: \.id) { match in
+                MatchCard(
+                    teamA: match.teamA,
+                    teamB: match.teamB,
+                    dateString: match.dateString
                 )
             }
+            .listRowBackground(Color.gray.opacity(__designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[0].arg[0].value.modifier[0].arg[0].value", fallback: 0)))
+            .listRowInsets(.init(
+                top: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
+                leading: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
+                bottom: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
+                trailing: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+            )
         }
     
 #sourceLocation()
@@ -57,17 +63,17 @@ extension BodyView {
 
 extension HeaderView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 26)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 37)
         VStack(alignment: .center) {
             HStack {
-                // Logo view
-                Image(__designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
+                
+                Image(__designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: __designTimeInteger("#10703.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
+                    .frame(height: __designTimeInteger("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
                 Spacer()
-                // Notifications icon view
-                Image(systemName: __designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
+                
+                Image(systemName: __designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
                     .font(.title)
                     .foregroundColor(.blue)
             }
@@ -75,21 +81,7 @@ extension HeaderView {
     
             CalendarComponent().padding()
             
-            // Dummy team data
-            let teamA = ScoreCardTeamData(
-                name: __designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[2].value.arg[0].value", fallback: "IDS"),
-                logo: __designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[2].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"),
-                score: __designTimeInteger("#10703.[2].[0].property.[0].[0].arg[1].value.[2].value.arg[2].value", fallback: 2)
-            )
-            
-            let teamB = ScoreCardTeamData(
-                name: __designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[3].value.arg[0].value", fallback: "AN"),
-                logo: __designTimeString("#10703.[2].[0].property.[0].[0].arg[1].value.[3].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png"),
-                score: __designTimeInteger("#10703.[2].[0].property.[0].[0].arg[1].value.[3].value.arg[2].value", fallback: 1)
-            )
-            
-            // Use the ScoreCard with dummy data
-            ScoreCard(teamA: teamA, teamB: teamB)
+            MatchCard(teamA: teamA, teamB: teamB, dateString: __designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[2].arg[2].value", fallback: "4:00 PM"), isMyMatch: __designTimeBoolean("#4993.[4].[0].property.[0].[0].arg[1].value.[2].arg[3].value", fallback: true))
                 .padding(.horizontal)
         }
         .padding(.bottom)
@@ -100,7 +92,7 @@ extension HeaderView {
 
 extension HomeView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 15)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 26)
         NavigationView {
             VStack {
                 HeaderView()

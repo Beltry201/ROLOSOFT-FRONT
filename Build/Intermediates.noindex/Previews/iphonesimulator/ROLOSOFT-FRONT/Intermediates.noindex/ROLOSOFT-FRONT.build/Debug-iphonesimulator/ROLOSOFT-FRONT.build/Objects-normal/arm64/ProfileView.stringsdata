@@ -25,6 +25,10 @@
       {
         "comment": "",
         "key": "Address"
+      },
+      {
+        "comment": "",
+        "key": "Ver reglamento"
       }
     ]
   },
