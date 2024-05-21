@@ -24,7 +24,7 @@
 		FE4E83722BF6F77500BE07E4 /* DetailTeamResultListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E83712BF6F77500BE07E4 /* DetailTeamResultListItem.swift */; };
 		FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */; };
 		FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FF2BEC5EB700170E54 /* TextFieldModifier.swift */; };
-		FEFE60212BF2FC5600816EC7 /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE60202BF2FC5600816EC7 /* ScoreCard.swift */; };
+		FEFE60212BF2FC5600816EC7 /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE60202BF2FC5600816EC7 /* MatchCard.swift */; };
 		FEFE60232BF304F300816EC7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE60222BF304F300816EC7 /* ImageLoader.swift */; };
 		FEFE60252BF3054300816EC7 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE60242BF3054300816EC7 /* URLImage.swift */; };
 		FEFE60272BF4334000816EC7 /* NewsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE60262BF4334000816EC7 /* NewsCard.swift */; };
@@ -50,7 +50,7 @@
 		FE4E83712BF6F77500BE07E4 /* DetailTeamResultListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamResultListItem.swift; sourceTree = "<group>"; };
 		FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		FEAB41FF2BEC5EB700170E54 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
-		FEFE60202BF2FC5600816EC7 /* ScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
+		FEFE60202BF2FC5600816EC7 /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		FEFE60222BF304F300816EC7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FEFE60242BF3054300816EC7 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		FEFE60262BF4334000816EC7 /* NewsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCard.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */,
-				FEFE60202BF2FC5600816EC7 /* ScoreCard.swift */,
+				FEFE60202BF2FC5600816EC7 /* MatchCard.swift */,
 				FEFE60242BF3054300816EC7 /* URLImage.swift */,
 				FEFE60262BF4334000816EC7 /* NewsCard.swift */,
 				FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */,
@@ -290,7 +290,7 @@
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
 				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
 				5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */,
-				FEFE60212BF2FC5600816EC7 /* ScoreCard.swift in Sources */,
+				FEFE60212BF2FC5600816EC7 /* MatchCard.swift in Sources */,
 				52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */,
 				FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,

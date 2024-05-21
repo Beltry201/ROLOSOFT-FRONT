@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+// Create dummy team data
+let teamA = ScoreCardTeamData(
+    name: "IDS",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"
+)
+
+let teamB = ScoreCardTeamData(
+    name: "AN",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png"
+)
+
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var authService: AuthService // Add authService as an observed object
@@ -26,36 +37,22 @@ struct HeaderView: View {
     var body: some View {
         VStack(alignment: .center) {
             HStack {
-                // Logo view
+                
                 Image("frisa-logox4")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 30)
                 Spacer()
-                // Notifications icon view
+                
                 Image(systemName: "bell")
                     .font(.title)
-                    .foregroundColor(.blue) // Customize color as needed
+                    .foregroundColor(.blue)
             }
             .padding(.horizontal)
     
             CalendarComponent().padding()
             
-            // Create dummy team data
-            let teamA = ScoreCardTeamData(
-                name: "IDS",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png",
-                score: 2
-            )
-            
-            let teamB = ScoreCardTeamData(
-                name: "AN",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png",
-                score: 1
-            )
-            
-            // Use the ScoreCard with dummy data
-            ScoreCard(teamA: teamA, teamB: teamB, hour: "4:00 PM")
+            MatchCard(teamA: teamA, teamB: teamB, dateString: "4:00 PM", isMyMatch: true)
                 .padding(.horizontal)
         }
         .padding(.bottom)
@@ -65,24 +62,29 @@ struct HeaderView: View {
 struct BodyView: View {
     var body: some View {
         List {
-            ForEach(newsData, id: \.title) { news in
-                NewsCard(
-                    title: news.title,
-                    date: news.date,
-                    desc: news.desc,
-                    imgUrl: news.imgUrl
+            ForEach(matchCardsData, id: \.id) { match in
+                MatchCard(
+                    teamA: match.teamA,
+                    teamB: match.teamB,
+                    dateString: match.dateString
                 )
             }
+            .listRowBackground(Color.gray.opacity(0))
+            .listRowInsets(.init(
+                top: 0,
+                leading: 0,
+                bottom: 8,
+                trailing: 0)
+            )
         }
     }
 }
 
-let newsData = [
-    (title: "Title 1", date: "Date 1", desc: "Description 1", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-    (title: "Title 2", date: "Date 2", desc: "Description 2", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-    (title: "Title 3", date: "Date 3", desc: "Description 3", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-    (title: "Title 4", date: "Date 4", desc: "Description 4", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-    (title: "Title 5", date: "Date 5", desc: "Description 5", imgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png")
+let matchCardsData = [
+    (id: 1, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
+    (id: 2, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
+    (id: 3, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
+    (id: 4, teamA: teamA, teamB: teamB, dateString: "4:00 PM")
 ]
 
 struct NavigationBarItemView: View {
