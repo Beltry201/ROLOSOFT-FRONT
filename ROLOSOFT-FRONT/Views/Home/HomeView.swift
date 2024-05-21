@@ -20,7 +20,7 @@ let teamB = ScoreCardTeamData(
 
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var authService: AuthService // Add authService as an observed object
+    @ObservedObject var authService: AuthService
     
     var body: some View {
         NavigationView {
@@ -29,7 +29,6 @@ struct HomeView: View {
                 BodyView()
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -52,6 +51,18 @@ struct HeaderView: View {
     
             CalendarComponent().padding()
             
+            // Dummy team data
+            let teamA = ScoreCardTeamData(
+                name: "IDS",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png",
+                score: 2
+            )
+            
+            let teamB = ScoreCardTeamData(
+                name: "AN",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png",
+                score: 1
+            )
             MatchCard(teamA: teamA, teamB: teamB, dateString: "4:00 PM", isMyMatch: true)
                 .padding(.horizontal)
         }
@@ -103,28 +114,9 @@ struct NavigationBarItemView: View {
     }
 }
 
-struct LogoutButton: View {
-    @ObservedObject var authService: AuthService // Add authService as an observed object
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
-    var body: some View {
-        Button(action: {
-            authService.logOut() // Call logOut method from AuthService
-            presentationMode.wrappedValue.dismiss() // Dismiss the current view
-        }) {
-            Text("Logout")
-                .foregroundColor(.red)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-        }
-        .padding()
-    }
-}
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let authService = AuthService() // Create an instance of AuthService
-        return HomeView(authService: authService) // Pass authService to HomeView
+        let authService = AuthService()
+        return HomeView(authService: authService)
     }
 }

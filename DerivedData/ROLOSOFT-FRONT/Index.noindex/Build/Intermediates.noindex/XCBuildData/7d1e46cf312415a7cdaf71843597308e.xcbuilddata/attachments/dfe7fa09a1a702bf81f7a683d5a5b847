@@ -1,0 +1,75 @@
+{
+  "" : {
+    "dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT-FRONT-master.d",
+    "diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT-FRONT-master.dia",
+    "emit-module-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT-FRONT-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT-FRONT-master-emit-module.dia",
+    "swift-dependencies" : "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/Objects-normal/arm64/ROLOSOFT-FRONT-master.swiftdeps"
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/DerivedData/ROLOSOFT-FRONT/Index.noindex/Build/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphoneos/ROLOSOFT-FRONT.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/CalendarComponent.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/DetailTeamCard.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/DetailTeamResultListItem.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/LogOutButton.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/NewsCard.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/ScoreCard.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/URLImage.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Helpers/ImageLoader.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Models/UserError.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Models/UserModel.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Modifiers/ButtonModifier.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Modifiers/TextFieldModifier.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ROLOSOFT_FRONTApp.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/AuthService.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Authentication/LoginView.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LoadingView.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Profile/ProfileView.swift" : {
+
+  },
+  "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift" : {
+
+  }
+}

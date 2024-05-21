@@ -1,5 +1,36 @@
 {
   "source": "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/Build/Intermediates.noindex/Previews/iphonesimulator/ROLOSOFT-FRONT/Intermediates.noindex/ROLOSOFT-FRONT.build/Debug-iphonesimulator/ROLOSOFT-FRONT.build/Objects-normal/arm64/ProfileView.1.preview-thunk.swift",
-  "tables": {},
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Loading profile..."
+      },
+      {
+        "comment": "",
+        "key": "%@ %@"
+      },
+      {
+        "comment": "",
+        "key": "CURP: %@"
+      },
+      {
+        "comment": "",
+        "key": "%@, %@"
+      },
+      {
+        "comment": "",
+        "key": "%@, %@ %@"
+      },
+      {
+        "comment": "",
+        "key": "Address"
+      },
+      {
+        "comment": "",
+        "key": "Ver reglamento"
+      }
+    ]
+  },
   "version": 1
 }

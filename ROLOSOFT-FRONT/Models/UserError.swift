@@ -7,10 +7,11 @@
 
 import Foundation
 
-enum UserError: Int {
-    case unknown = -1
-    case clientError = 400
-    case unauthorized = 401
-    case notFound = 404
-    case serverError = 500
+enum UserError: Error {
+    case unknown
+    case clientError
+    case unauthorized
+    case notFound
+    case serverError
+    case custom(String)
 }

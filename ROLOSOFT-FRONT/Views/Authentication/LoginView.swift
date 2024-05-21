@@ -13,7 +13,8 @@ struct LoginView: View {
     @State private var isLogged = false // Boolean to trigger navigation
     @State private var emailErrorMessage: String? = nil
     @State private var passwordErrorMessage: String? = nil
-
+    @State private var generalErrorMessage: String? = nil
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,6 +50,14 @@ struct LoginView: View {
                             .font(.subheadline)
                     }
                     
+                    if let generalErrorMessage = generalErrorMessage {
+                        Text(generalErrorMessage)
+                            .foregroundColor(.red)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                            .font(.subheadline)
+                    }
+                    
                     Button(action: {
                         // Call API service to perform login
                         authService.logIn(username: username, password: password) { result in
@@ -62,6 +71,10 @@ struct LoginView: View {
                                     emailErrorMessage = nil
                                 case .notFound:
                                     emailErrorMessage = "User not found."
+                                    passwordErrorMessage = nil
+                                case .custom(let message):
+                                    generalErrorMessage = message
+                                    emailErrorMessage = nil
                                     passwordErrorMessage = nil
                                 case .clientError, .serverError, .unknown:
                                     break

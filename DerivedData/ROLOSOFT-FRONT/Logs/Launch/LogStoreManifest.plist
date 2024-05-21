@@ -6,14 +6,14 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>C435DBD3-CB06-4A43-B6EB-D5FC7A422486</key>
+		<key>F4D2B0EB-CF6F-409C-9368-B55A47543718</key>
 		<dict>
 			<key>auxiliaryLogUniqueIdentifier</key>
-			<string>88E393AC-C364-4AE8-85F9-EDE11AF7877D</string>
+			<string>12AC5952-B883-4FBC-B1C2-F185CE07628B</string>
 			<key>auxiliaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>S</string>
 				<key>totalNumberOfAnalyzerIssues</key>
 				<integer>0</integer>
 				<key>totalNumberOfErrors</key>
@@ -21,7 +21,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>className</key>
 			<string>IDESchemeActionsInvocationRecord</string>
@@ -30,7 +30,7 @@
 			<key>domainType</key>
 			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
 			<key>fileName</key>
-			<string>Run-ROLOSOFT-FRONT-2024.05.13_20-17-40--0600.xcresult</string>
+			<string>Run-ROLOSOFT-FRONT-2024.05.17_20-04-58--0600.xcresult</string>
 			<key>hasAuxiliaryLog</key>
 			<true/>
 			<key>hasConsoleLog</key>
@@ -40,7 +40,7 @@
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>S</string>
 				<key>totalNumberOfAnalyzerIssues</key>
 				<integer>0</integer>
 				<key>totalNumberOfErrors</key>
@@ -48,7 +48,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>ROLOSOFT-FRONT project</string>
@@ -59,13 +59,13 @@
 			<key>signature</key>
 			<string>Run ROLOSOFT-FRONT</string>
 			<key>timeStartedRecording</key>
-			<real>737345860.20850694</real>
+			<real>737690698.29582405</real>
 			<key>timeStoppedRecording</key>
 			<real>0.0</real>
 			<key>title</key>
 			<string>Run ROLOSOFT-FRONT</string>
 			<key>uniqueIdentifier</key>
-			<string>C435DBD3-CB06-4A43-B6EB-D5FC7A422486</string>
+			<string>F4D2B0EB-CF6F-409C-9368-B55A47543718</string>
 		</dict>
 	</dict>
 </dict>
