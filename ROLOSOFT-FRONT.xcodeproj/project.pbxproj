@@ -18,8 +18,10 @@
 		5255745D2BD8521E00881C57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745C2BD8521D00881C57 /* HomeView.swift */; };
 		526493562BEC71B600F3E170 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526493552BEC71B600F3E170 /* UserError.swift */; };
 		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
-		52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserModel.swift */; };
+		52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserProfile.swift */; };
 		52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */; };
+		52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */; };
+		52FC48A52BF831BA0095EF4D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC48A42BF831BA0095EF4D /* SearchView.swift */; };
 		FE4E83702BF6E64200BE07E4 /* DetailTeamCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */; };
 		FE4E83722BF6F77500BE07E4 /* DetailTeamResultListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E83712BF6F77500BE07E4 /* DetailTeamResultListItem.swift */; };
 		FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */; };
@@ -44,8 +46,10 @@
 		5255745C2BD8521D00881C57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		526493552BEC71B600F3E170 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		52CBB6F92BD5A41600DD0410 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		52CBB6F92BD5A41600DD0410 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
+		52FC48A42BF831BA0095EF4D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamCard.swift; sourceTree = "<group>"; };
 		FE4E83712BF6F77500BE07E4 /* DetailTeamResultListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamResultListItem.swift; sourceTree = "<group>"; };
 		FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		523923EB2BCF5C470054F9BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52CBB6F92BD5A41600DD0410 /* UserModel.swift */,
+				52CBB6F92BD5A41600DD0410 /* UserProfile.swift */,
 				526493552BEC71B600F3E170 /* UserError.swift */,
 			);
 			path = Models;
@@ -79,6 +83,7 @@
 		523923ED2BCF5C6B0054F9BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52FC48A32BF8317C0095EF4D /* Search */,
 				52FC489E2BF7EC120095EF4D /* Profile */,
 				523923F32BCF5CAB0054F9BD /* Modules */,
 				523923F22BCF5CA40054F9BD /* Home */,
@@ -187,6 +192,7 @@
 				FEFE60262BF4334000816EC7 /* NewsCard.swift */,
 				FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */,
 				FE4E83712BF6F77500BE07E4 /* DetailTeamResultListItem.swift */,
+				52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 				52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		52FC48A32BF8317C0095EF4D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				52FC48A42BF831BA0095EF4D /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		FEAB41FC2BEC5E6500170E54 /* Modifiers */ = {
@@ -285,14 +299,16 @@
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				FE4E83722BF6F77500BE07E4 /* DetailTeamResultListItem.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
+				52FC48A52BF831BA0095EF4D /* SearchView.swift in Sources */,
 				FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */,
 				FE4E83702BF6E64200BE07E4 /* DetailTeamCard.swift in Sources */,
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
 				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
 				5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */,
 				FEFE60212BF2FC5600816EC7 /* ScoreCard.swift in Sources */,
-				52CBB6FA2BD5A41600DD0410 /* UserModel.swift in Sources */,
+				52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */,
 				FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */,
+				52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 				52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */,
 				FEFE60252BF3054300816EC7 /* URLImage.swift in Sources */,

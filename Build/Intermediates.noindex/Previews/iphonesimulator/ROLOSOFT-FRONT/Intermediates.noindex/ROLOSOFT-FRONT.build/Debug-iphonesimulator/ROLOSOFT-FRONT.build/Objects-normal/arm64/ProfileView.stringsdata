@@ -1,5 +1,32 @@
 {
   "source": "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Profile/ProfileView.swift",
-  "tables": {},
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Loading profile..."
+      },
+      {
+        "comment": "",
+        "key": "%@ %@"
+      },
+      {
+        "comment": "",
+        "key": "CURP: %@"
+      },
+      {
+        "comment": "",
+        "key": "%@, %@"
+      },
+      {
+        "comment": "",
+        "key": "%@, %@ %@"
+      },
+      {
+        "comment": "",
+        "key": "Address"
+      }
+    ]
+  },
   "version": 1
 }

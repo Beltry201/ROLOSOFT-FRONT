@@ -42,7 +42,7 @@ struct CalendarComponent: View {
                     VStack {
                         Text(day.dayOfWeek())
                             .font(.caption)
-                            .fixedSize(horizontal: true, vertical: false) // Prevents wrapping
+                            .fixedSize(horizontal: true, vertical: false)
                         
                         Text("\(day.dayOfMonth())")
                             .font(.subheadline)

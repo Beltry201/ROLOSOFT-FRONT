@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var authService: AuthService // Add authService as an observed object
+    @ObservedObject var authService: AuthService
     
     var body: some View {
         NavigationView {
@@ -18,7 +18,6 @@ struct HomeView: View {
                 BodyView()
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -35,13 +34,13 @@ struct HeaderView: View {
                 // Notifications icon view
                 Image(systemName: "bell")
                     .font(.title)
-                    .foregroundColor(.blue) // Customize color as needed
+                    .foregroundColor(.blue)
             }
             .padding(.horizontal)
     
             CalendarComponent().padding()
             
-            // Create dummy team data
+            // Dummy team data
             let teamA = ScoreCardTeamData(
                 name: "IDS",
                 logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png",
@@ -102,28 +101,9 @@ struct NavigationBarItemView: View {
     }
 }
 
-struct LogoutButton: View {
-    @ObservedObject var authService: AuthService // Add authService as an observed object
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
-    var body: some View {
-        Button(action: {
-            authService.logOut() // Call logOut method from AuthService
-            presentationMode.wrappedValue.dismiss() // Dismiss the current view
-        }) {
-            Text("Logout")
-                .foregroundColor(.red)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-        }
-        .padding()
-    }
-}
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let authService = AuthService() // Create an instance of AuthService
-        return HomeView(authService: authService) // Pass authService to HomeView
+        let authService = AuthService()
+        return HomeView(authService: authService)
     }
 }

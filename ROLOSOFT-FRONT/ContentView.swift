@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var authService = AuthService()
-    @State private var selectedTab: Tab = .home // Keep track of the selected tab
+    @State private var selectedTab: Tab = .home
 
     enum Tab {
         case home, news, teams, search, profile
@@ -44,9 +44,7 @@ struct ContentView: View {
                     }
                     .tag(Tab.teams)
 
-                    NavigationView {
-                        Text("Search")
-                    }
+                    SearchView()
                     .tabItem {
                         Image("Search")
                     }
@@ -65,7 +63,6 @@ struct ContentView: View {
             
             // Loading screen
             if authService.isLoading {
-                LoadingView()
             }
         }
         // Reset isLoading when authentication status changes
