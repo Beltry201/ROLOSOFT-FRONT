@@ -9,58 +9,45 @@ import protocol SwiftUI.View
 import Foundation
 
 extension APIService {
-    @_dynamicReplacement(for: logIn(username:password:completion:)) private func __preview__logIn(username: String, password: String, completion: @escaping (User) -> Void) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 15)
-        print(__designTimeString("#1436.[1].[2].[0].arg[0].value", fallback: "HOLA"))
+    @_dynamicReplacement(for: getRequest(endpoint:token:completion:)) private func __preview__getRequest<T: Decodable>(endpoint: String, token: String, completion: @escaping (Result<T, Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 38)
         guard let baseURL = baseURL else {
-            print("Invalid base URL")
+            completion(.failure(APIError.invalidBaseURL))
             return
         }
         
-        let url = baseURL.appendingPathComponent(__designTimeString("#1436.[1].[2].[2].value.modifier[0].arg[0].value", fallback: "/users/login"))
-        
-        let body: [String: Any] = [
-            __designTimeString("#1436.[1].[2].[3].value.[0].key", fallback: "email"): username,
-            __designTimeString("#1436.[1].[2].[3].value.[1].key", fallback: "password"): password
-        ]
-        
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: body) else {
-            print("Error converting body to JSON data")
-            return
-        }
-        
+        let url = baseURL.appendingPathComponent(endpoint)
         var request = URLRequest(url: url)
-        request.httpMethod = __designTimeString("#1436.[1].[2].[6].[0]", fallback: "POST")
-        request.setValue(__designTimeString("#1436.[1].[2].[7].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#1436.[1].[2].[7].modifier[0].arg[1].value", fallback: "Content-Type"))
-        request.httpBody = jsonData
+        request.httpMethod = __designTimeString("#5422.[1].[2].[3].[0]", fallback: "GET")
+        request.setValue(__designTimeString("#5422.[1].[2].[4].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#5422.[1].[2].[4].modifier[0].arg[1].value", fallback: "Content-Type"))
+        request.setValue("\(token)", forHTTPHeaderField: __designTimeString("#5422.[1].[2].[5].modifier[0].arg[1].value", fallback: "Authorization"))
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                print("Error:", error?.localizedDescription ?? "Unknown error")
+            if let error = error {
+                completion(.failure(error))
                 return
             }
             
-            guard (200..<300).contains(response.statusCode) else {
-                print("Login failed with status code:", response.statusCode)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(APIError.invalidResponse))
                 return
             }
+            print("\n-- RESPONSE: ", httpResponse)
+            
+            guard let data = data else {
+                completion(.failure(APIError.noData))
+                return
+            }
+            
+            print("\n-- RAW DATA: ", String(data: data, encoding: .utf8) ?? __designTimeString("#5422.[1].[2].[6].modifier[0].arg[1].value.[4].arg[1].value.[0]", fallback: "No data"))
+                    
             
             do {
-                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                if let message = jsonResponse?["message"] as? String,
-                   let userIdString = jsonResponse?["id"] as? String,
-                   let userId = UUID(uuidString: userIdString) {
-                    print("Login successful: \(message), User ID: \(userId)")
-                    let user = User(id: userId, email: username)
-                    completion(user)
-                    
-                    // Navigate to the menu page here
-                    // You can trigger navigation based on your app's navigation setup
-                } else {
-                    print("Invalid response format")
-                }
+                let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                print("\n-- DECODED DATA: ", decodedResponse)
+                completion(.success(decodedResponse))
             } catch {
-                print("Error parsing JSON:", error.localizedDescription)
+                completion(.failure(error))
             }
         }.resume()
     
@@ -68,5 +55,34 @@ extension APIService {
     }
 }
 
+extension APIService {
+    @_dynamicReplacement(for: fetchMatchEvents(tournamentId:token:completion:)) private func __preview__fetchMatchEvents(tournamentId: String, token: String, completion: @escaping (Result<[MatchEvent], Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 14)
+        
+        print("\n-- RECIBI JWT:", token)
+        print("\n-- RECIBI TID:", tournamentId)
+        
+        // Endpoint for the API request
+        let endpoint = "/tournaments/\(tournamentId)/matches"
+        
+        // Call getRequest method to perform the GET request
+        getRequest(endpoint: endpoint, token: token) { (result: Result<MatchEventResponse, Error>) in
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
 import class ROLOSOFT_FRONT.APIService
+import enum ROLOSOFT_FRONT.APIError
 
