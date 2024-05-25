@@ -13,10 +13,14 @@
 		523BF1E82BCE1E40003138DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1E72BCE1E40003138DC /* Assets.xcassets */; };
 		523BF1EB2BCE1E40003138DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */; };
 		5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252EEF82BE0760D00095F22 /* LoadingView.swift */; };
-		5252EEFC2BE07ADD00095F22 /* CalendarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */; };
+		5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252EEFB2BE07ADD00095F22 /* MatchCalendar.swift */; };
 		5255745B2BD84D0000881C57 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745A2BD84D0000881C57 /* AuthService.swift */; };
 		5255745D2BD8521E00881C57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255745C2BD8521D00881C57 /* HomeView.swift */; };
 		526493562BEC71B600F3E170 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526493552BEC71B600F3E170 /* UserError.swift */; };
+		52783E482C0125A800B1A138 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52783E472C0125A800B1A138 /* MatchEvent.swift */; };
+		52783E4A2C01674C00B1A138 /* JSONDecoder+CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52783E492C01674C00B1A138 /* JSONDecoder+CustomDate.swift */; };
+		52895FB62C0017BA00F53C13 /* RuleBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52895FB52C0017B900F53C13 /* RuleBookView.swift */; };
+		52895FB82C00196A00F53C13 /* reglamento_frisa.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 52895FB72C00196A00F53C13 /* reglamento_frisa.pdf */; };
 		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
 		52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserProfile.swift */; };
 		52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */; };
@@ -41,10 +45,14 @@
 		523BF1E72BCE1E40003138DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		523BF1EA2BCE1E40003138DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5252EEF82BE0760D00095F22 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponent.swift; sourceTree = "<group>"; };
+		5252EEFB2BE07ADD00095F22 /* MatchCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCalendar.swift; sourceTree = "<group>"; };
 		5255745A2BD84D0000881C57 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5255745C2BD8521D00881C57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		526493552BEC71B600F3E170 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		52783E472C0125A800B1A138 /* MatchEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEvent.swift; sourceTree = "<group>"; };
+		52783E492C01674C00B1A138 /* JSONDecoder+CustomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+CustomDate.swift"; sourceTree = "<group>"; };
+		52895FB52C0017B900F53C13 /* RuleBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBookView.swift; sourceTree = "<group>"; };
+		52895FB72C00196A00F53C13 /* reglamento_frisa.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = reglamento_frisa.pdf; sourceTree = "<group>"; };
 		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		52CBB6F92BD5A41600DD0410 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 			children = (
 				52CBB6F92BD5A41600DD0410 /* UserProfile.swift */,
 				526493552BEC71B600F3E170 /* UserError.swift */,
+				52783E472C0125A800B1A138 /* MatchEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FEFE60222BF304F300816EC7 /* ImageLoader.swift */,
+				52783E492C01674C00B1A138 /* JSONDecoder+CustomDate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -186,8 +196,8 @@
 		5252EEFA2BE07AB800095F22 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5252EEFB2BE07ADD00095F22 /* CalendarComponent.swift */,
 				FEFE60202BF2FC5600816EC7 /* MatchCard.swift */,
+				5252EEFB2BE07ADD00095F22 /* MatchCalendar.swift */,
 				FEFE60242BF3054300816EC7 /* URLImage.swift */,
 				FEFE60262BF4334000816EC7 /* NewsCard.swift */,
 				FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */,
@@ -200,7 +210,9 @@
 		52FC489E2BF7EC120095EF4D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				52895FB72C00196A00F53C13 /* reglamento_frisa.pdf */,
 				52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */,
+				52895FB52C0017B900F53C13 /* RuleBookView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				523BF1EB2BCE1E40003138DC /* Preview Assets.xcassets in Resources */,
+				52895FB82C00196A00F53C13 /* reglamento_frisa.pdf in Resources */,
 				523BF1E82BCE1E40003138DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +307,7 @@
 			files = (
 				FEFE60272BF4334000816EC7 /* NewsCard.swift in Sources */,
 				FEFE60232BF304F300816EC7 /* ImageLoader.swift in Sources */,
-				5252EEFC2BE07ADD00095F22 /* CalendarComponent.swift in Sources */,
+				5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */,
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				FE4E83722BF6F77500BE07E4 /* DetailTeamResultListItem.swift in Sources */,
@@ -305,10 +318,13 @@
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
 				5255745B2BD84D0000881C57 /* AuthService.swift in Sources */,
 				5252EEF92BE0760D00095F22 /* LoadingView.swift in Sources */,
-				FEFE60212BF2FC5600816EC7 /* ScoreCard.swift in Sources */,
+				52895FB62C0017BA00F53C13 /* RuleBookView.swift in Sources */,
+				FEFE60212BF2FC5600816EC7 /* MatchCard.swift in Sources */,
 				52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */,
+				52783E482C0125A800B1A138 /* MatchEvent.swift in Sources */,
 				FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */,
 				52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */,
+				52783E4A2C01674C00B1A138 /* JSONDecoder+CustomDate.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
 				52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */,
 				FEFE60252BF3054300816EC7 /* URLImage.swift in Sources */,

@@ -1,14 +1,9 @@
-//
-//  ProfileView.swift
-//  ROLOSOFT-FRONT
-//
-//  Created by David Beltran on 16/05/24.
-//
-
 import SwiftUI
+import PDFKit
 
 struct ProfileView: View {
     @ObservedObject var authService: AuthService
+    @State private var isShowingPDF = false
     
     var body: some View {
         VStack {
@@ -97,8 +92,7 @@ struct ProfileView: View {
                 
                 // Button to see tournament rule book
                 Button(action: {
-                    // Action to see the tournament rule book
-                    print("Ver reglamento")
+                    isShowingPDF = true
                 }) {
                     HStack {
                         Image(systemName: "book")
@@ -107,23 +101,23 @@ struct ProfileView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
-                            
-                            
-                            
-                        
                     }
-                    .frame(maxWidth: .infinity)
-                    .background(Color.red)
-                    .cornerRadius(10)
-                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+                    .modifier(ButtonModifier())
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
-
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
                 }
-                Spacer()
+                .sheet(isPresented: $isShowingPDF) {
+                    if let url = Bundle.main.url(forResource: "reglamento_frisa", withExtension: "pdf") {
+                        RuleBookView(url: url)
+                    } else {
+                        Text("PDF not found")
+                    }
+                }
                 
                 // Logout Button
                 LogoutButton(authService: authService)
+                    .frame(maxWidth: .infinity)
                     .padding(.bottom, 20)
             } else {
                 Text("Loading profile...")
