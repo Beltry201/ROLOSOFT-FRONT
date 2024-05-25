@@ -98,7 +98,7 @@ struct MatchCalendar: View {
     
     private func hasEvent(on date: Date) -> Bool {
         return events.contains { event in
-            Calendar.current.isDate(event.dateStart, inSameDayAs: date)
+            Calendar.current.isDate(event.dateTimeStart, inSameDayAs: date)
         }
     }
     

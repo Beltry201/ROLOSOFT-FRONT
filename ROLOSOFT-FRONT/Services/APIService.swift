@@ -12,9 +12,6 @@ class APIService: ObservableObject {
     
     func fetchMatchEvents(tournamentId: String, token: String, completion: @escaping (Result<[MatchEvent], Error>) -> Void) {
         
-        print("\n-- RECIBI JWT:", token)
-        print("\n-- RECIBI TID:", tournamentId)
-        
         // Endpoint for the API request
         let endpoint = "/tournaments/\(tournamentId)/matches"
         
@@ -56,14 +53,11 @@ class APIService: ObservableObject {
                 completion(.failure(APIError.invalidResponse))
                 return
             }
-            print("\n-- RESPONSE: ", httpResponse)
             
             guard let data = data else {
                 completion(.failure(APIError.noData))
                 return
             }
-            
-            print("\n-- RAW DATA: ", String(data: data, encoding: .utf8) ?? "No data")
                     
             do {
                 let decoder = JSONDecoder()

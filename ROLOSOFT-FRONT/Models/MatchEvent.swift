@@ -9,8 +9,8 @@ import Foundation
 
 struct MatchEvent: Identifiable, Decodable {
     let id: String?
-    let dateStart: Date
-    let dateEnd: Date
+    let dateTimeStart: Date
+    let dateTimeEnd: Date
     let isPlaying: Bool
     let teamA: Team
     let teamB: Team
@@ -27,7 +27,7 @@ struct MatchEvent: Identifiable, Decodable {
             let name: String
             let lastName: String
             let minute: Int
-            let player_number: Int
+            let playerNumber: Int
         }
     }
 }

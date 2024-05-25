@@ -130,7 +130,7 @@ struct BodyView: View {
                         MatchCard(
                             teamA: match.teamA,
                             teamB: match.teamB,
-                            dateString: formatDate(match.dateStart)
+                            dateString: formatDate(match.dateTimeStart)
                         )
                     }
                     .listRowBackground(Color.gray.opacity(0))
@@ -147,7 +147,7 @@ struct BodyView: View {
     
     private var filteredEvents: [MatchEvent] {
         events.filter { event in
-            Calendar.current.isDate(event.dateStart, inSameDayAs: selectedDate)
+            Calendar.current.isDate(event.dateTimeStart, inSameDayAs: selectedDate)
         }
     }
     
