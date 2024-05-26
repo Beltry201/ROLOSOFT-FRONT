@@ -85,6 +85,6 @@ struct ScoreCardTeamData {
 
 struct ScoreCardPreview: PreviewProvider {
     static var previews: some View {
-        MatchCard(teamA: ScoreCardTeamData(name: "EquipoA ak adkadla da", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"), teamB: ScoreCardTeamData(name: "EquipoB", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"), dateString: "4:00 PM")
+        MatchCard(teamA: ScoreCardTeamData(name: "EquipoA", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"), teamB: ScoreCardTeamData(name: "EquipoB", logo: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"), dateString: "4:00 PM")
     }
 }
