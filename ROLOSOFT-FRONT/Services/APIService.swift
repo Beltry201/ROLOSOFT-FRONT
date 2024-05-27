@@ -49,7 +49,7 @@ class APIService: ObservableObject {
                 return
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else {
+            guard response is HTTPURLResponse else {
                 completion(.failure(APIError.invalidResponse))
                 return
             }
