@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var authService = AuthService()
+    @StateObject var apiSerive = APIService()
     @State private var selectedTab: Tab = .home
 
     enum Tab {
@@ -21,7 +22,7 @@ struct ContentView: View {
             // Main content
             if authService.isAuthenticated {
                 TabView(selection: $selectedTab) {
-                    HomeView(authService: authService)
+                    HomeView(authService: authService, apiService: apiSerive)
                         .navigationBarHidden(true)
                         .tabItem {
                             Image("Home")

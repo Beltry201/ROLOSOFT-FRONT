@@ -9,7 +9,8 @@ import Foundation
 
 class AuthService: ObservableObject {
     private let baseURL = URL(string: "http://34.125.102.164:3000")
-    private let jwtTokenKey = "jwtToken"
+    public let jwtTokenKey = "jwtToken"
+    public let tournamentIdKey = "tournamentId"
     
     @Published var isAuthenticated = false
     @Published var isLoading = false
@@ -75,11 +76,17 @@ class AuthService: ObservableObject {
                     }
                     
                     guard let dataDict = jsonResponse["data"] as? [String: Any],
-                          let jwt = dataDict["token"] as? String else {
-                        print("Invalid data format")
-                        completion(.failure(.unknown))
-                        return
-                    }
+                          let jwt = dataDict["token"] as? String,
+                          let tournamentId = dataDict["tournamentId"] as? String else {
+                            print("Invalid data format")
+                            completion(.failure(.unknown))
+                            return
+                       }
+                       
+                    // Store JWT token and tournament ID in UserDefaults
+                    UserDefaults.standard.set(jwt, forKey: self.jwtTokenKey)
+                    UserDefaults.standard.set(tournamentId, forKey: self.tournamentIdKey)
+                       
                     
                     // Store JWT token in UserDefaults
                     UserDefaults.standard.set(jwt, forKey: self.jwtTokenKey)

@@ -1,5 +1,5 @@
 //
-//  ScoreCard.swift
+//  MatchCard.swift
 //  ROLOSOFT-FRONT
 //
 //  Created by Juan Camilo Bedoya Barbosa on 13/05/24.
@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MatchCard: View {
-    var teamA: ScoreCardTeamData
-    var teamB: ScoreCardTeamData
+    var teamA: MatchEvent.Team
+    var teamB: MatchEvent.Team
     var dateString: String
     var isMyMatch: Bool? = false
     
@@ -20,7 +20,7 @@ struct MatchCard: View {
                 .font(.caption)
             
             HStack(alignment: .top) {
-                TeamBox(name: teamA.name, logoUrl: teamA.logo, isMyMatch: isMyMatch!)
+                TeamBox(name: teamA.name, logoUrl: teamA.shieldImg ?? "", isMyMatch: isMyMatch!)
                 
                 Spacer()
                 
@@ -33,7 +33,7 @@ struct MatchCard: View {
                 
                 Spacer()
                 
-                TeamBox(name: teamB.name, logoUrl: teamB.logo, isMyMatch: isMyMatch)
+                TeamBox(name: teamB.name, logoUrl: teamB.shieldImg ?? "", isMyMatch: isMyMatch)
             }
         }
         .padding()

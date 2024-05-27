@@ -24,14 +24,14 @@ extension LoginView {
             VStack {
                 Spacer()
                 VStack {
-                    Text(__designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Login"))
+                    Text(__designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Login"))
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding(.bottom, __designTimeInteger("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
+                        .padding(.bottom, __designTimeInteger("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[1].value", fallback: 20))
 
-                    TextField(__designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].arg[0].value", fallback: "Correo electrónico"), text: $username)
+                    TextField(__designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].arg[0].value", fallback: "Correo electrónico"), text: $username)
                         .modifier(TextFieldModifier())
-                        .padding(.bottom, __designTimeInteger("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].modifier[1].arg[1].value", fallback: 8))
+                        .padding(.bottom, __designTimeInteger("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[1].modifier[1].arg[1].value", fallback: 8))
                     
                     if let emailErrorMessage = emailErrorMessage {
                         Text(emailErrorMessage)
@@ -41,9 +41,9 @@ extension LoginView {
                             .font(.subheadline)
                     }
 
-                    SecureField(__designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].arg[0].value", fallback: "Contraseña"), text: $password)
+                    SecureField(__designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].arg[0].value", fallback: "Contraseña"), text: $password)
                         .modifier(TextFieldModifier())
-                        .padding(.bottom, __designTimeInteger("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].modifier[1].arg[1].value", fallback: 8))
+                        .padding(.bottom, __designTimeInteger("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[3].modifier[1].arg[1].value", fallback: 8))
                     
                     // Password error message
                     if let passwordErrorMessage = passwordErrorMessage {
@@ -71,30 +71,30 @@ extension LoginView {
                             case .failure(let error):
                                 switch error {
                                 case .unauthorized:
-                                    passwordErrorMessage = __designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[0].[0].[0]", fallback: "Invalid password.")
+                                    passwordErrorMessage = __designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[0].[0].[0]", fallback: "Invalid password.")
                                     emailErrorMessage = nil
                                 case .notFound:
-                                    emailErrorMessage = __designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[1].[0].[0]", fallback: "User not found.")
+                                    emailErrorMessage = __designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[0].value.[0].modifier[0].arg[2].value.[0].[1].[0].[1].[0].[0]", fallback: "User not found.")
                                     passwordErrorMessage = nil
-                                case .clientError(let message):
+                                case .custom(let message):
                                     generalErrorMessage = message
                                     emailErrorMessage = nil
                                     passwordErrorMessage = nil
-                                case .serverError, .unknown:
+                                case .clientError, .serverError, .unknown:
                                     break
                                 }
                             }
                         }
                     }){
-                        Text(__designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[1].value.[0].arg[0].value", fallback: "Login"))
+                        Text(__designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].arg[1].value.[0].arg[0].value", fallback: "Login"))
                             .modifier(ButtonModifier())
                     }
-                    .padding(.top, __designTimeInteger("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].modifier[0].arg[1].value", fallback: 8))
+                    .padding(.top, __designTimeInteger("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[6].modifier[0].arg[1].value", fallback: 8))
                 }
                 .padding()
-                .navigationTitle(__designTimeString("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: "Login"))
-                .navigationBarHidden(__designTimeBoolean("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: true))
-                .navigationBarBackButtonHidden(__designTimeBoolean("#15567.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[3].arg[0].value", fallback: true)) // Hide back button
+                .navigationTitle(__designTimeString("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: "Login"))
+                .navigationBarHidden(__designTimeBoolean("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: true))
+                .navigationBarBackButtonHidden(__designTimeBoolean("#5065.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[3].arg[0].value", fallback: true)) // Hide back button
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 Spacer()

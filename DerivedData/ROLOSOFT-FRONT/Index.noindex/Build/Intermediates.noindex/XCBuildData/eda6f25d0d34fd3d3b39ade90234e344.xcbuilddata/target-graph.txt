@@ -1,3 +1,0 @@
-Target dependency graph (2 targets)
-Target 'ROLOSOFT-FRONT' in project 'ROLOSOFT-FRONT' (no dependencies)
-Target 'ROLOSOFT-FRONT' in project 'ROLOSOFT-FRONT' (no dependencies)

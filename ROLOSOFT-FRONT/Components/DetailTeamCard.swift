@@ -34,8 +34,9 @@ struct DetailTeamCard: View {
                                     Text(String(data.victories))
                                         .font(.title)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
                                 }
-                                .frame(width: 30, alignment: .center)
+                                .frame(width: 35, alignment: .center)
                                 
                                 VStack {
                                     Text("E")

@@ -10,9 +10,10 @@ import SwiftUI
 
 extension HomeView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 107)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 188)
+        let apiService = APIService() // Initialize APIService instance
         let authService = AuthService()
-        return HomeView(authService: authService)
+        return HomeView(authService: authService, apiService: apiService)
     
 #sourceLocation()
     }
@@ -20,15 +21,15 @@ extension HomeView_Previews {
 
 extension NavigationBarItemView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 91)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 172)
         HStack {
-            NavigationLink(destination: Text(__designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
-                Image(systemName: __designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
+            NavigationLink(destination: Text(__designTimeString("#5906.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
+                Image(systemName: __designTimeString("#5906.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
             }
             .padding(.horizontal)
             
-            NavigationLink(destination: Text(__designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
-                Image(systemName: __designTimeString("#4993.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
+            NavigationLink(destination: Text(__designTimeString("#5906.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
+                Image(systemName: __designTimeString("#5906.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
             }
             .padding(.horizontal)
         }
@@ -38,23 +39,63 @@ extension NavigationBarItemView {
 }
 
 extension BodyView {
+    @_dynamicReplacement(for: formatDate(_:)) private func __preview__formatDate(_ date: Date) -> String {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 155)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = __designTimeString("#5906.[5].[4].[1].[0]", fallback: "h:mm a")
+        return dateFormatter.string(from: date)
+    
+#sourceLocation()
+    }
+}
+
+extension BodyView {
+    @_dynamicReplacement(for: filteredEvents) private var __preview__filteredEvents: [MatchEvent] {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 149)
+        events.filter { event in
+            Calendar.current.isDate(event.dateTimeStart, inSameDayAs: selectedDate)
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension BodyView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 63)
-        List {
-            ForEach(matchCardsData, id: \.id) { match in
-                MatchCard(
-                    teamA: match.teamA,
-                    teamB: match.teamB,
-                    dateString: match.dateString
-                )
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 112)
+        VStack {
+            if filteredEvents.isEmpty {
+                List {
+                    Text(__designTimeString("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No matches today"))
+                        .foregroundColor(.gray)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+                .listRowBackground(Color.white)
+                .listRowInsets(.init(
+                    top: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
+                    leading: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
+                    bottom: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
+                    trailing: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+                    )
+            } else {
+                List {
+                    ForEach(filteredEvents, id: \.id) { match in
+                        MatchCard(
+                            teamA: match.teamA,
+                            teamB: match.teamB,
+                            dateString: formatDate(match.dateTimeStart)
+                        )
+                    }
+                    .listRowBackground(Color.gray.opacity(__designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.modifier[0].arg[0].value", fallback: 0)))
+                    .listRowInsets(.init(
+                        top: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
+                        leading: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
+                        bottom: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
+                        trailing: __designTimeInteger("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+                    )
+                }
             }
-            .listRowBackground(Color.gray.opacity(__designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[0].arg[0].value.modifier[0].arg[0].value", fallback: 0)))
-            .listRowInsets(.init(
-                top: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
-                leading: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
-                bottom: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
-                trailing: __designTimeInteger("#4993.[5].[0].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
-            )
         }
     
 #sourceLocation()
@@ -63,26 +104,35 @@ extension BodyView {
 
 extension HeaderView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 37)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 73)
         VStack(alignment: .center) {
             HStack {
-                
-                Image(__designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
+                Image(__designTimeString("#5906.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: __designTimeInteger("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
+                    .frame(height: __designTimeInteger("#5906.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
                 Spacer()
                 
-                Image(systemName: __designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
+                Image(systemName: __designTimeString("#5906.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
                     .font(.title)
                     .foregroundColor(.blue)
             }
             .padding(.horizontal)
     
-            CalendarComponent().padding()
+            MatchCalendar(selectedDate: $selectedDate, events: events).padding()
             
-            MatchCard(teamA: teamA, teamB: teamB, dateString: __designTimeString("#4993.[4].[0].property.[0].[0].arg[1].value.[2].arg[2].value", fallback: "4:00 PM"), isMyMatch: __designTimeBoolean("#4993.[4].[0].property.[0].[0].arg[1].value.[2].arg[3].value", fallback: true))
-                .padding(.horizontal)
+            // Replace MatchCard with DetailTeamCard
+            DetailTeamCard(
+                data: DetailTeamData(
+                    name: __designTimeString("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[0].value", fallback: "Independiente Santa Fé"), // Replace with actual team name
+                    logoImgUrl: __designTimeString("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Escudo_de_Independiente_Santa_Fe.png/150px-Escudo_de_Independiente_Santa_Fe.png"), // Replace with actual logo URL
+                    victories: __designTimeInteger("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[2].value", fallback: 10), // Replace with actual data
+                    ties: __designTimeInteger("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[3].value", fallback: 5), // Replace with actual data
+                    defeats: __designTimeInteger("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[4].value", fallback: 3), // Replace with actual data
+                    points: __designTimeInteger("#5906.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[5].value", fallback: 25) // Replace with actual data
+                )
+            )
+            .padding(.horizontal)
         }
         .padding(.bottom)
     
@@ -91,13 +141,46 @@ extension HeaderView {
 }
 
 extension HomeView {
+    @_dynamicReplacement(for: fetchMatchEvents()) private func __preview__fetchMatchEvents() {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 41)
+        // Check if JWT token exists in UserDefaults
+        guard let jwt = UserDefaults.standard.string(forKey: authService.jwtTokenKey) else {
+            print("JWT token not available")
+            return
+        }
+        
+        guard let tournamentIdKey = UserDefaults.standard.string(forKey: authService.tournamentIdKey) else {
+            print("Tournament not available")
+            return
+        }
+
+        apiService.fetchMatchEvents(tournamentId: tournamentIdKey, token: jwt) { result in
+            switch result {
+            case .success(let events):
+                print(__designTimeString("#5906.[3].[6].[2].modifier[0].arg[2].value.[0].[0].[0].arg[0].value", fallback: "SUCCESS"))
+                DispatchQueue.main.async {
+                    self.events = events
+                }
+            case .failure(let error):
+                print(__designTimeString("#5906.[3].[6].[2].modifier[0].arg[2].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch match events:"), error.localizedDescription)
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension HomeView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 26)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 29)
         NavigationView {
             VStack {
-                HeaderView()
-                BodyView()
+                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate)
+                BodyView(events: events, selectedDate: selectedDate)
             }
+        }
+        .onAppear {
+            fetchMatchEvents()
         }
     
 #sourceLocation()
