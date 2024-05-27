@@ -112,7 +112,7 @@ struct BodyView: View {
         VStack {
             if filteredEvents.isEmpty {
                 List {
-                    Text("No matches today")
+                    Text("No hay partidos programados.")
                         .foregroundColor(.gray)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
