@@ -18,11 +18,12 @@ struct LeaderBoardTeam: Identifiable {
 }
 
 struct LeaderBoardView: View {
-    let teams: [LeaderBoardTeam]
+    @State private var teams: [LeaderBoardTeam] = []
+    @StateObject var apiService = APIService()
     
     struct ListItemBg: ViewModifier {
         var isMyMatch: Bool? = false
-
+        
         func body(content: Content) -> some View {
             if let isMyMatch = isMyMatch, isMyMatch {
                 return AnyView(content
@@ -37,59 +38,84 @@ struct LeaderBoardView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Equipo")
-                Spacer()
-                Text("D")
-                Spacer()
-                Text("E")
-                Spacer()
-                Text("V")
-            }
-            .padding()
-            .font(.headline)
-            
-            List(teams.indices, id: \.self) { index in
+        NavigationView {
+            VStack {
                 HStack {
-                    Text("\(index + 1)")
-                        .font(.headline)
-                        .foregroundColor(teams[index].isMyMatch ? .white : .black)
-                    URLImage(url: teams[index].logo)
-                        .frame(width: 30, height: 30)
-                        .cornerRadius(8)
-                        .clipped()
-                    Text(teams[index].name)
-                        .font(.headline)
-                        .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                    Text("Equipo")
                     Spacer()
-                    Text("\(teams[index].d)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                    Text("D")
                     Spacer()
-                    Text("\(teams[index].e)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                    Text("E")
                     Spacer()
-                    Text("\(teams[index].v)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                    Text("V")
                 }
                 .padding()
-                .modifier(ListItemBg(isMyMatch: teams[index].isMyMatch))
-                .cornerRadius(8)
-                .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                .font(.headline)
+                
+                List(teams.indices, id: \.self) { index in
+                    HStack {
+                        Text("\(index + 1)")
+                            .font(.headline)
+                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                        URLImage(url: teams[index].logo)
+                            .frame(width: 30, height: 30)
+                            .cornerRadius(8)
+                            .clipped()
+                        Text(teams[index].name)
+                            .font(.headline)
+                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].d)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].e)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].v)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                    }
+                    .padding()
+                    .modifier(ListItemBg(isMyMatch: teams[index].isMyMatch))
+                    .cornerRadius(8)
+                    .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                }
+                .listStyle(.inset)
+            }.onAppear{loadLeaderBoard()}
+        }
+    }
+    
+    private func loadLeaderBoard() {
+        let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
+        let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+
+        print("\n-- TID:", tournamentId)
+        print("\n-- TOKEN:", token)
+        
+        apiService.fetchLeaderBoard(tournamentId: tournamentId, token: token) { result in
+            switch result {
+            case .success(let teamData):
+                self.teams = teamData.map { team in
+                    LeaderBoardTeam(
+                        name: team.team,
+                        logo: team.photoUrl,
+                        d: team.defeats,
+                        e: team.draws,
+                        v: team.victories,
+                        isMyMatch: false // Update based on your criteria
+                    )
+                }
+            case .failure(let error):
+                print("Error fetching leaderboard: \(error)")
             }
-            .listStyle(.inset)
         }
     }
 }
 
-#Preview {
-    LeaderBoardView(teams: [
-        LeaderBoardTeam(name: "ISF", logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", d: 10, e: 20, v: 30, isMyMatch: false),
-        LeaderBoardTeam(name: "ISF", logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", d: 10, e: 20, v: 30, isMyMatch: true),
-        LeaderBoardTeam(name: "ISF", logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", d: 10, e: 20, v: 30, isMyMatch: false),
-        LeaderBoardTeam(name: "ISF", logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", d: 10, e: 20, v: 30, isMyMatch: false)
-    ])
+struct LeaderBoardView_Previews: PreviewProvider {
+    static var previews: some View {
+        LeaderBoardView()
+    }
 }

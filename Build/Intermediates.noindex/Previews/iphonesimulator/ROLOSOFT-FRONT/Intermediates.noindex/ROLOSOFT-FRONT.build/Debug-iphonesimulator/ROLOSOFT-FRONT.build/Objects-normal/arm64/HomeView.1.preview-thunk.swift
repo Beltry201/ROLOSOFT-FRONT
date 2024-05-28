@@ -23,13 +23,13 @@ extension NavigationBarItemView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 171)
         HStack {
-            NavigationLink(destination: Text(__designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
-                Image(systemName: __designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
+            NavigationLink(destination: Text(__designTimeString("#2453.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
+                Image(systemName: __designTimeString("#2453.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
             }
             .padding(.horizontal)
             
-            NavigationLink(destination: Text(__designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
-                Image(systemName: __designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
+            NavigationLink(destination: Text(__designTimeString("#2453.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
+                Image(systemName: __designTimeString("#2453.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
             }
             .padding(.horizontal)
         }
@@ -42,7 +42,7 @@ extension BodyView {
     @_dynamicReplacement(for: formatDate(_:)) private func __preview__formatDate(_ date: Date) -> String {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 154)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = __designTimeString("#5728.[5].[4].[1].[0]", fallback: "h:mm a")
+        dateFormatter.dateFormat = __designTimeString("#2453.[5].[4].[1].[0]", fallback: "h:mm a")
         return dateFormatter.string(from: date)
     
 #sourceLocation()
@@ -66,17 +66,17 @@ extension BodyView {
         VStack {
             if filteredEvents.isEmpty {
                 List {
-                    Text(__designTimeString("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No hay partidos programados."))
+                    Text(__designTimeString("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No hay partidos programados."))
                         .foregroundColor(.gray)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .listRowBackground(Color.white)
                 .listRowInsets(.init(
-                    top: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
-                    leading: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
-                    bottom: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
-                    trailing: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+                    top: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
+                    leading: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
+                    bottom: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
+                    trailing: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
                     )
             } else {
                 List {
@@ -88,10 +88,10 @@ extension BodyView {
                         )
                     }
                     .listRowInsets(.init(
-                        top: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 0),
-                        leading: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 0),
-                        bottom: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[2].value", fallback: 8),
-                        trailing: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[3].value", fallback: 0))
+                        top: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 0),
+                        leading: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 0),
+                        bottom: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[2].value", fallback: 8),
+                        trailing: __designTimeInteger("#2453.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[3].value", fallback: 0))
                     )
                 }
             }
@@ -106,13 +106,13 @@ extension HeaderView {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 73)
         VStack(alignment: .center) {
             HStack {
-                Image(__designTimeString("#5728.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
+                Image(__designTimeString("#2453.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: __designTimeInteger("#5728.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
+                    .frame(height: __designTimeInteger("#2453.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
                 Spacer()
                 
-                Image(systemName: __designTimeString("#5728.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
+                Image(systemName: __designTimeString("#2453.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
                     .font(.title)
                     .foregroundColor(.blue)
             }
@@ -123,12 +123,12 @@ extension HeaderView {
             // Replace MatchCard with DetailTeamCard
             DetailTeamCard(
                 data: DetailTeamData(
-                    name: __designTimeString("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[0].value", fallback: "Independiente Santa Fé"), // Replace with actual team name
-                    logoImgUrl: __designTimeString("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Escudo_de_Independiente_Santa_Fe.png/150px-Escudo_de_Independiente_Santa_Fe.png"), // Replace with actual logo URL
-                    victories: __designTimeInteger("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[2].value", fallback: 10), // Replace with actual data
-                    ties: __designTimeInteger("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[3].value", fallback: 5), // Replace with actual data
-                    defeats: __designTimeInteger("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[4].value", fallback: 3), // Replace with actual data
-                    points: __designTimeInteger("#5728.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[5].value", fallback: 25) // Replace with actual data
+                    name: __designTimeString("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[0].value", fallback: "Independiente Santa Fé"), // Replace with actual team name
+                    logoImgUrl: __designTimeString("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Escudo_de_Independiente_Santa_Fe.png/150px-Escudo_de_Independiente_Santa_Fe.png"), // Replace with actual logo URL
+                    victories: __designTimeInteger("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[2].value", fallback: 10), // Replace with actual data
+                    ties: __designTimeInteger("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[3].value", fallback: 5), // Replace with actual data
+                    defeats: __designTimeInteger("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[4].value", fallback: 3), // Replace with actual data
+                    points: __designTimeInteger("#2453.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[5].value", fallback: 25) // Replace with actual data
                 )
             )
             .padding(.horizontal)
@@ -156,12 +156,12 @@ extension HomeView {
         apiService.fetchMatchEvents(tournamentId: tournamentIdKey, token: jwt) { result in
             switch result {
             case .success(let events):
-                print(__designTimeString("#5728.[3].[6].[2].modifier[0].arg[2].value.[0].[0].[0].arg[0].value", fallback: "SUCCESS"))
+                print(__designTimeString("#2453.[3].[6].[2].modifier[0].arg[2].value.[0].[0].[0].arg[0].value", fallback: "SUCCESS"))
                 DispatchQueue.main.async {
                     self.events = events
                 }
             case .failure(let error):
-                print(__designTimeString("#5728.[3].[6].[2].modifier[0].arg[2].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch match events:"), error.localizedDescription)
+                print(__designTimeString("#2453.[3].[6].[2].modifier[0].arg[2].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch match events:"), error.localizedDescription)
             }
         }
     

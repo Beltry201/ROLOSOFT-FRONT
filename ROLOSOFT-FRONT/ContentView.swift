@@ -33,16 +33,15 @@ struct ContentView: View {
                         .tabItem {
                             Image("News")
                         }
-                    .tag(Tab.news)
+                        .tag(Tab.news)
 
-                    NavigationView {
-                        Text("Teams view")
-                    }
-                    .tabItem {
-                        Image("Teams")
-                    }
-                    .tag(Tab.teams)
-
+                    
+                    LeaderBoardView(apiService: apiSerive)
+                        .tabItem {
+                           Image("Teams")
+                       }
+                        .tag(Tab.teams)
+                    
                     SearchView()
                     .tabItem {
                         Image("Search")

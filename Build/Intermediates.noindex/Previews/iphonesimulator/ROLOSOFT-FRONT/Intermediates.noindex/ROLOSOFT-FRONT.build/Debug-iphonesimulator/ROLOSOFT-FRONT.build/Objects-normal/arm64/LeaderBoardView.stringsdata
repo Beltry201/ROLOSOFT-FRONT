@@ -1,0 +1,28 @@
+{
+  "source": "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Equipo"
+      },
+      {
+        "comment": "",
+        "key": "D"
+      },
+      {
+        "comment": "",
+        "key": "E"
+      },
+      {
+        "comment": "",
+        "key": "V"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      }
+    ]
+  },
+  "version": 1
+}

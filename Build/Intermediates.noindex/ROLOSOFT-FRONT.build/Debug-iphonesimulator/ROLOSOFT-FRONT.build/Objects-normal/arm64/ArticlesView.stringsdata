@@ -1,0 +1,16 @@
+{
+  "source": "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/ArticlesView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Noticias importantes"
+      },
+      {
+        "comment": "",
+        "key": "Hola"
+      }
+    ]
+  },
+  "version": 1
+}
