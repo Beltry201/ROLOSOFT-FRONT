@@ -66,7 +66,7 @@ extension BodyView {
         VStack {
             if filteredEvents.isEmpty {
                 List {
-                    Text(__designTimeString("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No matches today"))
+                    Text(__designTimeString("#5906.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No hay partidos programados."))
                         .foregroundColor(.gray)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)

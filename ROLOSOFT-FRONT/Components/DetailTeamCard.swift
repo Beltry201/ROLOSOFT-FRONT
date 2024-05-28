@@ -67,7 +67,7 @@ struct DetailTeamCard: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                             }
-                            
+                        
                         }
                     }
                 }

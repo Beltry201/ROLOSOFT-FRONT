@@ -17,6 +17,14 @@
       {
         "comment": "",
         "key": "Jugadores"
+      },
+      {
+        "comment": "",
+        "key": "%@ %lld"
+      },
+      {
+        "comment": "",
+        "key": "%@ %@"
       }
     ]
   },

@@ -13,14 +13,14 @@ extension TeamBox {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/MatchCard.swift", line: 68)
         VStack(alignment: .center) {
             URLImage(url: logoUrl)
-                .frame(width: __designTimeInteger("#7205.[3].[3].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 50), height: __designTimeInteger("#7205.[3].[3].property.[0].[0].arg[1].value.[0].modifier[0].arg[1].value", fallback: 50))
+                .frame(width: __designTimeInteger("#4843.[3].[3].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 50), height: __designTimeInteger("#4843.[3].[3].property.[0].[0].arg[1].value.[0].modifier[0].arg[1].value", fallback: 50))
             Text(name)
                 .font(.footnote)
                 .multilineTextAlignment(.center)
                 .foregroundColor(isMyMatch! ? .white : .black)
-                .fixedSize(horizontal: __designTimeBoolean("#7205.[3].[3].property.[0].[0].arg[1].value.[1].modifier[3].arg[0].value", fallback: false), vertical: __designTimeBoolean("#7205.[3].[3].property.[0].[0].arg[1].value.[1].modifier[3].arg[1].value", fallback: true))
+                .fixedSize(horizontal: __designTimeBoolean("#4843.[3].[3].property.[0].[0].arg[1].value.[1].modifier[3].arg[0].value", fallback: false), vertical: __designTimeBoolean("#4843.[3].[3].property.[0].[0].arg[1].value.[1].modifier[3].arg[1].value", fallback: true))
         }
-        .frame(maxWidth: __designTimeInteger("#7205.[3].[3].property.[0].[0].modifier[0].arg[0].value", fallback: 120))
+        .frame(maxWidth: __designTimeInteger("#4843.[3].[3].property.[0].[0].modifier[0].arg[0].value", fallback: 120))
     
 #sourceLocation()
     }
@@ -31,7 +31,7 @@ extension BackgroundModifier {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Components/MatchCard.swift", line: 50)
         if let isMyMatch = isMyMatch, isMyMatch {
             return AnyView(content
-                .background(LinearGradient(gradient: Gradient(colors: [Color(red: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[0].value", fallback: 0.854), green: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[1].value", fallback: 0.000), blue: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[2].value", fallback: 0.176), opacity: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[3].value", fallback: 0.85)), Color(red: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[0].value", fallback: 0.882), green: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[1].value", fallback: 0.341), blue: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[2].value", fallback: 0.008), opacity: __designTimeFloat("#7205.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[3].value", fallback: 0.85))]), startPoint: .bottom, endPoint: .top))
+                .background(LinearGradient(gradient: Gradient(colors: [Color(red: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[0].value", fallback: 0.854), green: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[1].value", fallback: 0.000), blue: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[2].value", fallback: 0.176), opacity: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[0].arg[3].value", fallback: 0.85)), Color(red: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[0].value", fallback: 0.882), green: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[1].value", fallback: 0.341), blue: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[2].value", fallback: 0.008), opacity: __designTimeFloat("#4843.[2].[1].[0].[0].[0].arg[0].value.modifier[0].arg[0].value.arg[0].value.arg[0].value.[1].arg[3].value", fallback: 0.85))]), startPoint: .bottom, endPoint: .top))
             )
         } else {
             return AnyView(content
@@ -52,12 +52,12 @@ extension MatchCard {
                 .font(.caption)
             
             HStack(alignment: .top) {
-                TeamBox(name: teamA.name, logoUrl: teamA.shieldImg ?? __designTimeString("#7205.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[1].value.[0]", fallback: ""), isMyMatch: isMyMatch!)
+                TeamBox(name: teamA.name, logoUrl: teamA.shieldImg ?? __designTimeString("#4843.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[1].value.[0]", fallback: ""), isMyMatch: isMyMatch!)
                 
                 Spacer()
                 
                 VStack {
-                    Text(__designTimeString("#7205.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[2].arg[0].value.[0].arg[0].value", fallback: "VS"))
+                    Text(__designTimeString("#4843.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[2].arg[0].value.[0].arg[0].value", fallback: "VS"))
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(isMyMatch! ? .white : .black)
@@ -65,13 +65,13 @@ extension MatchCard {
                 
                 Spacer()
                 
-                TeamBox(name: teamB.name, logoUrl: teamB.shieldImg ?? __designTimeString("#7205.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[4].arg[1].value.[0]", fallback: ""), isMyMatch: isMyMatch)
+                TeamBox(name: teamB.name, logoUrl: teamB.shieldImg ?? __designTimeString("#4843.[1].[4].property.[0].[0].arg[0].value.[1].arg[1].value.[4].arg[1].value.[0]", fallback: ""), isMyMatch: isMyMatch)
             }
         }
         .padding()
         .modifier(BackgroundModifier(isMyMatch: isMyMatch!))
-        .cornerRadius(__designTimeInteger("#7205.[1].[4].property.[0].[0].modifier[2].arg[0].value", fallback: 10))
-        .shadow(color: Color.black.opacity(__designTimeFloat("#7205.[1].[4].property.[0].[0].modifier[3].arg[0].value.modifier[0].arg[0].value", fallback: 0.1)), radius: __designTimeInteger("#7205.[1].[4].property.[0].[0].modifier[3].arg[1].value", fallback: 5), x: __designTimeInteger("#7205.[1].[4].property.[0].[0].modifier[3].arg[2].value", fallback: 0), y: __designTimeInteger("#7205.[1].[4].property.[0].[0].modifier[3].arg[3].value", fallback: 2))
+        .cornerRadius(__designTimeInteger("#4843.[1].[4].property.[0].[0].modifier[2].arg[0].value", fallback: 10))
+        .shadow(color: Color.black.opacity(__designTimeFloat("#4843.[1].[4].property.[0].[0].modifier[3].arg[0].value.modifier[0].arg[0].value", fallback: 0.1)), radius: __designTimeInteger("#4843.[1].[4].property.[0].[0].modifier[3].arg[1].value", fallback: 5), x: __designTimeInteger("#4843.[1].[4].property.[0].[0].modifier[3].arg[2].value", fallback: 0), y: __designTimeInteger("#4843.[1].[4].property.[0].[0].modifier[3].arg[3].value", fallback: 2))
     
 #sourceLocation()
     }

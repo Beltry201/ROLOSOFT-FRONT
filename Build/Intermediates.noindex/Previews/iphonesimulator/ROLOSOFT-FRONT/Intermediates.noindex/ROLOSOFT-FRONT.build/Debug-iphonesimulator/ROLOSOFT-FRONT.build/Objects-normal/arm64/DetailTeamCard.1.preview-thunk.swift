@@ -16,7 +16,7 @@ extension DetailTeamCard {
                 VStack {
                     URLImage(url: data.logoImgUrl)
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 120))
+                        .frame(width: __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 120))
                 }
                 HStack {
                     VStack {
@@ -24,65 +24,65 @@ extension DetailTeamCard {
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].modifier[3].arg[1].value", fallback: 10))
+                            .padding(.bottom, __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].modifier[3].arg[1].value", fallback: 10))
                         HStack {
                             HStack {
                                 VStack {
-                                    Text(__designTimeString("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "V"))
+                                    Text(__designTimeString("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "V"))
                                         .font(.subheadline)
                                         .foregroundColor(.white)
                                     Text(String(data.victories))
                                         .font(.title)
                                         .foregroundColor(.white)
-                                        .lineLimit(__designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: 1))
+                                        .lineLimit(__designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[0].value", fallback: 1))
                                 }
-                                .frame(width: __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[0].value", fallback: 35), alignment: .center)
+                                .frame(width: __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[0].value", fallback: 35), alignment: .center)
                                 
                                 VStack {
-                                    Text(__designTimeString("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "E"))
+                                    Text(__designTimeString("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "E"))
                                         .font(.subheadline)
                                         .foregroundColor(.white)
                                     Text(String(data.ties))
                                         .font(.title)
                                         .foregroundColor(.white)
                                 }
-                                .frame(width: __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].modifier[0].arg[0].value", fallback: 30), alignment: .center)
+                                .frame(width: __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].modifier[0].arg[0].value", fallback: 30), alignment: .center)
                                 
                                 VStack {
-                                    Text(__designTimeString("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[2].arg[0].value.[0].arg[0].value", fallback: "D"))
+                                    Text(__designTimeString("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[2].arg[0].value.[0].arg[0].value", fallback: "D"))
                                         .font(.subheadline)
                                         .foregroundColor(.white)
                                     Text(String(data.defeats))
                                         .font(.title)
                                         .foregroundColor(.white)
                                 }
-                                .frame(width: __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[2].modifier[0].arg[0].value", fallback: 30), alignment: .center)
+                                .frame(width: __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[2].modifier[0].arg[0].value", fallback: 30), alignment: .center)
                             }
                             Spacer()
                             VStack {
-                                Text(__designTimeString("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[2].arg[0].value.[0].arg[0].value", fallback: "Puntos"))
+                                Text(__designTimeString("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[0].value.[0].arg[0].value.[1].arg[0].value.[2].arg[0].value.[0].arg[0].value", fallback: "Puntos"))
                                     .font(.headline)
                                     .foregroundColor(.white)
                                 Text(String(data.points))
                                     .font(.title)
                                     .foregroundColor(.white)
                             }
-                            
+                        
                         }
                     }
                 }
-                .padding(.leading, __designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 10))
+                .padding(.leading, __designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 10))
             }
-            .padding(__designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[0].arg[0].value", fallback: 20))
+            .padding(__designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[0].arg[0].value", fallback: 20))
             .frame(width: geometry.size.width)
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color(red: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[0].value", fallback: 0.854), green: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[1].value", fallback: 0.000), blue: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[2].value", fallback: 0.176), opacity: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[3].value", fallback: 0.85)),
-                                                Color(red: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[0].value", fallback: 0.882), green: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[1].value", fallback: 0.341), blue: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[2].value", fallback: 0.008), opacity: __designTimeFloat("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[3].value", fallback: 0.85))]),
+                    gradient: Gradient(colors: [Color(red: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[0].value", fallback: 0.854), green: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[1].value", fallback: 0.000), blue: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[2].value", fallback: 0.176), opacity: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[0].arg[3].value", fallback: 0.85)),
+                                                Color(red: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[0].value", fallback: 0.882), green: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[1].value", fallback: 0.341), blue: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[2].value", fallback: 0.008), opacity: __designTimeFloat("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value.arg[0].value.[1].arg[3].value", fallback: 0.85))]),
                     startPoint: .bottom,
                     endPoint: .top)
             )
-            .cornerRadius(__designTimeInteger("#5294.[1].[1].property.[0].[0].arg[0].value.[0].modifier[3].arg[0].value", fallback: 10))
+            .cornerRadius(__designTimeInteger("#5038.[1].[1].property.[0].[0].arg[0].value.[0].modifier[3].arg[0].value", fallback: 10))
         }
     
 #sourceLocation()

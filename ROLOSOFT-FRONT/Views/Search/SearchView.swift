@@ -10,36 +10,38 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText = ""
     @State private var selectedTab = 0
+    @State private var teams: [School] = []
+    @State private var players: [Student] = []
 
-    let teams = ["Team A", "Team B", "Team C"]
-    let players = ["Player X", "Player Y", "Player Z"]
+    @StateObject private var apiService = APIService()
 
-    var filteredTeams: [String] {
+    var filteredTeams: [School] {
         if searchText.isEmpty {
             return teams
         } else {
-            return teams.filter { $0.localizedCaseInsensitiveContains(searchText) }
+            return teams.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
 
-    var filteredPlayers: [String] {
+    var filteredPlayers: [Student] {
         if searchText.isEmpty {
             return players
         } else {
-            return players.filter { $0.localizedCaseInsensitiveContains(searchText) }
+            return players.filter { "\($0.firstName) \($0.lastName)".localizedCaseInsensitiveContains(searchText) }
         }
     }
 
     var body: some View {
         VStack(alignment: .leading) {
-            // Header with search bar
             Text("Buscar en el torneo")
                 .font(.custom("", size: 24))
                 .padding(.horizontal, 10)
                 .padding(.top, 20)
             
             HStack {
-                TextField("Search", text: $searchText)
+                TextField("Search", text: $searchText, onCommit: {
+                    search()
+                })
                     .padding(7)
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
@@ -54,6 +56,7 @@ struct SearchView: View {
                             if !searchText.isEmpty {
                                 Button(action: {
                                     self.searchText = ""
+                                    search() // Perform search with empty text
                                 }) {
                                     Image(systemName: "multiply.circle.fill")
                                         .foregroundColor(.gray)
@@ -66,7 +69,6 @@ struct SearchView: View {
                     .padding(.top, 0)
             }
             
-            // Custom Tabs for Teams and Players
             HStack {
                 Spacer()
                 VStack {
@@ -103,22 +105,46 @@ struct SearchView: View {
                 Spacer()
             }
             .padding(.top)
-//            .background(.red)
             
-            // List of Items
             List {
                 if selectedTab == 0 {
-                    ForEach(filteredTeams, id: \.self) { team in
-                        Text(team)
+                    ForEach(filteredTeams) { team in
+                        
+                        Text("\(team.name) \(team.number)")
                     }
                 } else {
-                    ForEach(filteredPlayers, id: \.self) { player in
-                        Text(player)
+                    ForEach(filteredPlayers) { player in
+                        Text("\(player.firstName) \(player.lastName)")
                     }
                 }
             }
         }
         .navigationTitle("Search")
+        .onAppear {
+            search()
+        }
+    }
+
+    private func search() {
+        let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
+        let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+        
+        print("\n-- TID:", tournamentId)
+        print("\n-- TOKEN:", token)
+        
+        apiService.searchStudentsAndSchools(tournamentId: tournamentId, token: token, query: searchText) { result in
+            DispatchQueue.main.async {
+                print("\n-- RESULT:", result)
+                switch result {
+                case .success(let data):
+                    print("\n-- DATA: ", data)
+                    self.teams = data.schools
+                    self.players = data.students
+                case .failure(let error):
+                    print("Search error: \(error)")
+                }
+            }
+        }
     }
 }
 

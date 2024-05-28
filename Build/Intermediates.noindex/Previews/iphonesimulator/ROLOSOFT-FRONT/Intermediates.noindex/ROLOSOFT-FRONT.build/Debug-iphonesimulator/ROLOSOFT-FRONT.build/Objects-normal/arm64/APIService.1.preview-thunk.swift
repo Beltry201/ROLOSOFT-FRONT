@@ -10,43 +10,58 @@ import Foundation
 
 extension APIService {
     @_dynamicReplacement(for: getRequest(endpoint:token:completion:)) private func __preview__getRequest<T: Decodable>(endpoint: String, token: String, completion: @escaping (Result<T, Error>) -> Void) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 38)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 51)
         guard let baseURL = baseURL else {
             completion(.failure(APIError.invalidBaseURL))
             return
         }
-        
+
         let url = baseURL.appendingPathComponent(endpoint)
         var request = URLRequest(url: url)
-        request.httpMethod = __designTimeString("#5422.[1].[2].[3].[0]", fallback: "GET")
-        request.setValue(__designTimeString("#5422.[1].[2].[4].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#5422.[1].[2].[4].modifier[0].arg[1].value", fallback: "Content-Type"))
-        request.setValue("\(token)", forHTTPHeaderField: __designTimeString("#5422.[1].[2].[5].modifier[0].arg[1].value", fallback: "Authorization"))
-        
+        request.httpMethod = __designTimeString("#11822.[1].[3].[3].[0]", fallback: "GET")
+        request.setValue(__designTimeString("#11822.[1].[3].[4].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#11822.[1].[3].[4].modifier[0].arg[1].value", fallback: "Content-Type"))
+        request.setValue("\(token)", forHTTPHeaderField: __designTimeString("#11822.[1].[3].[5].modifier[0].arg[1].value", fallback: "Authorization"))
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
+
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(APIError.invalidResponse))
                 return
             }
-            print("\n-- RESPONSE: ", httpResponse)
-            
+
+            print("HTTP Status Code: \(httpResponse.statusCode)")
+
+            guard (200...299).contains(httpResponse.statusCode) else {
+                print("HTTP Error: \(httpResponse.statusCode)")
+                if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                    print("Response: \(responseString)")
+                }
+                completion(.failure(APIError.custom("HTTP Error: \(httpResponse.statusCode)")))
+                return
+            }
+
             guard let data = data else {
                 completion(.failure(APIError.noData))
                 return
             }
-            
-            print("\n-- RAW DATA: ", String(data: data, encoding: .utf8) ?? __designTimeString("#5422.[1].[2].[6].modifier[0].arg[1].value.[4].arg[1].value.[0]", fallback: "No data"))
-                    
-            
+
             do {
-                let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // Custom date format to match your API response
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                
+                let decodedResponse = try decoder.decode(T.self, from: data)
                 print("\n-- DECODED DATA: ", decodedResponse)
                 completion(.success(decodedResponse))
             } catch {
+                print("Decoding error: \(error)")
+                let responseString = String(data: data, encoding: .utf8) ?? "Unable to convert data to string."
+                print("Response: \(responseString)")
                 completion(.failure(error))
             }
         }.resume()
@@ -56,17 +71,34 @@ extension APIService {
 }
 
 extension APIService {
+    @_dynamicReplacement(for: searchStudentsAndSchools(tournamentId:token:query:completion:)) private func __preview__searchStudentsAndSchools(tournamentId: String, token: String, query: String, completion: @escaping (Result<(schools: [School], students: [Student]), Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 31)
+        let endpoint = "/tournaments/\(tournamentId)/search"
+        print("\n-- ENDPOINT: ", query)
+        getRequest(endpoint: endpoint, token: token) { (result: Result<SearchResponse, Error>) in
+            print("\n--RESULT: ", result)
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success((schools: response.data.schools, students: response.data.students)))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension APIService {
     @_dynamicReplacement(for: fetchMatchEvents(tournamentId:token:completion:)) private func __preview__fetchMatchEvents(tournamentId: String, token: String, completion: @escaping (Result<[MatchEvent], Error>) -> Void) {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 14)
-        
-        print("\n-- RECIBI JWT:", token)
-        print("\n-- RECIBI TID:", tournamentId)
-        
-        // Endpoint for the API request
         let endpoint = "/tournaments/\(tournamentId)/matches"
-        
-        // Call getRequest method to perform the GET request
         getRequest(endpoint: endpoint, token: token) { (result: Result<MatchEventResponse, Error>) in
+            print("\n-- RESULT MATCHES: ", result)
             switch result {
             case .success(let response):
                 if response.success {
@@ -85,4 +117,6 @@ extension APIService {
 
 import class ROLOSOFT_FRONT.APIService
 import enum ROLOSOFT_FRONT.APIError
+import struct ROLOSOFT_FRONT.SearchResponse
+import struct ROLOSOFT_FRONT.SearchData
 
