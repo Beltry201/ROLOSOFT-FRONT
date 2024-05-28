@@ -13,8 +13,22 @@ struct SearchView: View {
     @State private var teams: [School] = []
     @State private var players: [Student] = []
 
-    @StateObject private var apiService = APIService()
+    var body: some View {
+        NavigationView {
+            VStack {
+                SearchHeader(teams: $teams, players: $players, searchText: $searchText, selectedTab: $selectedTab)
+            }
+        }
+    }
+}
 
+struct SearchHeader: View {
+    @Binding var teams: [School]
+    @Binding var players: [Student]
+    @Binding var searchText: String
+    @Binding var selectedTab: Int
+    @StateObject private var apiService = APIService()
+    
     var filteredTeams: [School] {
         if searchText.isEmpty {
             return teams
@@ -30,7 +44,7 @@ struct SearchView: View {
             return players.filter { "\($0.firstName) \($0.lastName)".localizedCaseInsensitiveContains(searchText) }
         }
     }
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Buscar en el torneo")
@@ -167,14 +181,12 @@ struct SearchView: View {
                 }
                 .tag(1)
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
-        .navigationTitle("Search")
         .onAppear {
             search()
         }
     }
-
+    
     private func search() {
         let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
         let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
@@ -196,6 +208,7 @@ struct SearchView: View {
             }
         }
     }
+    
 }
 
 #Preview {

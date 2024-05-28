@@ -10,7 +10,7 @@ import SwiftUI
 
 extension ContentView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 82)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/ContentView.swift", line: 80)
         ContentView()
     
 #sourceLocation()
@@ -31,13 +31,11 @@ extension ContentView {
                             Image(__designTimeString("#3801.[1].[4].property.[0].[0].arg[0].value.[0].[0].[0].arg[1].value.[0].modifier[1].arg[0].value.[0].arg[0].value", fallback: "Home"))
                         }
                         .tag(Tab.home)
-
-                    NavigationView {
-                        Text(__designTimeString("#3801.[1].[4].property.[0].[0].arg[0].value.[0].[0].[0].arg[1].value.[1].arg[0].value.[0].arg[0].value", fallback: "New articles View"))
-                    }
-                    .tabItem {
-                        Image(__designTimeString("#3801.[1].[4].property.[0].[0].arg[0].value.[0].[0].[0].arg[1].value.[1].modifier[0].arg[0].value.[0].arg[0].value", fallback: "News"))
-                    }
+                    
+                    ArticlesView()
+                        .tabItem {
+                            Image(__designTimeString("#3801.[1].[4].property.[0].[0].arg[0].value.[0].[0].[0].arg[1].value.[1].modifier[0].arg[0].value.[0].arg[0].value", fallback: "News"))
+                        }
                     .tag(Tab.news)
 
                     NavigationView {

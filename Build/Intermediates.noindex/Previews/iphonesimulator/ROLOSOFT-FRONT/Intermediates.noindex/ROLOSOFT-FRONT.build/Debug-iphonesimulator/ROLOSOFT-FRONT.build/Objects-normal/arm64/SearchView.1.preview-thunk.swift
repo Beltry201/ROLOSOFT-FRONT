@@ -8,11 +8,11 @@ import struct SwiftUI.EmptyView
 import protocol SwiftUI.View
 import SwiftUI
 
-extension SearchView {
+extension SearchHeader {
     @_dynamicReplacement(for: search()) private func __preview__search() {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 179)
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#3777.[1].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#3777.[1].[8].[0].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#3777.[1].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#3777.[1].[8].[1].value.[1]", fallback: "")
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 191)
+        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#3777.[2].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#3777.[2].[8].[0].value.[1]", fallback: "")
+        let token = UserDefaults.standard.string(forKey: __designTimeString("#3777.[2].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#3777.[2].[8].[1].value.[1]", fallback: "")
         
         print("\n-- TID:", tournamentId)
         print("\n-- TOKEN:", token)
@@ -35,77 +35,77 @@ extension SearchView {
     }
 }
 
-extension SearchView {
+extension SearchHeader {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 35)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 49)
         VStack(alignment: .leading) {
-            Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[0].arg[0].value", fallback: "Buscar en el torneo"))
-                .font(.custom(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: ""), size: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 24)))
-                .padding(.horizontal, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 10))
-                .padding(.top, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[0].modifier[2].arg[1].value", fallback: 20))
+            Text(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[0].arg[0].value", fallback: "Buscar en el torneo"))
+                .font(.custom(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: ""), size: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 24)))
+                .padding(.horizontal, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 10))
+                .padding(.top, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[0].modifier[2].arg[1].value", fallback: 20))
             
             HStack {
-                TextField(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].arg[0].value", fallback: "Search"), text: $searchText, onCommit: {
+                TextField(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].arg[0].value", fallback: "Search"), text: $searchText, onCommit: {
                     search()
                 })
-                    .padding(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 7))
-                    .padding(.horizontal, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[1].arg[1].value", fallback: 25))
+                    .padding(__designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 7))
+                    .padding(.horizontal, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[1].arg[1].value", fallback: 25))
                     .background(Color(.systemGray6))
-                    .cornerRadius(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 8))
+                    .cornerRadius(__designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 8))
                     .overlay(
                         HStack {
-                            Image(systemName: __designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].arg[0].value", fallback: "magnifyingglass"))
+                            Image(systemName: __designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].arg[0].value", fallback: "magnifyingglass"))
                                 .foregroundColor(.gray)
-                                .frame(minWidth: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 0), maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[2].arg[1].value", fallback: 8))
+                                .frame(minWidth: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 0), maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[2].arg[1].value", fallback: 8))
                             
                             if !searchText.isEmpty {
                                 Button(action: {
-                                    self.searchText = __designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[0].value.[0].[0]", fallback: "")
+                                    self.searchText = __designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[0].value.[0].[0]", fallback: "")
                                     search() // Perform search with empty text
                                 }) {
-                                    Image(systemName: __designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value", fallback: "multiply.circle.fill"))
+                                    Image(systemName: __designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value", fallback: "multiply.circle.fill"))
                                         .foregroundColor(.gray)
-                                        .padding(.trailing, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 8))
+                                        .padding(.trailing, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 8))
                                 }
                             }
                         }
                     )
-                    .padding(.horizontal, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[5].arg[1].value", fallback: 10))
-                    .padding(.top, __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[6].arg[1].value", fallback: 0))
+                    .padding(.horizontal, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[5].arg[1].value", fallback: 10))
+                    .padding(.top, __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[1].arg[0].value.[0].modifier[6].arg[1].value", fallback: 0))
             }
             
             HStack {
                 Spacer()
                 VStack {
-                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Equipos"))
-                        .fontWeight(selectedTab == __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 0) ? .regular : .light)
+                    Text(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].arg[0].value", fallback: "Equipos"))
+                        .fontWeight(selectedTab == __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 0) ? .regular : .light)
                         .overlay(
                             GeometryReader { geometry in
                                 Rectangle()
-                                    .foregroundColor(selectedTab == __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 0) ? .red : .clear)
-                                    .frame(height: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 2))
-                                    .offset(y: geometry.size.height - __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[2].arg[0].value.[0]", fallback: 2))
+                                    .foregroundColor(selectedTab == __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 0) ? .red : .clear)
+                                    .frame(height: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 2))
+                                    .offset(y: geometry.size.height - __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[2].arg[0].value.[0]", fallback: 2))
                             }
                         )
                         .onTapGesture {
-                            selectedTab = __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[0].value.[0].[0]", fallback: 0)
+                            selectedTab = __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[1].arg[0].value.[0].modifier[2].arg[0].value.[0].[0]", fallback: 0)
                         }
                 }
                 Spacer()
                 VStack {
-                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].arg[0].value", fallback: "Jugadores"))
-                        .fontWeight(selectedTab == __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 1) ? .regular : .light)
+                    Text(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].arg[0].value", fallback: "Jugadores"))
+                        .fontWeight(selectedTab == __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 1) ? .regular : .light)
                         .overlay(
                             GeometryReader { geometry in
                                 Rectangle()
-                                    .foregroundColor(selectedTab == __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 1) ? .red : .clear)
-                                    .frame(height: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 2))
-                                    .offset(y: geometry.size.height - __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[2].arg[0].value.[0]", fallback: 2))
+                                    .foregroundColor(selectedTab == __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[0].arg[0].value.if.[0]", fallback: 1) ? .red : .clear)
+                                    .frame(height: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 2))
+                                    .offset(y: geometry.size.height - __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value.[0].modifier[2].arg[0].value.[0]", fallback: 2))
                             }
                         )
                         .onTapGesture {
-                            selectedTab = __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[2].arg[0].value.[0].[0]", fallback: 1)
+                            selectedTab = __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[2].arg[0].value.[3].arg[0].value.[0].modifier[2].arg[0].value.[0].[0]", fallback: 1)
                         }
                 }
                 Spacer()
@@ -124,7 +124,7 @@ extension SearchView {
                             HStack {
                                 URLImage(url: team.logoUrl)
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                                    .frame(width: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
                                 
                                 Spacer()
                                 
@@ -134,14 +134,14 @@ extension SearchView {
                                 
                                 VStack(alignment: .center) {
                                     Text("\(team.points)") // Convert points to string
-                                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                                    Text(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
                                         .font(.caption)
                                 }
                             }
                         }
                     }
                 }
-                .tag(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
+                .tag(__designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
                 
                 VStack {
                     if filteredPlayers.isEmpty {
@@ -154,7 +154,7 @@ extension SearchView {
                             HStack {
                                 URLImage(url: player.studentPhotoUrl)
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                                    .frame(width: __designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
                                 
                                 Spacer()
                                 
@@ -164,18 +164,16 @@ extension SearchView {
                                 
                                 VStack(alignment: .center) {
                                     Text("\(player.greenCards)")
-                                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                                    Text(__designTimeString("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
                                         .font(.caption)
                                 }
                             }
                         }
                     }
                 }
-                .tag(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
+                .tag(__designTimeInteger("#3777.[2].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
-        .navigationTitle(__designTimeString("#3777.[1].[7].property.[0].[0].modifier[0].arg[0].value", fallback: "Search"))
         .onAppear {
             search()
         }
@@ -184,9 +182,9 @@ extension SearchView {
     }
 }
 
-extension SearchView {
+extension SearchHeader {
     @_dynamicReplacement(for: filteredPlayers) private var __preview__filteredPlayers: [Student] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 27)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 41)
         if searchText.isEmpty {
             return players
         } else {
@@ -197,9 +195,9 @@ extension SearchView {
     }
 }
 
-extension SearchView {
+extension SearchHeader {
     @_dynamicReplacement(for: filteredTeams) private var __preview__filteredTeams: [School] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 19)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 33)
         if searchText.isEmpty {
             return teams
         } else {
@@ -210,7 +208,21 @@ extension SearchView {
     }
 }
 
+extension SearchView {
+    @_dynamicReplacement(for: body) private var __preview__body: some View {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 17)
+        NavigationView {
+            VStack {
+                SearchHeader(teams: $teams, players: $players, searchText: $searchText, selectedTab: $selectedTab)
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
 import struct ROLOSOFT_FRONT.SearchView
+import struct ROLOSOFT_FRONT.SearchHeader
 #Preview {
     SearchView()
 }

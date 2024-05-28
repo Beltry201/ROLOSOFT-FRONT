@@ -133,7 +133,6 @@ struct BodyView: View {
                             dateString: formatDate(match.dateTimeStart)
                         )
                     }
-                    .listRowBackground(Color.gray.opacity(0))
                     .listRowInsets(.init(
                         top: 0,
                         leading: 0,

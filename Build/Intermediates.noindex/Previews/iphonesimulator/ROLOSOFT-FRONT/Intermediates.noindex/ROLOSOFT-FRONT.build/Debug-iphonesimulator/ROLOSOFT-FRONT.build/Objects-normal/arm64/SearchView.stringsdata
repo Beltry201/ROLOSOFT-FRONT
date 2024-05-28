@@ -4,11 +4,11 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Search"
+        "key": "Buscar en el torneo"
       },
       {
         "comment": "",
-        "key": "Buscar en el torneo"
+        "key": "Search"
       },
       {
         "comment": "",
@@ -20,7 +20,19 @@
       },
       {
         "comment": "",
-        "key": "%@ %lld"
+        "key": "No encontramos al equipo %@"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "puntos"
+      },
+      {
+        "comment": "",
+        "key": "No encontramos al jugador %@"
       },
       {
         "comment": "",

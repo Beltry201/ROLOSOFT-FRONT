@@ -4,6 +4,10 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "Buscar en el torneo"
+      },
+      {
+        "comment": "",
         "key": "Hola"
       }
     ]

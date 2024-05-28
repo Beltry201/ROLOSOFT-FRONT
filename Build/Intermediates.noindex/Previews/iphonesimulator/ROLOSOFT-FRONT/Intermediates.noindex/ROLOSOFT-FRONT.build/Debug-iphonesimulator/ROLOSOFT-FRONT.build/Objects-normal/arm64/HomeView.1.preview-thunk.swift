@@ -10,7 +10,7 @@ import SwiftUI
 
 extension HomeView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 188)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 187)
         let apiService = APIService() // Initialize APIService instance
         let authService = AuthService()
         return HomeView(authService: authService, apiService: apiService)
@@ -21,7 +21,7 @@ extension HomeView_Previews {
 
 extension NavigationBarItemView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 172)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 171)
         HStack {
             NavigationLink(destination: Text(__designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
                 Image(systemName: __designTimeString("#5728.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
@@ -40,7 +40,7 @@ extension NavigationBarItemView {
 
 extension BodyView {
     @_dynamicReplacement(for: formatDate(_:)) private func __preview__formatDate(_ date: Date) -> String {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 155)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 154)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = __designTimeString("#5728.[5].[4].[1].[0]", fallback: "h:mm a")
         return dateFormatter.string(from: date)
@@ -51,7 +51,7 @@ extension BodyView {
 
 extension BodyView {
     @_dynamicReplacement(for: filteredEvents) private var __preview__filteredEvents: [MatchEvent] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 149)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 148)
         events.filter { event in
             Calendar.current.isDate(event.dateTimeStart, inSameDayAs: selectedDate)
         }
@@ -87,12 +87,11 @@ extension BodyView {
                             dateString: formatDate(match.dateTimeStart)
                         )
                     }
-                    .listRowBackground(Color.gray.opacity(__designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.modifier[0].arg[0].value", fallback: 0)))
                     .listRowInsets(.init(
-                        top: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
-                        leading: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
-                        bottom: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
-                        trailing: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+                        top: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 0),
+                        leading: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 0),
+                        bottom: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[2].value", fallback: 8),
+                        trailing: __designTimeInteger("#5728.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[3].value", fallback: 0))
                     )
                 }
             }

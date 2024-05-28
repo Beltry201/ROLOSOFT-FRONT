@@ -4,6 +4,10 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "Artículos"
+      },
+      {
+        "comment": "",
         "key": "Hola"
       }
     ]

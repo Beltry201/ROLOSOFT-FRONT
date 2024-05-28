@@ -25,6 +25,7 @@
 		52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserProfile.swift */; };
 		52CE67872C054FC1001C5169 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67862C054FC1001C5169 /* School.swift */; };
 		52CE67892C05538E001C5169 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67882C05538E001C5169 /* DateFormatter.swift */; };
+		52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */; };
 		52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */; };
 		52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */; };
 		52FC48A52BF831BA0095EF4D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC48A42BF831BA0095EF4D /* SearchView.swift */; };
@@ -62,6 +63,7 @@
 		52CBB6F92BD5A41600DD0410 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		52CE67862C054FC1001C5169 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		52CE67882C05538E001C5169 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
 		52FC48A42BF831BA0095EF4D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		523923ED2BCF5C6B0054F9BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52ECF2E42C056BE900B902F3 /* Team */,
 				52FC48A32BF8317C0095EF4D /* Search */,
 				52FC489E2BF7EC120095EF4D /* Profile */,
 				523923F32BCF5CAB0054F9BD /* Modules */,
@@ -222,6 +225,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		52ECF2E42C056BE900B902F3 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
 		52FC489E2BF7EC120095EF4D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +348,7 @@
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
 				FE4E83722BF6F77500BE07E4 /* ResultCard.swift in Sources */,
+				52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
 				52FC48A52BF831BA0095EF4D /* SearchView.swift in Sources */,
 				FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */,
