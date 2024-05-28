@@ -32,6 +32,7 @@
 		FE1C56832BFD6AE600D105E3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1C56822BFD6AE600D105E3 /* Article.swift */; };
 		FE1C56862BFD6B3B00D105E3 /* dummyArticlesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1C56852BFD6B3B00D105E3 /* dummyArticlesList.swift */; };
 		FE1C56882BFD711B00D105E3 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1C56872BFD711B00D105E3 /* ArticlesView.swift */; };
+		FE44F94C2C056B5900824334 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44F94B2C056B5900824334 /* LeaderBoardView.swift */; };
 		FE4E83702BF6E64200BE07E4 /* DetailTeamCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */; };
 		FE4E83722BF6F77500BE07E4 /* ResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E83712BF6F77500BE07E4 /* ResultCard.swift */; };
 		FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */; };
@@ -70,6 +71,7 @@
 		FE1C56822BFD6AE600D105E3 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FE1C56852BFD6B3B00D105E3 /* dummyArticlesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyArticlesList.swift; sourceTree = "<group>"; };
 		FE1C56872BFD711B00D105E3 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
+		FE44F94B2C056B5900824334 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamCard.swift; sourceTree = "<group>"; };
 		FE4E83712BF6F77500BE07E4 /* ResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCard.swift; sourceTree = "<group>"; };
 		FEAB41FD2BEC5E9600170E54 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -109,20 +111,13 @@
 				52ECF2E42C056BE900B902F3 /* Team */,
 				52FC48A32BF8317C0095EF4D /* Search */,
 				52FC489E2BF7EC120095EF4D /* Profile */,
-				523923F32BCF5CAB0054F9BD /* Modules */,
 				523923F22BCF5CA40054F9BD /* Home */,
 				523923F12BCF5C9A0054F9BD /* Authentication */,
 				5252EEF82BE0760D00095F22 /* LoadingView.swift */,
 				FE1C56872BFD711B00D105E3 /* ArticlesView.swift */,
+				FE44F94B2C056B5900824334 /* LeaderBoardView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		523923EE2BCF5C720054F9BD /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		523923EF2BCF5C830054F9BD /* Services */ = {
@@ -160,13 +155,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		523923F32BCF5CAB0054F9BD /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		523BF1D72BCE1E3E003138DC = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +180,6 @@
 				5252EEFA2BE07AB800095F22 /* Components */,
 				523923F02BCF5C8C0054F9BD /* Helpers */,
 				523923EF2BCF5C830054F9BD /* Services */,
-				523923EE2BCF5C720054F9BD /* ViewModels */,
 				523923ED2BCF5C6B0054F9BD /* Views */,
 				523923EB2BCF5C470054F9BD /* Models */,
 				523BF1E32BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift */,
@@ -363,6 +350,7 @@
 				52783E482C0125A800B1A138 /* MatchEvent.swift in Sources */,
 				FEAB42002BEC5EB700170E54 /* TextFieldModifier.swift in Sources */,
 				52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */,
+				FE44F94C2C056B5900824334 /* LeaderBoardView.swift in Sources */,
 				52783E4A2C01674C00B1A138 /* JSONDecoder+CustomDate.swift in Sources */,
 				52CE67892C05538E001C5169 /* DateFormatter.swift in Sources */,
 				523BF1E42BCE1E3E003138DC /* ROLOSOFT_FRONTApp.swift in Sources */,
