@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>BF3691B9-10B6-4A0D-8D2E-FA883C271216</key>
+		<key>A58011E6-E3F1-4FF0-8C08-D3F4DE598D69</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>BF3691B9-10B6-4A0D-8D2E-FA883C271216.xcactivitylog</string>
+			<string>A58011E6-E3F1-4FF0-8C08-D3F4DE598D69.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -29,7 +29,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>1</integer>
+				<integer>2</integer>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>ROLOSOFT-FRONT project</string>
@@ -40,13 +40,13 @@
 			<key>signature</key>
 			<string>Build for Previews ROLOSOFT-FRONT</string>
 			<key>timeStartedRecording</key>
-			<real>738550590.55306196</real>
+			<real>738620533.44765306</real>
 			<key>timeStoppedRecording</key>
-			<real>738550591.71314096</real>
+			<real>738620534.61857998</real>
 			<key>title</key>
 			<string>Build for Previews ROLOSOFT-FRONT</string>
 			<key>uniqueIdentifier</key>
-			<string>BF3691B9-10B6-4A0D-8D2E-FA883C271216</string>
+			<string>A58011E6-E3F1-4FF0-8C08-D3F4DE598D69</string>
 		</dict>
 	</dict>
 </dict>

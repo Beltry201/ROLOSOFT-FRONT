@@ -12,10 +12,19 @@ struct ArticlesView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(articles, id: \.id) { article in
-                    NavigationLink(destination: Text("Hola")) {
-                        ArticleCard(title: article.title, imageUrl: article.imageURL, dateString: "5 hours ago")
+            
+            VStack(alignment: .leading) {
+                Text("Noticias importantes")
+                    .font(.title)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 20)
+                
+                // List of articles
+                List {
+                    ForEach(articles, id: \.id) { article in
+                        NavigationLink(destination: Text("Hola")) {
+                            ArticleCard(title: article.title, imageUrl: article.imageURL, dateString: "5 hours ago")
+                        }
                     }
                 }
             }

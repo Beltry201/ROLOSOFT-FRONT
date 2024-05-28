@@ -28,13 +28,11 @@ struct ContentView: View {
                             Image("Home")
                         }
                         .tag(Tab.home)
-
-                    NavigationView {
-                        Text("New articles View")
-                    }
-                    .tabItem {
-                        Image("News")
-                    }
+                    
+                    ArticlesView()
+                        .tabItem {
+                            Image("News")
+                        }
                     .tag(Tab.news)
 
                     NavigationView {
