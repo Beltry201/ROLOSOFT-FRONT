@@ -4,23 +4,7 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Buscar en el torneo"
-      },
-      {
-        "comment": "",
-        "key": "Search"
-      },
-      {
-        "comment": "",
-        "key": "Equipos"
-      },
-      {
-        "comment": "",
-        "key": "Jugadores"
-      },
-      {
-        "comment": "",
-        "key": "No encontramos al equipo %@"
+        "key": "%@ %@"
       },
       {
         "comment": "",
@@ -32,11 +16,19 @@
       },
       {
         "comment": "",
-        "key": "No encontramos al jugador %@"
+        "key": "Buscar en el torneo"
       },
       {
         "comment": "",
-        "key": "%@ %@"
+        "key": "Search"
+      },
+      {
+        "comment": "",
+        "key": "No encontramos al equipo %@"
+      },
+      {
+        "comment": "",
+        "key": "No encontramos al jugador %@"
       }
     ]
   },

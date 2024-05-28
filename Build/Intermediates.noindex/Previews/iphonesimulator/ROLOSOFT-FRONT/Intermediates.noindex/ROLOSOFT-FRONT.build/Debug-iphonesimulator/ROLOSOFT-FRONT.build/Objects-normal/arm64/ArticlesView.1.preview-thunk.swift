@@ -14,9 +14,9 @@ extension ArticlesView {
         NavigationView {
             
             VStack(alignment: .leading) {
-                Text(__designTimeString("#9836.[1].[1].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "Buscar en el torneo"))
+                Text(__designTimeString("#9836.[1].[1].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "Noticias importantes"))
                     .font(.title)
-                    .padding(.horizontal, __designTimeInteger("#9836.[1].[1].property.[0].[0].arg[0].value.[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 10))
+                    .padding(.horizontal, __designTimeInteger("#9836.[1].[1].property.[0].[0].arg[0].value.[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 30))
                     .padding(.vertical, __designTimeInteger("#9836.[1].[1].property.[0].[0].arg[0].value.[0].arg[1].value.[0].modifier[2].arg[1].value", fallback: 20))
                 
                 // List of articles
