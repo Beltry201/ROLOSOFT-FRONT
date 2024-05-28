@@ -10,7 +10,7 @@ import SwiftUI
 
 extension SearchView {
     @_dynamicReplacement(for: search()) private func __preview__search() {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 129)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 179)
         let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#3777.[1].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#3777.[1].[8].[0].value.[1]", fallback: "")
         let token = UserDefaults.standard.string(forKey: __designTimeString("#3777.[1].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#3777.[1].[8].[1].value.[1]", fallback: "")
         
@@ -112,18 +112,68 @@ extension SearchView {
             }
             .padding(.top)
             
-            List {
-                if selectedTab == 0 {
-                    ForEach(filteredTeams) { team in
-                        
-                        Text("\(team.name) \(team.number)")
-                    }
-                } else {
-                    ForEach(filteredPlayers) { player in
-                        Text("\(player.firstName) \(player.lastName)")
+            TabView(selection: $selectedTab) {
+                VStack {
+                    if filteredTeams.isEmpty {
+                        Text("No encontramos al equipo \(searchText)")
+                            .foregroundColor(.gray)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    } else {
+                        List(filteredTeams) { team in
+                            HStack {
+                                URLImage(url: team.logoUrl)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                                
+                                Spacer()
+                                
+                                Text(team.name)
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center) {
+                                    Text("\(team.points)") // Convert points to string
+                                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                                        .font(.caption)
+                                }
+                            }
+                        }
                     }
                 }
+                .tag(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
+                
+                VStack {
+                    if filteredPlayers.isEmpty {
+                        Text("No encontramos al jugador \(searchText)")
+                            .foregroundColor(.gray)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    } else {
+                        List(filteredPlayers) { player in
+                            HStack {
+                                URLImage(url: player.studentPhotoUrl)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: __designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                                
+                                Spacer()
+                                
+                                Text("\(player.firstName) \(player.lastName)")
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center) {
+                                    Text("\(player.greenCards)")
+                                    Text(__designTimeString("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].arg[0].value.[0].[1].[0].arg[1].value.[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                                        .font(.caption)
+                                }
+                            }
+                        }
+                    }
+                }
+                .tag(__designTimeInteger("#3777.[1].[7].property.[0].[0].arg[1].value.[3].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
         .navigationTitle(__designTimeString("#3777.[1].[7].property.[0].[0].modifier[0].arg[0].value", fallback: "Search"))
         .onAppear {

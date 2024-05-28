@@ -106,18 +106,68 @@ struct SearchView: View {
             }
             .padding(.top)
             
-            List {
-                if selectedTab == 0 {
-                    ForEach(filteredTeams) { team in
-                        
-                        Text("\(team.name) \(team.number)")
-                    }
-                } else {
-                    ForEach(filteredPlayers) { player in
-                        Text("\(player.firstName) \(player.lastName)")
+            TabView(selection: $selectedTab) {
+                VStack {
+                    if filteredTeams.isEmpty {
+                        Text("No encontramos al equipo \(searchText)")
+                            .foregroundColor(.gray)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    } else {
+                        List(filteredTeams) { team in
+                            HStack {
+                                URLImage(url: team.logoUrl)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50)
+                                
+                                Spacer()
+                                
+                                Text(team.name)
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center) {
+                                    Text("\(team.points)") // Convert points to string
+                                    Text("puntos")
+                                        .font(.caption)
+                                }
+                            }
+                        }
                     }
                 }
+                .tag(0)
+                
+                VStack {
+                    if filteredPlayers.isEmpty {
+                        Text("No encontramos al jugador \(searchText)")
+                            .foregroundColor(.gray)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    } else {
+                        List(filteredPlayers) { player in
+                            HStack {
+                                URLImage(url: player.studentPhotoUrl)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50)
+                                
+                                Spacer()
+                                
+                                Text("\(player.firstName) \(player.lastName)")
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center) {
+                                    Text("\(player.greenCards)")
+                                    Text("puntos")
+                                        .font(.caption)
+                                }
+                            }
+                        }
+                    }
+                }
+                .tag(1)
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
         .navigationTitle("Search")
         .onAppear {
