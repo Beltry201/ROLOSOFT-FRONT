@@ -14,7 +14,7 @@ struct LeaderBoardTeam: Identifiable {
     let d: Int
     let e: Int
     let v: Int
-    let isMyMatch: Bool
+    let isMyTeam: Bool
 }
 
 struct LeaderBoardView: View {
@@ -22,10 +22,10 @@ struct LeaderBoardView: View {
     @StateObject var apiService = APIService()
     
     struct ListItemBg: ViewModifier {
-        var isMyMatch: Bool? = false
+        var isMyTeam: Bool? = false
         
         func body(content: Content) -> some View {
-            if let isMyMatch = isMyMatch, isMyMatch {
+            if let isMyTeam = isMyTeam, isMyTeam {
                 return AnyView(content
                     .listRowBackground(LinearGradient(gradient: Gradient(colors: [Color(red: 0.854, green: 0.000, blue: 0.176, opacity: 0.85), Color(red: 0.882, green: 0.341, blue: 0.008, opacity: 0.85)]), startPoint: .bottom, endPoint: .top))
                 )
@@ -56,29 +56,29 @@ struct LeaderBoardView: View {
                     HStack {
                         Text("\(index + 1)")
                             .font(.headline)
-                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
                         URLImage(url: teams[index].logo)
                             .frame(width: 30, height: 30)
                             .cornerRadius(8)
                             .clipped()
                         Text(teams[index].name)
                             .font(.headline)
-                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
                         Spacer()
                         Text("\(teams[index].d)")
                             .font(.subheadline)
-                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
                         Spacer()
                         Text("\(teams[index].e)")
                             .font(.subheadline)
-                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
                         Spacer()
                         Text("\(teams[index].v)")
                             .font(.subheadline)
-                            .foregroundColor(teams[index].isMyMatch ? .white : .black)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
                     }
                     .padding()
-                    .modifier(ListItemBg(isMyMatch: teams[index].isMyMatch))
+                    .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
                     .cornerRadius(8)
                     .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
                 }
@@ -104,7 +104,7 @@ struct LeaderBoardView: View {
                         d: team.defeats,
                         e: team.draws,
                         v: team.victories,
-                        isMyMatch: false // Update based on your criteria
+                        isMyTeam: false // Update based on your criteria
                     )
                 }
             case .failure(let error):
