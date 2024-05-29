@@ -34,6 +34,7 @@
 		FE1C56862BFD6B3B00D105E3 /* dummyArticlesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1C56852BFD6B3B00D105E3 /* dummyArticlesList.swift */; };
 		FE1C56882BFD711B00D105E3 /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1C56872BFD711B00D105E3 /* ArticlesView.swift */; };
 		FE264D652C06AD0D00C0C4A6 /* GoalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE264D642C06AD0D00C0C4A6 /* GoalTable.swift */; };
+		FE264D672C06B62100C0C4A6 /* GeneralTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE264D662C06B62100C0C4A6 /* GeneralTable.swift */; };
 		FE44F94C2C056B5900824334 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44F94B2C056B5900824334 /* LeaderBoardView.swift */; };
 		FE4E83702BF6E64200BE07E4 /* DetailTeamCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */; };
 		FE4E83722BF6F77500BE07E4 /* ResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E83712BF6F77500BE07E4 /* ResultCard.swift */; };
@@ -75,6 +76,7 @@
 		FE1C56852BFD6B3B00D105E3 /* dummyArticlesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyArticlesList.swift; sourceTree = "<group>"; };
 		FE1C56872BFD711B00D105E3 /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
 		FE264D642C06AD0D00C0C4A6 /* GoalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTable.swift; sourceTree = "<group>"; };
+		FE264D662C06B62100C0C4A6 /* GeneralTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTable.swift; sourceTree = "<group>"; };
 		FE44F94B2C056B5900824334 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 		FE4E836F2BF6E64200BE07E4 /* DetailTeamCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamCard.swift; sourceTree = "<group>"; };
 		FE4E83712BF6F77500BE07E4 /* ResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCard.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				FE4E83712BF6F77500BE07E4 /* ResultCard.swift */,
 				52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */,
 				FE264D642C06AD0D00C0C4A6 /* GoalTable.swift */,
+				FE264D662C06B62100C0C4A6 /* GeneralTable.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,
 				529AA5902C068B8A00201125 /* LeaderBoard.swift in Sources */,
 				5255745D2BD8521E00881C57 /* HomeView.swift in Sources */,
+				FE264D672C06B62100C0C4A6 /* GeneralTable.swift in Sources */,
 				FE4E83722BF6F77500BE07E4 /* ResultCard.swift in Sources */,
 				52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
