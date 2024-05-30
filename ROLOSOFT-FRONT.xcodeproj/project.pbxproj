@@ -24,6 +24,7 @@
 		529AA5902C068B8A00201125 /* LeaderBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529AA58F2C068B8A00201125 /* LeaderBoard.swift */; };
 		52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F72BD5A39600DD0410 /* APIService.swift */; };
 		52CBB6FA2BD5A41600DD0410 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBB6F92BD5A41600DD0410 /* UserProfile.swift */; };
+		52CC57582C06C29D0019A55E /* ScoringTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC57572C06C29D0019A55E /* ScoringTable.swift */; };
 		52CE67872C054FC1001C5169 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67862C054FC1001C5169 /* School.swift */; };
 		52CE67892C05538E001C5169 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67882C05538E001C5169 /* DateFormatter.swift */; };
 		52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */; };
@@ -66,6 +67,7 @@
 		529AA58F2C068B8A00201125 /* LeaderBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoard.swift; sourceTree = "<group>"; };
 		52CBB6F72BD5A39600DD0410 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		52CBB6F92BD5A41600DD0410 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		52CC57572C06C29D0019A55E /* ScoringTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringTable.swift; sourceTree = "<group>"; };
 		52CE67862C054FC1001C5169 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		52CE67882C05538E001C5169 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				FE1C56822BFD6AE600D105E3 /* Article.swift */,
 				52783E472C0125A800B1A138 /* MatchEvent.swift */,
 				52CE67862C054FC1001C5169 /* School.swift */,
+				52CC57572C06C29D0019A55E /* ScoringTable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				FEFE60232BF304F300816EC7 /* ImageLoader.swift in Sources */,
 				FE264D652C06AD0D00C0C4A6 /* GoalTable.swift in Sources */,
 				5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */,
+				52CC57582C06C29D0019A55E /* ScoringTable.swift in Sources */,
 				FE1C56862BFD6B3B00D105E3 /* dummyArticlesList.swift in Sources */,
 				5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */,
 				523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */,

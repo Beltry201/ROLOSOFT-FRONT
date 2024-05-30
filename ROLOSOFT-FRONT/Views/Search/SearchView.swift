@@ -68,30 +68,30 @@ struct SearchView: View {
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .onChange(of: selectedTab) { newValue, oldValue in
-                    search()
+                    Task {
+                        await search()
+                    }
                 }
                 .padding(.top, -8) // Adjust negative top padding to align content properly
             }
             .onAppear {
-                search()
+                Task {
+                    await search()
+                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 
-    private func search() {
+    private func search() async {
         let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
         let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
 
-        print("\n-- TID:", tournamentId)
-        print("\n-- TOKEN:", token)
-
         apiService.searchStudentsAndSchools(tournamentId: tournamentId, token: token, query: searchText) { result in
             DispatchQueue.main.async {
-                print("\n-- RESULT:", result)
                 switch result {
                 case .success(let data):
-                    print("\n-- DATA: ", data)
+                    print("\n-- INITIAL SEARCH DATA: ", data)
                     self.teams = data.schools
                     self.players = data.students
                 case .failure(let error):
@@ -118,7 +118,9 @@ struct SearchHeader: View {
 
             HStack {
                 TextField("Search", text: $searchText, onCommit: {
-                    search()
+                    Task {
+                        await search()
+                    }
                 })
                 .padding(7)
                 .padding(.horizontal, 25)
@@ -134,7 +136,9 @@ struct SearchHeader: View {
                         if !searchText.isEmpty {
                             Button(action: {
                                 self.searchText = ""
-                                search() // Perform search with empty text
+                                Task {
+                                    await search()
+                                }
                             }) {
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
@@ -164,19 +168,15 @@ struct SearchHeader: View {
         }
     }
 
-    private func search() {
+    private func search() async {
         let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
         let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
 
-        print("\n-- TID:", tournamentId)
-        print("\n-- TOKEN:", token)
-
         apiService.searchStudentsAndSchools(tournamentId: tournamentId, token: token, query: searchText) { result in
             DispatchQueue.main.async {
-                print("\n-- RESULT:", result)
                 switch result {
                 case .success(let data):
-                    print("\n-- DATA: ", data)
+                    print("\n-- SEARCH DATA: ", data)
                     self.teams = data.schools
                     self.players = data.students
                 case .failure(let error):

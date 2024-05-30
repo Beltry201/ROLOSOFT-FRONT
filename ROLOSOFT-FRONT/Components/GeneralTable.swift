@@ -18,9 +18,8 @@ struct GeneralTableTeam: Identifiable {
 }
 
 struct GeneralTable: View {
-    @State private var teams: [GeneralTableTeam] = []
-    @StateObject var apiService = APIService()
-    
+    var teams: [GeneralTableTeam]
+
     struct ListItemBg: ViewModifier {
         var isMyTeam: Bool? = false
         
@@ -38,82 +37,55 @@ struct GeneralTable: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
+            HStack {
+                Text("Equipo")
+                Spacer()
+                Text("D")
+                Spacer()
+                Text("E")
+                Spacer()
+                Text("V")
+            }
+            .padding()
+            .font(.headline)
+            
+            List(teams.indices, id: \.self) { index in
                 HStack {
-                    Text("Equipo")
+                    Text("\(index + 1)")
+                        .font(.headline)
+                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                    URLImage(url: teams[index].logo)
+                        .frame(width: 30, height: 30)
+                        .cornerRadius(8)
+                        .clipped()
+                    Text(teams[index].name)
+                        .font(.headline)
+                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
                     Spacer()
-                    Text("D")
+                    Text("\(teams[index].d)")
+                        .font(.subheadline)
+                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
                     Spacer()
-                    Text("E")
+                    Text("\(teams[index].e)")
+                        .font(.subheadline)
+                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
                     Spacer()
-                    Text("V")
+                    Text("\(teams[index].v)")
+                        .font(.subheadline)
+                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
                 }
                 .padding()
-                .font(.headline)
-                
-                List(teams.indices, id: \.self) { index in
-                    HStack {
-                        Text("\(index + 1)")
-                            .font(.headline)
-                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                        URLImage(url: teams[index].logo)
-                            .frame(width: 30, height: 30)
-                            .cornerRadius(8)
-                            .clipped()
-                        Text(teams[index].name)
-                            .font(.headline)
-                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                        Spacer()
-                        Text("\(teams[index].d)")
-                            .font(.subheadline)
-                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                        Spacer()
-                        Text("\(teams[index].e)")
-                            .font(.subheadline)
-                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                        Spacer()
-                        Text("\(teams[index].v)")
-                            .font(.subheadline)
-                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                    }
-                    .padding()
-                    .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
-                    .cornerRadius(8)
-                    .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
-                }
-                .listStyle(.inset)
-            }.onAppear{loadLeaderBoard()}
-        }
-    }
-    
-    private func loadLeaderBoard() {
-        let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
-        let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
-
-        print("\n-- TID:", tournamentId)
-        print("\n-- TOKEN:", token)
-        
-        apiService.fetchLeaderBoard(tournamentId: tournamentId, token: token) { result in
-            switch result {
-            case .success(let teamData):
-                self.teams = teamData.map { team in
-                    GeneralTableTeam(
-                        name: team.team,
-                        logo: team.photoUrl,
-                        d: team.defeats,
-                        e: team.draws,
-                        v: team.victories,
-                        isMyTeam: false
-                    )
-                }
-            case .failure(let error):
-                print("Error fetching leaderboard: \(error)")
+                .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
+                .cornerRadius(8)
+                .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
             }
         }
     }
 }
 
-#Preview {
-    GeneralTable()
+struct GeneralTable_Previews: PreviewProvider {
+    static var previews: some View {
+        GeneralTable(teams: [])
+    }
 }
