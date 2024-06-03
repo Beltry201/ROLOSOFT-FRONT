@@ -8,7 +8,7 @@
 import Foundation
 
 class APIService: ObservableObject {
-    private let baseURL = URL(string: "http://34.125.102.164:3000")
+    private let baseURL = URL(string: "http://34.118.243.66:3000")
     
     func fetchScoringTable(tournamentId: String, token: String, completion: @escaping (Result<[ScoringTableRow], Error>) -> Void) {
         let endpoint = "/tournaments/\(tournamentId)/scoring-table"

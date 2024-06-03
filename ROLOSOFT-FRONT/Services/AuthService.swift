@@ -8,7 +8,7 @@
 import Foundation
 
 class AuthService: ObservableObject {
-    private let baseURL = URL(string: "http://34.125.102.164:3000")
+    private let baseURL = URL(string: "http://34.118.243.66:3000")
     public let jwtTokenKey = "jwtToken"
     public let tournamentIdKey = "tournamentId"
     
