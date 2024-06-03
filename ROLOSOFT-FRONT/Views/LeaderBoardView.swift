@@ -48,6 +48,7 @@ struct LeaderBoardView: View {
                         .tag(1)
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    .padding(.top, -8)
                 } else {
                     ProgressView("Loading data...")
                 }

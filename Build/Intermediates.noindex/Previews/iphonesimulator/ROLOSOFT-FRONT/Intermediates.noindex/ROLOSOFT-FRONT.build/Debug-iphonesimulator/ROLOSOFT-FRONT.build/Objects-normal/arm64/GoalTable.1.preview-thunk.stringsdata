@@ -4,15 +4,15 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Jugador"
-      },
-      {
-        "comment": "",
-        "key": "Goles"
-      },
-      {
-        "comment": "",
         "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "gol"
+      },
+      {
+        "comment": "",
+        "key": "goles"
       }
     ]
   },

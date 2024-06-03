@@ -38,47 +38,47 @@ struct GeneralTable: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Equipo")
-                Spacer()
-                Text("D")
-                Spacer()
-                Text("E")
-                Spacer()
-                Text("V")
-            }
-            .padding()
-            .font(.headline)
-            
-            List(teams.indices, id: \.self) { index in
+            List {
                 HStack {
-                    Text("\(index + 1)")
-                        .font(.headline)
-                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                    URLImage(url: teams[index].logo)
-                        .frame(width: 30, height: 30)
-                        .cornerRadius(8)
-                        .clipped()
-                    Text(teams[index].name)
-                        .font(.headline)
-                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                    Text("Equipo").padding()
                     Spacer()
-                    Text("\(teams[index].d)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                    Spacer()
-                    Text("\(teams[index].e)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
-                    Spacer()
-                    Text("\(teams[index].v)")
-                        .font(.subheadline)
-                        .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                    Text("D").padding(.horizontal, 18)
+                    Text("E").padding(.horizontal, 18)
+                    Text("V").padding(.horizontal, 18)
                 }
-                .padding()
-                .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
-                .cornerRadius(8)
+                .font(.headline)
                 .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                
+                ForEach(teams.indices, id: \.self) { index in
+                    HStack {
+                        Text("\(index + 1)")
+                            .font(.headline)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                        URLImage(url: teams[index].logo)
+                            .frame(width: 30, height: 30)
+                            .cornerRadius(8)
+                            .clipped()
+                        Text(teams[index].name)
+                            .font(.headline)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].d)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].e)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                        Spacer()
+                        Text("\(teams[index].v)")
+                            .font(.subheadline)
+                            .foregroundColor(teams[index].isMyTeam ? .white : .black)
+                    }
+                    .padding()
+                    .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
+                    .cornerRadius(8)
+                    .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                }
             }
         }
     }

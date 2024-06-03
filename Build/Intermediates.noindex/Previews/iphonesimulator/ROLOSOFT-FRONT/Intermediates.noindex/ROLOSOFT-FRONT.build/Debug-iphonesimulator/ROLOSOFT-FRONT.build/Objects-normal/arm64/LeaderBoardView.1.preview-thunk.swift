@@ -10,7 +10,7 @@ import SwiftUI
 
 extension LeaderBoardView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 148)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 149)
         LeaderBoardView()
     
 #sourceLocation()
@@ -19,22 +19,22 @@ extension LeaderBoardView_Previews {
 
 extension LeaderBoardHeader {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 127)
-        VStack(alignment: .leading, spacing: __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[1].value", fallback: 0)) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 128)
+        VStack(alignment: .leading, spacing: __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[1].value", fallback: 0)) {
             HStack {
                 Spacer()
-                TabBarButton(title: __designTimeString("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[0].value", fallback: "General"), isSelected: selectedTab == __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
-                    selectedTab = __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
+                TabBarButton(title: __designTimeString("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[0].value", fallback: "Tabla general"), isSelected: selectedTab == __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
+                    selectedTab = __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
                 }
-                .padding(.horizontal, __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
-                TabBarButton(title: __designTimeString("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[0].value", fallback: "Goals"), isSelected: selectedTab == __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
-                    selectedTab = __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
+                TabBarButton(title: __designTimeString("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[0].value", fallback: "Tabla de goleo"), isSelected: selectedTab == __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
+                    selectedTab = __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
                 }
-                .padding(.horizontal, __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
             }
-            .padding(.top, __designTimeInteger("#3994.[2].[1].property.[0].[0].arg[2].value.[0].modifier[0].arg[1].value", fallback: 8))
+            .padding(.top, __designTimeInteger("#7814.[2].[1].property.[0].[0].arg[2].value.[0].modifier[0].arg[1].value", fallback: 8))
         }
     
 #sourceLocation()
@@ -43,9 +43,9 @@ extension LeaderBoardHeader {
 
 extension LeaderBoardView {
     @_dynamicReplacement(for: loadData()) private func __preview__loadData() {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 63)
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#3994.[1].[6].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#3994.[1].[6].[0].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#3994.[1].[6].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#3994.[1].[6].[1].value.[1]", fallback: "")
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 64)
+        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#7814.[1].[6].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#7814.[1].[6].[0].value.[1]", fallback: "")
+        let token = UserDefaults.standard.string(forKey: __designTimeString("#7814.[1].[6].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#7814.[1].[6].[1].value.[1]", fallback: "")
         
         let group = DispatchGroup()
         
@@ -64,7 +64,7 @@ extension LeaderBoardView {
                             d: team.defeats,
                             e: team.draws,
                             v: team.victories,
-                            isMyTeam: __designTimeBoolean("#3994.[1].[6].[6].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[0].[0]", fallback: false)
+                            isMyTeam: __designTimeBoolean("#7814.[1].[6].[6].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[0].[0]", fallback: false)
                         )
                     }
                 case .failure(let error):
@@ -97,7 +97,7 @@ extension LeaderBoardView {
         group.notify(queue: .main) {
             self.generalTeams = fetchedTeams
             self.scoringTable = fetchedPlayers
-            self.isDataLoaded = __designTimeBoolean("#3994.[1].[6].[9].modifier[0].arg[1].value.[2].[0]", fallback: true)
+            self.isDataLoaded = __designTimeBoolean("#7814.[1].[6].[9].modifier[0].arg[1].value.[2].[0]", fallback: true)
         }
     
 #sourceLocation()
@@ -110,13 +110,13 @@ extension LeaderBoardView {
         NavigationView {
             VStack {
                 LeaderBoardHeader(selectedTab: $selectedTab)
-                    .padding(.top, __designTimeInteger("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8))
+                    .padding(.top, __designTimeInteger("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8))
                 if isDataLoaded {
                     TabView(selection: $selectedTab) {
                         // Tab 1: GeneralTable
                         VStack {
                             if generalTeams.isEmpty {
-                                Text(__designTimeString("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
+                                Text(__designTimeString("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
                                     .foregroundColor(.gray)
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
@@ -124,12 +124,12 @@ extension LeaderBoardView {
                                 GeneralTable(teams: generalTeams)
                             }
                         }
-                        .tag(__designTimeInteger("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
+                        .tag(__designTimeInteger("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
                         
                         // Tab 2: GoalTable
                         VStack {
                             if scoringTable.isEmpty {
-                                Text(__designTimeString("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
+                                Text(__designTimeString("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
                                     .foregroundColor(.gray)
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
@@ -137,11 +137,12 @@ extension LeaderBoardView {
                                 GoalTable(players: scoringTable)
                             }
                         }
-                        .tag(__designTimeInteger("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
+                        .tag(__designTimeInteger("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    .padding(.top, __designTimeInteger("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].modifier[1].arg[1].value", fallback: -8))
                 } else {
-                    ProgressView(__designTimeString("#3994.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: "Loading data..."))
+                    ProgressView(__designTimeString("#7814.[1].[5].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: "Loading data..."))
                 }
             }
             .onAppear {

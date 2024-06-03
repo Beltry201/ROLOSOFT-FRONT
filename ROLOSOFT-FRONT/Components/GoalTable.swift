@@ -36,16 +36,6 @@ struct GoalTable: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Text("Jugador")
-                Spacer()
-                Text("Goles")
-                Spacer()
-            }
-            .padding()
-            .font(.headline)
-
             List(players.indices, id: \.self) { index in
                 HStack {
                     Text("\(index + 1)")
@@ -61,9 +51,12 @@ struct GoalTable: View {
                         .font(.headline)
                         .foregroundColor(.black)
                     Spacer()
-                    Text("\(players[index].goals)")
-                        .font(.subheadline)
-                        .foregroundColor(.black)
+                    
+                    VStack(alignment: .center) {
+                        Text("\(players[index].goals)")
+                        Text(players[index].goals == 1 ? "gol" : "goles")
+                            .font(.caption)
+                    }
                 }
                 .padding()
                 .modifier(ListItemBg(isMyPlayer: false)) // Adjust as necessary
@@ -77,7 +70,7 @@ struct GoalTable: View {
 struct GoalTable_Previews: PreviewProvider {
     static var previews: some View {
         GoalTable(players: [
-            GoalTablePlayer(imgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", name: "Nombre Jugador", goals: 8, teamImgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"),
+            GoalTablePlayer(imgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", name: "Nombre Jugador", goals: 1, teamImgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"),
             GoalTablePlayer(imgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", name: "Nombre Jugador", goals: 8, teamImgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"),
             GoalTablePlayer(imgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", name: "Nombre Jugador", goals: 8, teamImgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"),
             GoalTablePlayer(imgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", name: "Nombre Jugador", goals: 8, teamImgUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png")
