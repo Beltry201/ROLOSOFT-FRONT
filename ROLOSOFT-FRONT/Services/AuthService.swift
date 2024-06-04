@@ -11,6 +11,7 @@ class AuthService: ObservableObject {
     private let baseURL = URL(string: "http://34.118.243.66:3000")
     public let jwtTokenKey = "jwtToken"
     public let tournamentIdKey = "tournamentId"
+    public let teamIdKey = "teamId"
     
     @Published var isAuthenticated = false
     @Published var isLoading = false
@@ -77,6 +78,7 @@ class AuthService: ObservableObject {
                     
                     guard let dataDict = jsonResponse["data"] as? [String: Any],
                           let jwt = dataDict["token"] as? String,
+                          let teamId = dataDict["schoolId"] as? String,
                           let tournamentId = dataDict["tournamentId"] as? String else {
                             print("Invalid data format")
                             completion(.failure(.unknown))
@@ -85,11 +87,8 @@ class AuthService: ObservableObject {
                        
                     // Store JWT token and tournament ID in UserDefaults
                     UserDefaults.standard.set(jwt, forKey: self.jwtTokenKey)
+                    UserDefaults.standard.set(teamId, forKey: self.teamIdKey)
                     UserDefaults.standard.set(tournamentId, forKey: self.tournamentIdKey)
-                       
-                    
-                    // Store JWT token in UserDefaults
-                    UserDefaults.standard.set(jwt, forKey: self.jwtTokenKey)
                     
                     // Fetch user profile
                     self.fetchUserProfile(jwt: jwt) { result in

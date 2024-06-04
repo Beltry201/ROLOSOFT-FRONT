@@ -10,7 +10,7 @@ import SwiftUI
 
 extension HomeView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 187)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 200)
         let apiService = APIService() // Initialize APIService instance
         let authService = AuthService()
         return HomeView(authService: authService, apiService: apiService)
@@ -21,15 +21,15 @@ extension HomeView_Previews {
 
 extension NavigationBarItemView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 171)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 184)
         HStack {
-            NavigationLink(destination: Text(__designTimeString("#4124.[7].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
-                Image(systemName: __designTimeString("#4124.[7].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
+            NavigationLink(destination: Text(__designTimeString("#1311.[4].[0].property.[0].[0].arg[0].value.[0].arg[0].value.arg[0].value", fallback: "Profile"))) {
+                Image(systemName: __designTimeString("#1311.[4].[0].property.[0].[0].arg[0].value.[0].arg[1].value.[0].arg[0].value", fallback: "person"))
             }
             .padding(.horizontal)
             
-            NavigationLink(destination: Text(__designTimeString("#4124.[7].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
-                Image(systemName: __designTimeString("#4124.[7].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
+            NavigationLink(destination: Text(__designTimeString("#1311.[4].[0].property.[0].[0].arg[0].value.[1].arg[0].value.arg[0].value", fallback: "Settings"))) {
+                Image(systemName: __designTimeString("#1311.[4].[0].property.[0].[0].arg[0].value.[1].arg[1].value.[0].arg[0].value", fallback: "gear"))
             }
             .padding(.horizontal)
         }
@@ -40,9 +40,9 @@ extension NavigationBarItemView {
 
 extension BodyView {
     @_dynamicReplacement(for: formatDate(_:)) private func __preview__formatDate(_ date: Date) -> String {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 154)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 176)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = __designTimeString("#4124.[5].[4].[1].[0]", fallback: "h:mm a")
+        dateFormatter.dateFormat = __designTimeString("#1311.[3].[4].[1].[0]", fallback: "h:mm a")
         return dateFormatter.string(from: date)
     
 #sourceLocation()
@@ -51,7 +51,7 @@ extension BodyView {
 
 extension BodyView {
     @_dynamicReplacement(for: filteredEvents) private var __preview__filteredEvents: [MatchEvent] {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 148)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 170)
         events.filter { event in
             Calendar.current.isDate(event.dateTimeStart, inSameDayAs: selectedDate)
         }
@@ -62,21 +62,21 @@ extension BodyView {
 
 extension BodyView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 112)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 134)
         VStack {
             if filteredEvents.isEmpty {
                 List {
-                    Text(__designTimeString("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No hay partidos programados."))
+                    Text(__designTimeString("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[0].[0].arg[0].value.[0].arg[0].value", fallback: "No hay partidos programados."))
                         .foregroundColor(.gray)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .listRowBackground(Color.white)
                 .listRowInsets(.init(
-                    top: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
-                    leading: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
-                    bottom: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
-                    trailing: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
+                    top: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[0].value", fallback: 0),
+                    leading: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[1].value", fallback: 0),
+                    bottom: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[2].value", fallback: 8),
+                    trailing: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[0].[0].modifier[1].arg[0].value.arg[3].value", fallback: 0))
                     )
             } else {
                 List {
@@ -88,10 +88,10 @@ extension BodyView {
                         )
                     }
                     .listRowInsets(.init(
-                        top: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 0),
-                        leading: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 0),
-                        bottom: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[2].value", fallback: 8),
-                        trailing: __designTimeInteger("#4124.[5].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[3].value", fallback: 0))
+                        top: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: 0),
+                        leading: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 0),
+                        bottom: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[2].value", fallback: 8),
+                        trailing: __designTimeInteger("#1311.[3].[2].property.[0].[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[0].arg[0].value.arg[3].value", fallback: 0))
                     )
                 }
             }
@@ -103,16 +103,16 @@ extension BodyView {
 
 extension HeaderView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 73)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 101)
         VStack(alignment: .center) {
             HStack {
-                Image(__designTimeString("#4124.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
+                Image(__designTimeString("#1311.[2].[5].property.[0].[0].arg[1].value.[0].arg[0].value.[0].arg[0].value", fallback: "frisa-logox4"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: __designTimeInteger("#4124.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
+                    .frame(height: __designTimeInteger("#1311.[2].[5].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[2].arg[0].value", fallback: 30))
                 Spacer()
                 
-                Image(systemName: __designTimeString("#4124.[4].[4].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
+                Image(systemName: __designTimeString("#1311.[2].[5].property.[0].[0].arg[1].value.[0].arg[0].value.[2].arg[0].value", fallback: "bell"))
                     .font(.title)
                     .foregroundColor(.blue)
             }
@@ -120,18 +120,13 @@ extension HeaderView {
     
             MatchCalendar(selectedDate: $selectedDate, events: events).padding()
             
-            // Replace MatchCard with DetailTeamCard
-            DetailTeamCard(
-                data: DetailTeamData(
-                    name: __designTimeString("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[0].value", fallback: "Independiente Santa Fé"), // Replace with actual team name
-                    logoImgUrl: __designTimeString("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[1].value", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Escudo_de_Independiente_Santa_Fe.png/150px-Escudo_de_Independiente_Santa_Fe.png"), // Replace with actual logo URL
-                    victories: __designTimeInteger("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[2].value", fallback: 10), // Replace with actual data
-                    ties: __designTimeInteger("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[3].value", fallback: 5), // Replace with actual data
-                    defeats: __designTimeInteger("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[4].value", fallback: 3), // Replace with actual data
-                    points: __designTimeInteger("#4124.[4].[4].property.[0].[0].arg[1].value.[2].arg[0].value.arg[5].value", fallback: 25) // Replace with actual data
-                )
-            )
-            .padding(.horizontal)
+            if let teamDetails = teamDetails {
+                DetailTeamCard(data: teamDetails)
+                    .padding(.horizontal)
+            } else {
+                Text(__designTimeString("#1311.[2].[5].property.[0].[0].arg[1].value.[2].[1].[0].arg[0].value", fallback: "Loading team details..."))
+                    .padding(.horizontal)
+            }
         }
         .padding(.bottom)
     
@@ -140,8 +135,49 @@ extension HeaderView {
 }
 
 extension HomeView {
+    @_dynamicReplacement(for: fetchTeamDetails()) private func __preview__fetchTeamDetails() {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 57)
+        guard let jwt = UserDefaults.standard.string(forKey: authService.jwtTokenKey) else {
+            print("JWT token not available")
+            return
+        }
+        
+        guard let tournamentIdKey = UserDefaults.standard.string(forKey: authService.tournamentIdKey) else {
+            print("Tournament not available")
+            return
+        }
+        
+        guard let teamId = UserDefaults.standard.string(forKey: "teamId") else {
+            print("Team ID not available")
+            return
+        }
+
+        apiService.fetchTeamDetails(tournamentId: tournamentIdKey, teamId: teamId, token: jwt) { result in
+            switch result {
+            case .success(let details):
+                print(__designTimeString("#1311.[1].[8].[3].modifier[0].arg[3].value.[0].[0].[0].arg[0].value", fallback: "Team details fetched successfully"))
+                DispatchQueue.main.async {
+                    self.teamDetails = DetailTeamData(
+                        name: details.schoolName,
+                        logoImgUrl: __designTimeString("#1311.[1].[8].[3].modifier[0].arg[3].value.[0].[0].[1].modifier[0].arg[0].value.[0].[0]", fallback: ""), // Replace with actual logo URL if available
+                        victories: details.victories,
+                        ties: details.draws,
+                        defeats: details.defeats,
+                        points: details.points
+                    )
+                }
+            case .failure(let error):
+                print(__designTimeString("#1311.[1].[8].[3].modifier[0].arg[3].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch team details:"), error.localizedDescription)
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension HomeView {
     @_dynamicReplacement(for: fetchMatchEvents()) private func __preview__fetchMatchEvents() {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 41)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 32)
         // Check if JWT token exists in UserDefaults
         guard let jwt = UserDefaults.standard.string(forKey: authService.jwtTokenKey) else {
             print("JWT token not available")
@@ -156,12 +192,12 @@ extension HomeView {
         apiService.fetchMatchEvents(tournamentId: tournamentIdKey, token: jwt) { result in
             switch result {
             case .success(let events):
-                print(__designTimeString("#4124.[3].[6].[2].modifier[0].arg[2].value.[0].[0].[0].arg[0].value", fallback: "SUCCESS"))
+                print("SUCCESS: \(events)")
                 DispatchQueue.main.async {
                     self.events = events
                 }
             case .failure(let error):
-                print(__designTimeString("#4124.[3].[6].[2].modifier[0].arg[2].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch match events:"), error.localizedDescription)
+                print(__designTimeString("#1311.[1].[7].[2].modifier[0].arg[2].value.[0].[1].[0].arg[0].value", fallback: "Failed to fetch match events:"), error.localizedDescription)
             }
         }
     
@@ -171,15 +207,16 @@ extension HomeView {
 
 extension HomeView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 29)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Home/HomeView.swift", line: 19)
         NavigationView {
             VStack {
-                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate)
+                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate, teamDetails: $teamDetails)
                 BodyView(events: events, selectedDate: selectedDate)
             }
         }
         .onAppear {
             fetchMatchEvents()
+            fetchTeamDetails()
         }
     
 #sourceLocation()

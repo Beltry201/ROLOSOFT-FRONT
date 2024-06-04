@@ -10,6 +10,22 @@ import Foundation
 class APIService: ObservableObject {
     private let baseURL = URL(string: "http://34.118.243.66:3000")
     
+    func fetchTeamDetails(tournamentId: String, teamId: String,  token: String, completion: @escaping (Result<TeamDetails, Error>) -> Void) {
+        let endpoint = "/tournaments/\(tournamentId)/schools/\(teamId)/general-table"
+        getRequest(endpoint: endpoint, token: token) { (result: Result<TeamDetailsResponse, Error>) in
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func fetchScoringTable(tournamentId: String, token: String, completion: @escaping (Result<[ScoringTableRow], Error>) -> Void) {
         let endpoint = "/tournaments/\(tournamentId)/scoring-table"
         getRequest(endpoint: endpoint, token: token) { (result: Result<ScoringTableResponse, Error>) in
@@ -147,15 +163,4 @@ enum APIError: Error {
     case notFound
     case serverError
     case custom(String)
-}
-
-struct SearchResponse: Decodable {
-    let success: Bool
-    let message: String
-    let data: SearchData
-}
-
-struct SearchData: Decodable {
-    let schools: [School]
-    let students: [Student]
 }

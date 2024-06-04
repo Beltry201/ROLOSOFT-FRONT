@@ -11,7 +11,7 @@ import SwiftUI
 extension TeamDetailView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Team/TeamDetailView.swift", line: 12)
-        Text(/*@START_MENU_TOKEN@*/__designTimeString("#9634.[1].[0].property.[0].[0].arg[0].value", fallback: "Hello, World!")/*@END_MENU_TOKEN@*/)
+        Text(/*@START_MENU_TOKEN@*/__designTimeString("#1232.[1].[0].property.[0].[0].arg[0].value", fallback: "Hello, World!")/*@END_MENU_TOKEN@*/)
     
 #sourceLocation()
     }

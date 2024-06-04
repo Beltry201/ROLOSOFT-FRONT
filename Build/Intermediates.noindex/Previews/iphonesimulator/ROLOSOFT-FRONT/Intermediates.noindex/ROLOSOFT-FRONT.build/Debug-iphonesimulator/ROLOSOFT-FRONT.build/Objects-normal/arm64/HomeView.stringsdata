@@ -4,6 +4,10 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "Loading team details..."
+      },
+      {
+        "comment": "",
         "key": "No hay partidos programados."
       },
       {

@@ -7,33 +7,24 @@
 
 import SwiftUI
 
-// Create dummy team data
-let teamA = ScoreCardTeamData(
-    name: "IDS",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png"
-)
-
-let teamB = ScoreCardTeamData(
-    name: "AN",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Atlético_Nacional.png"
-)
-
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var authService: AuthService
     @ObservedObject var apiService: APIService
     @State private var events: [MatchEvent] = []
     @State private var selectedDate: Date = Date()
+    @State private var teamDetails: DetailTeamData? = nil
     
     var body: some View {
         NavigationView {
             VStack {
-                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate)
+                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate, teamDetails: $teamDetails)
                 BodyView(events: events, selectedDate: selectedDate)
             }
         }
         .onAppear {
             fetchMatchEvents()
+            fetchTeamDetails()
         }
     }
     
@@ -52,12 +43,48 @@ struct HomeView: View {
         apiService.fetchMatchEvents(tournamentId: tournamentIdKey, token: jwt) { result in
             switch result {
             case .success(let events):
-                print("SUCCESS")
+                print("SUCCESS: \(events)")
                 DispatchQueue.main.async {
                     self.events = events
                 }
             case .failure(let error):
                 print("Failed to fetch match events:", error.localizedDescription)
+            }
+        }
+    }
+    
+    private func fetchTeamDetails() {
+        guard let jwt = UserDefaults.standard.string(forKey: authService.jwtTokenKey) else {
+            print("JWT token not available")
+            return
+        }
+        
+        guard let tournamentIdKey = UserDefaults.standard.string(forKey: authService.tournamentIdKey) else {
+            print("Tournament not available")
+            return
+        }
+        
+        guard let teamId = UserDefaults.standard.string(forKey: "teamId") else {
+            print("Team ID not available")
+            return
+        }
+
+        apiService.fetchTeamDetails(tournamentId: tournamentIdKey, teamId: teamId, token: jwt) { result in
+            switch result {
+            case .success(let details):
+                print("Team details fetched successfully")
+                DispatchQueue.main.async {
+                    self.teamDetails = DetailTeamData(
+                        name: details.schoolName,
+                        logoImgUrl: "", // Replace with actual logo URL if available
+                        victories: details.victories,
+                        ties: details.draws,
+                        defeats: details.defeats,
+                        points: details.points
+                    )
+                }
+            case .failure(let error):
+                print("Failed to fetch team details:", error.localizedDescription)
             }
         }
     }
@@ -68,6 +95,7 @@ struct HeaderView: View {
     @ObservedObject var authService: AuthService
     @ObservedObject var apiService: APIService
     @Binding var selectedDate: Date
+    @Binding var teamDetails: DetailTeamData?
     
     var body: some View {
         VStack(alignment: .center) {
@@ -86,23 +114,17 @@ struct HeaderView: View {
     
             MatchCalendar(selectedDate: $selectedDate, events: events).padding()
             
-            // Replace MatchCard with DetailTeamCard
-            DetailTeamCard(
-                data: DetailTeamData(
-                    name: "Independiente Santa Fé", // Replace with actual team name
-                    logoImgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Escudo_de_Independiente_Santa_Fe.png/150px-Escudo_de_Independiente_Santa_Fe.png", // Replace with actual logo URL
-                    victories: 10, // Replace with actual data
-                    ties: 5, // Replace with actual data
-                    defeats: 3, // Replace with actual data
-                    points: 25 // Replace with actual data
-                )
-            )
-            .padding(.horizontal)
+            if let teamDetails = teamDetails {
+                DetailTeamCard(data: teamDetails)
+                    .padding(.horizontal)
+            } else {
+                Text("Loading team details...")
+                    .padding(.horizontal)
+            }
         }
         .padding(.bottom)
     }
 }
-
 
 struct BodyView: View {
     var events: [MatchEvent]
@@ -156,15 +178,6 @@ struct BodyView: View {
         return dateFormatter.string(from: date)
     }
 }
-
-
-
-let matchCardsData = [
-    (id: 1, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
-    (id: 2, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
-    (id: 3, teamA: teamA, teamB: teamB, dateString: "4:00 PM"),
-    (id: 4, teamA: teamA, teamB: teamB, dateString: "4:00 PM")
-]
 
 struct NavigationBarItemView: View {
     var body: some View {
