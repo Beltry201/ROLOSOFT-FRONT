@@ -13,6 +13,8 @@ struct LeaderBoardView: View {
     @State private var generalTeams: [GeneralTableTeam] = []
     @State private var scoringTable: [GoalTablePlayer] = []
     @State private var isDataLoaded = false
+    @State private var selectedTeamDetail: TeamDetails?
+    @State private var showTeamDetail = false
 
     var body: some View {
         NavigationView {
@@ -29,7 +31,9 @@ struct LeaderBoardView: View {
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
                             } else {
-                                GeneralTable(teams: generalTeams)
+                                GeneralTable(teams: generalTeams) { team in
+                                    fetchTeamDetail(teamId: team.id.uuidString)
+                                }
                             }
                         }
                         .tag(0)
@@ -55,6 +59,11 @@ struct LeaderBoardView: View {
             }
             .onAppear {
                 loadData()
+            }
+            .sheet(isPresented: $showTeamDetail) {
+                if let teamDetail = selectedTeamDetail {
+                    TeamDetailView(teamDetails: teamDetail)
+                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -115,6 +124,25 @@ struct LeaderBoardView: View {
             self.generalTeams = fetchedTeams
             self.scoringTable = fetchedPlayers
             self.isDataLoaded = true
+        }
+    }
+
+    private func fetchTeamDetail(teamId: String) {
+        
+        print("\n-- LOOKING FOR TEAM: \(teamId)")
+        let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
+        let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+
+        apiService.fetchTeamDetails(tournamentId: tournamentId, teamId: teamId, token: token) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let teamDetail):
+                    self.selectedTeamDetail = teamDetail
+                    self.showTeamDetail = true
+                case .failure(let error):
+                    print("Error fetching team details: \(error)")
+                }
+            }
         }
     }
 }

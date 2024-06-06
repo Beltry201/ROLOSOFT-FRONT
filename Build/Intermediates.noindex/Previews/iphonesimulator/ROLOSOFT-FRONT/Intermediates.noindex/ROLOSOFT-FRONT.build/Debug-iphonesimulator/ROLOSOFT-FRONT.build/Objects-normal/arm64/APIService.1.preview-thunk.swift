@@ -10,7 +10,7 @@ import Foundation
 
 extension APIService {
     @_dynamicReplacement(for: getRequest(endpoint:token:completion:)) private func __preview__getRequest<T: Decodable>(endpoint: String, token: String, completion: @escaping (Result<T, Error>) -> Void) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 51)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 97)
         guard let baseURL = baseURL else {
             completion(.failure(APIError.invalidBaseURL))
             return
@@ -18,9 +18,9 @@ extension APIService {
 
         let url = baseURL.appendingPathComponent(endpoint)
         var request = URLRequest(url: url)
-        request.httpMethod = __designTimeString("#11822.[1].[3].[3].[0]", fallback: "GET")
-        request.setValue(__designTimeString("#11822.[1].[3].[4].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#11822.[1].[3].[4].modifier[0].arg[1].value", fallback: "Content-Type"))
-        request.setValue("\(token)", forHTTPHeaderField: __designTimeString("#11822.[1].[3].[5].modifier[0].arg[1].value", fallback: "Authorization"))
+        request.httpMethod = __designTimeString("#6363.[1].[6].[3].[0]", fallback: "GET")
+        request.setValue(__designTimeString("#6363.[1].[6].[4].modifier[0].arg[0].value", fallback: "application/json"), forHTTPHeaderField: __designTimeString("#6363.[1].[6].[4].modifier[0].arg[1].value", fallback: "Content-Type"))
+        request.setValue("\(token)", forHTTPHeaderField: __designTimeString("#6363.[1].[6].[5].modifier[0].arg[1].value", fallback: "Authorization"))
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -72,11 +72,9 @@ extension APIService {
 
 extension APIService {
     @_dynamicReplacement(for: searchStudentsAndSchools(tournamentId:token:query:completion:)) private func __preview__searchStudentsAndSchools(tournamentId: String, token: String, query: String, completion: @escaping (Result<(schools: [School], students: [Student]), Error>) -> Void) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 31)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 79)
         let endpoint = "/tournaments/\(tournamentId)/search"
-        print("\n-- ENDPOINT: ", query)
         getRequest(endpoint: endpoint, token: token) { (result: Result<SearchResponse, Error>) in
-            print("\n--RESULT: ", result)
             switch result {
             case .success(let response):
                 if response.success {
@@ -95,10 +93,9 @@ extension APIService {
 
 extension APIService {
     @_dynamicReplacement(for: fetchMatchEvents(tournamentId:token:completion:)) private func __preview__fetchMatchEvents(tournamentId: String, token: String, completion: @escaping (Result<[MatchEvent], Error>) -> Void) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 14)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 63)
         let endpoint = "/tournaments/\(tournamentId)/matches"
         getRequest(endpoint: endpoint, token: token) { (result: Result<MatchEventResponse, Error>) in
-            print("\n-- RESULT MATCHES: ", result)
             switch result {
             case .success(let response):
                 if response.success {
@@ -115,8 +112,70 @@ extension APIService {
     }
 }
 
+extension APIService {
+    @_dynamicReplacement(for: fetchLeaderBoard(tournamentId:token:completion:)) private func __preview__fetchLeaderBoard(tournamentId: String, token: String, completion: @escaping (Result<[LeaderBoardTeamData], Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 47)
+        let endpoint = "/tournaments/\(tournamentId)/general-table"
+        getRequest(endpoint: endpoint, token: token) { (result: Result<LeaderBoardResponse, Error>) in
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension APIService {
+    @_dynamicReplacement(for: fetchScoringTable(tournamentId:token:completion:)) private func __preview__fetchScoringTable(tournamentId: String, token: String, completion: @escaping (Result<[ScoringTableRow], Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 31)
+        let endpoint = "/tournaments/\(tournamentId)/scoring-table"
+        getRequest(endpoint: endpoint, token: token) { (result: Result<ScoringTableResponse, Error>) in
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
+extension APIService {
+    @_dynamicReplacement(for: fetchTeamDetails(tournamentId:teamId:token:completion:)) private func __preview__fetchTeamDetails(tournamentId: String, teamId: String,  token: String, completion: @escaping (Result<TeamDetails, Error>) -> Void) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Services/APIService.swift", line: 14)
+        let endpoint = "/tournaments/\(tournamentId)/schools/\(teamId)/general-table"
+        getRequest(endpoint: endpoint, token: token) { (result: Result<TeamDetailsResponse, Error>) in
+            switch result {
+            case .success(let response):
+                
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    
+#sourceLocation()
+    }
+}
+
 import class ROLOSOFT_FRONT.APIService
 import enum ROLOSOFT_FRONT.APIError
-import struct ROLOSOFT_FRONT.SearchResponse
-import struct ROLOSOFT_FRONT.SearchData
 

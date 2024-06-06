@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct DetailTeamCard: View {
-    var data: DetailTeamData
+    var data: TeamDetails
     
     var body: some View {
         GeometryReader { geometry in
             HStack {
                 VStack {
-                    URLImage(url: data.logoImgUrl)
+                    URLImage(url: data.fullTeamPictureUrl)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120)
                 }
                 HStack {
                     VStack {
-                        Text(data.name)
+                        Text(data.schoolName)
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,7 +42,7 @@ struct DetailTeamCard: View {
                                     Text("E")
                                         .font(.subheadline)
                                         .foregroundColor(.white)
-                                    Text(String(data.ties))
+                                    Text(String(data.draws))
                                         .font(.title)
                                         .foregroundColor(.white)
                                 }
@@ -87,15 +87,6 @@ struct DetailTeamCard: View {
     }
 }
 
-struct DetailTeamData {
-    var name: String
-    var logoImgUrl: String
-    var victories: Int
-    var ties: Int
-    var defeats: Int
-    var points: Int
-}
-
 #Preview {
-    DetailTeamCard(data: DetailTeamData(name: "Nombre de equipo", logoImgUrl: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png", victories: 4, ties: 1, defeats: 2, points: 12))
+    DetailTeamCard(data: TeamDetails(tournamentId: "22e92ec7-3ac6-48f5-96f9-c455a6d1ae8c", schoolId: "1", schoolName: "Nombre de equipo", defeats: 2, draws: 1, victories: 4, goalsFor: 10, goalsAgainst: 5, goalDifference: 5, gamesPlayed: 7, points: 12, position: 3, shieldFileName: "escudo-depor-cali.png"))
 }

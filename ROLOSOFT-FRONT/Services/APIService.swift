@@ -15,6 +15,7 @@ class APIService: ObservableObject {
         getRequest(endpoint: endpoint, token: token) { (result: Result<TeamDetailsResponse, Error>) in
             switch result {
             case .success(let response):
+                
                 if response.success {
                     completion(.success(response.data))
                 } else {

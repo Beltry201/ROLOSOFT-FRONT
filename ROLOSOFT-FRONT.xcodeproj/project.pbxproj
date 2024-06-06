@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5202C0272C0FFC76007D0F11 /* GeneralTeamTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202C0262C0FFC76007D0F11 /* GeneralTeamTable.swift */; };
 		521FFE762C0FB84E00D091E7 /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FFE752C0FB84D00D091E7 /* TeamDetails.swift */; };
 		521FFE782C0FC72C00D091E7 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521FFE772C0FC72C00D091E7 /* Search.swift */; };
 		523923F52BCF5D2F0054F9BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523923F42BCF5D2F0054F9BD /* LoginView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5202C0262C0FFC76007D0F11 /* GeneralTeamTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTeamTable.swift; sourceTree = "<group>"; };
 		521A79442BE5BCFB000FBAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		521FFE752C0FB84D00D091E7 /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		521FFE772C0FC72C00D091E7 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				52CC57572C06C29D0019A55E /* ScoringTable.swift */,
 				521FFE752C0FB84D00D091E7 /* TeamDetails.swift */,
 				521FFE772C0FC72C00D091E7 /* Search.swift */,
+				5202C0262C0FFC76007D0F11 /* GeneralTeamTable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */,
 				52CC57582C06C29D0019A55E /* ScoringTable.swift in Sources */,
 				FE1C56862BFD6B3B00D105E3 /* dummyArticlesList.swift in Sources */,
+				5202C0272C0FFC76007D0F11 /* GeneralTeamTable.swift in Sources */,
 				FED1D3FB2C0FA51C008FA32A /* TeamDetailHead.swift in Sources */,
 				FE264D692C06B86100C0C4A6 /* GridPlayers.swift in Sources */,
 				5252EEFC2BE07ADD00095F22 /* MatchCalendar.swift in Sources */,

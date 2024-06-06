@@ -13,12 +13,18 @@ struct HomeView: View {
     @ObservedObject var apiService: APIService
     @State private var events: [MatchEvent] = []
     @State private var selectedDate: Date = Date()
-    @State private var teamDetails: DetailTeamData? = nil
+    @State private var teamDetails: TeamDetails? = nil
     
     var body: some View {
         NavigationView {
             VStack {
-                HeaderView(events: $events, authService: authService, apiService: apiService, selectedDate: $selectedDate, teamDetails: $teamDetails)
+                HeaderView(
+                    events: $events,
+                    authService: authService,
+                    apiService: apiService,
+                    selectedDate: $selectedDate,
+                    teamDetails: $teamDetails
+                )
                 BodyView(events: events, selectedDate: selectedDate)
             }
         }
@@ -72,15 +78,21 @@ struct HomeView: View {
         apiService.fetchTeamDetails(tournamentId: tournamentIdKey, teamId: teamId, token: jwt) { result in
             switch result {
             case .success(let details):
-                print("Team details fetched successfully")
                 DispatchQueue.main.async {
-                    self.teamDetails = DetailTeamData(
-                        name: details.schoolName,
-                        logoImgUrl: "", // Replace with actual logo URL if available
-                        victories: details.victories,
-                        ties: details.draws,
+                    self.teamDetails = TeamDetails(
+                        tournamentId: details.tournamentId, 
+                        schoolId: details.schoolId,
+                        schoolName: details.schoolName,
                         defeats: details.defeats,
-                        points: details.points
+                        draws: details.draws,
+                        victories: details.victories,
+                        goalsFor: details.goalsFor,
+                        goalsAgainst: details.goalsAgainst,
+                        goalDifference: details.goalDifference,
+                        gamesPlayed: details.gamesPlayed,
+                        points: details.points,
+                        position: details.position,
+                        shieldFileName: details.shieldFileName
                     )
                 }
             case .failure(let error):
@@ -95,7 +107,7 @@ struct HeaderView: View {
     @ObservedObject var authService: AuthService
     @ObservedObject var apiService: APIService
     @Binding var selectedDate: Date
-    @Binding var teamDetails: DetailTeamData?
+    @Binding var teamDetails: TeamDetails?
     
     var body: some View {
         VStack(alignment: .center) {

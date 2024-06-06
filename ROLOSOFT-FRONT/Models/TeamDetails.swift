@@ -7,6 +7,8 @@
 
 import Foundation
 
+let baseUrl = "http://34.118.243.66:3000/static/"
+
 struct TeamDetails: Decodable {
     let tournamentId: String
     let schoolId: String
@@ -20,6 +22,11 @@ struct TeamDetails: Decodable {
     let gamesPlayed: Int
     let points: Int
     let position: Int
+    let shieldFileName: String
+    
+    var fullTeamPictureUrl: String {
+        return baseUrl + shieldFileName
+    }
 }
 
 struct TeamDetailsResponse: Decodable {

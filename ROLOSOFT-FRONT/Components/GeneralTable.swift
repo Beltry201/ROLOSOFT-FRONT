@@ -7,18 +7,9 @@
 
 import SwiftUI
 
-struct GeneralTableTeam: Identifiable {
-    let id = UUID()
-    let name: String
-    let logo: String
-    let d: Int
-    let e: Int
-    let v: Int
-    let isMyTeam: Bool
-}
-
 struct GeneralTable: View {
     var teams: [GeneralTableTeam]
+    var onSelectTeam: (GeneralTableTeam) -> Void
 
     struct ListItemBg: ViewModifier {
         var isMyTeam: Bool? = false
@@ -78,14 +69,18 @@ struct GeneralTable: View {
                     .modifier(ListItemBg(isMyTeam: teams[index].isMyTeam))
                     .cornerRadius(8)
                     .listRowInsets(EdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    .onTapGesture {
+                        onSelectTeam(teams[index])
+                    }
                 }
             }
         }
     }
 }
 
-struct GeneralTable_Previews: PreviewProvider {
-    static var previews: some View {
-        GeneralTable(teams: [])
-    }
-}
+//
+//struct GeneralTable_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GeneralTable(teams: [])
+//    }
+//}
