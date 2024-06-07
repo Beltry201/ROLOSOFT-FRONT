@@ -8,53 +8,43 @@
 import SwiftUI
 
 struct TeamDetailHead: View {
-    let logoUrl: String
-    let position: Int
-    let name: String
-    let df: Int
-    let jj: Int
-    let jg: Int
-    let pt: Int
-    let je: Int
-    let jp: Int
-    let gf: Int
-    let gc: Int
-    
+    let teamDetails: TeamDetails
+
     var body: some View {
         VStack {
             VStack {
-                URLImage(url: logoUrl)
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                Text(name)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                URLImage(url: teamDetails.fullTeamPictureUrl)
+                    .frame(width: 100)
+                Text(teamDetails.schoolName)
+                    .fontWeight(.bold)
+                    .font(.title)
             }
             .padding(.bottom, 24)
-            Grid (horizontalSpacing: 20, verticalSpacing: 20) {
+            Grid(horizontalSpacing: 20, verticalSpacing: 20) {
                 GridRow {
                     VStack {
-                        Text(String(df))
+                        Text(String(teamDetails.goalDifference))
                             .fontWeight(.bold)
                         Text("DF")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(jj))
+                        Text(String(teamDetails.gamesPlayed))
                             .fontWeight(.bold)
                         Text("JJ")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(jg))
+                        Text(String(teamDetails.victories))
                             .fontWeight(.bold)
                         Text("JG")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(pt))
+                        Text(String(teamDetails.points))
                             .fontWeight(.bold)
                         Text("PT")
                             .font(.caption)
@@ -62,28 +52,28 @@ struct TeamDetailHead: View {
                 }
                 GridRow {
                     VStack {
-                        Text(String(je))
+                        Text(String(teamDetails.draws))
                             .fontWeight(.bold)
                         Text("JE")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(jp))
+                        Text(String(teamDetails.defeats))
                             .fontWeight(.bold)
                         Text("JP")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(gf))
+                        Text(String(teamDetails.goalsFor))
                             .fontWeight(.bold)
                         Text("GF")
                             .font(.caption)
                     }
                     Divider()
                     VStack {
-                        Text(String(gc))
+                        Text(String(teamDetails.goalsAgainst))
                             .fontWeight(.bold)
                         Text("GC")
                             .font(.caption)
@@ -94,6 +84,23 @@ struct TeamDetailHead: View {
     }
 }
 
-#Preview {
-    TeamDetailHead(logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png", position: 2, name: "Independiente Santa Fe", df: 2, jj: 10, jg: 10, pt: 30, je: 0, jp: 0, gf: 20, gc: 5)
+struct TeamDetailHead_Previews: PreviewProvider {
+    static var previews: some View {
+        let sampleTeamDetails = TeamDetails(
+            tournamentId: "1",
+            schoolId: "1",
+            schoolName: "Independiente Santa Fe",
+            defeats: 0,
+            draws: 0,
+            victories: 10,
+            goalsFor: 20,
+            goalsAgainst: 5,
+            goalDifference: 15,
+            gamesPlayed: 10,
+            points: 30,
+            position: 1,
+            shieldFileName: "Escudo_de_Independiente_Santa_Fe.png"
+        )
+        TeamDetailHead(teamDetails: sampleTeamDetails)
+    }
 }

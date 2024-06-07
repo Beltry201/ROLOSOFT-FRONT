@@ -23,7 +23,7 @@ extension PlayerRow {
         HStack {
             URLImage(url: player.studentPhotoUrl)
                 .aspectRatio(contentMode: .fit)
-                .frame(width: __designTimeInteger("#1041.[5].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                .frame(width: __designTimeInteger("#10249.[5].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
 
             Spacer()
 
@@ -33,7 +33,7 @@ extension PlayerRow {
 
             VStack(alignment: .center) {
                 Text("\(player.greenCards)")
-                Text(__designTimeString("#1041.[5].[1].property.[0].[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                Text(__designTimeString("#10249.[5].[1].property.[0].[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
                     .font(.caption)
             }
         }
@@ -48,7 +48,7 @@ extension TeamRow {
         HStack {
             URLImage(url: team.logoUrl)
                 .aspectRatio(contentMode: .fit)
-                .frame(width: __designTimeInteger("#1041.[4].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
+                .frame(width: __designTimeInteger("#10249.[4].[1].property.[0].[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 50))
 
             Spacer()
 
@@ -58,7 +58,7 @@ extension TeamRow {
 
             VStack(alignment: .center) {
                 Text("\(team.points)") // Convert points to string
-                Text(__designTimeString("#1041.[4].[1].property.[0].[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
+                Text(__designTimeString("#10249.[4].[1].property.[0].[0].arg[0].value.[4].arg[1].value.[1].arg[0].value", fallback: "puntos"))
                     .font(.caption)
             }
         }
@@ -76,8 +76,8 @@ extension TabBarButton {
                 .foregroundColor(isSelected ? .black : .gray)
             Rectangle()
                 .foregroundColor(isSelected ? .red : .clear)
-                .frame(height: __designTimeInteger("#1041.[3].[3].property.[0].[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: 2))
-                .padding(.top, __designTimeInteger("#1041.[3].[3].property.[0].[0].arg[0].value.[1].modifier[2].arg[1].value", fallback: 4))
+                .frame(height: __designTimeInteger("#10249.[3].[3].property.[0].[0].arg[0].value.[1].modifier[1].arg[0].value", fallback: 2))
+                .padding(.top, __designTimeInteger("#10249.[3].[3].property.[0].[0].arg[0].value.[1].modifier[2].arg[1].value", fallback: 4))
         }
         .contentShape(Rectangle())
         .onTapGesture {
@@ -91,8 +91,8 @@ extension TabBarButton {
 extension SearchHeader {
     @_dynamicReplacement(for: search()) private func __preview__search() async {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 172)
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#1041.[2].[6].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#1041.[2].[6].[0].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#1041.[2].[6].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#1041.[2].[6].[1].value.[1]", fallback: "")
+        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#10249.[2].[6].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#10249.[2].[6].[0].value.[1]", fallback: "")
+        let token = UserDefaults.standard.string(forKey: __designTimeString("#10249.[2].[6].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#10249.[2].[6].[1].value.[1]", fallback: "")
 
         apiService.searchStudentsAndSchools(tournamentId: tournamentId, token: token, query: searchText) { result in
             DispatchQueue.main.async {
@@ -114,61 +114,61 @@ extension SearchHeader {
 extension SearchHeader {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 113)
-        VStack(alignment: .leading, spacing: __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[1].value", fallback: 0)) {
-            Text(__designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[0].arg[0].value", fallback: "Buscar en el torneo"))
-                .font(.custom(__designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: ""), size: __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 24)))
-                .padding(.horizontal, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[0].modifier[1].arg[1].value", fallback: 10))
-                .padding(.top, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[0].modifier[2].arg[1].value", fallback: 20))
+        VStack(alignment: .leading, spacing: __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[1].value", fallback: 0)) {
+            Text(__designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[0].arg[0].value", fallback: "Buscar en el torneo"))
+                .font(.custom(__designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[0].modifier[0].arg[0].value.arg[0].value", fallback: ""), size: __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[0].modifier[0].arg[0].value.arg[1].value", fallback: 24)))
+                .padding(.horizontal, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[0].modifier[1].arg[1].value", fallback: 10))
+                .padding(.top, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[0].modifier[2].arg[1].value", fallback: 20))
 
             HStack {
-                TextField(__designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].arg[0].value", fallback: "Search"), text: $searchText, onCommit: {
+                TextField(__designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].arg[0].value", fallback: "Search"), text: $searchText, onCommit: {
                     Task {
                         await search()
                     }
                 })
-                .padding(__designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 7))
-                .padding(.horizontal, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[1].arg[1].value", fallback: 25))
+                .padding(__designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[0].arg[0].value", fallback: 7))
+                .padding(.horizontal, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[1].arg[1].value", fallback: 25))
                 .background(Color(.systemGray6))
-                .cornerRadius(__designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 8))
+                .cornerRadius(__designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[3].arg[0].value", fallback: 8))
                 .overlay(
                     HStack {
-                        Image(systemName: __designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].arg[0].value", fallback: "magnifyingglass"))
+                        Image(systemName: __designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].arg[0].value", fallback: "magnifyingglass"))
                             .foregroundColor(.gray)
-                            .frame(minWidth: __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 0), maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[2].arg[1].value", fallback: 8))
+                            .frame(minWidth: __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[1].arg[0].value", fallback: 0), maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[0].modifier[2].arg[1].value", fallback: 8))
 
                         if !searchText.isEmpty {
                             Button(action: {
-                                self.searchText = __designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[0].value.[0].[0]", fallback: "")
+                                self.searchText = __designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[0].value.[0].[0]", fallback: "")
                                 Task {
                                     await search()
                                 }
                             }) {
-                                Image(systemName: __designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value", fallback: "multiply.circle.fill"))
+                                Image(systemName: __designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value", fallback: "multiply.circle.fill"))
                                     .foregroundColor(.gray)
-                                    .padding(.trailing, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 8))
+                                    .padding(.trailing, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[4].arg[0].value.arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[1].arg[1].value", fallback: 8))
                             }
                         }
                     }
                 )
-                .padding(.horizontal, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[5].arg[1].value", fallback: 10))
-                .padding(.vertical, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[6].arg[1].value", fallback: 15))
+                .padding(.horizontal, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[5].arg[1].value", fallback: 10))
+                .padding(.vertical, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[1].arg[0].value.[0].modifier[6].arg[1].value", fallback: 15))
             }
 
             HStack {
                 Spacer()
-                TabBarButton(title: __designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[0].value", fallback: "Equipos"), isSelected: selectedTab == __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
-                    selectedTab = __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
+                TabBarButton(title: __designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[0].value", fallback: "Equipos"), isSelected: selectedTab == __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
+                    selectedTab = __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
                 }
-                .padding(.horizontal, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
-                TabBarButton(title: __designTimeString("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[0].value", fallback: "Jugadores"), isSelected: selectedTab == __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
-                    selectedTab = __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
+                TabBarButton(title: __designTimeString("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[0].value", fallback: "Jugadores"), isSelected: selectedTab == __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
+                    selectedTab = __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
                 }
-                .padding(.horizontal, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
             }
-            .padding(.top, __designTimeInteger("#1041.[2].[5].property.[0].[0].arg[2].value.[2].modifier[0].arg[1].value", fallback: 8))
+            .padding(.top, __designTimeInteger("#10249.[2].[5].property.[0].[0].arg[2].value.[2].modifier[0].arg[1].value", fallback: 8))
         }
     
 #sourceLocation()
@@ -178,8 +178,8 @@ extension SearchHeader {
 extension SearchView {
     @_dynamicReplacement(for: search()) private func __preview__search() async {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Search/SearchView.swift", line: 87)
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#1041.[1].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#1041.[1].[8].[0].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#1041.[1].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#1041.[1].[8].[1].value.[1]", fallback: "")
+        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#10249.[1].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#10249.[1].[8].[0].value.[1]", fallback: "")
+        let token = UserDefaults.standard.string(forKey: __designTimeString("#10249.[1].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#10249.[1].[8].[1].value.[1]", fallback: "")
 
         apiService.searchStudentsAndSchools(tournamentId: tournamentId, token: token, query: searchText) { result in
             DispatchQueue.main.async {
@@ -204,7 +204,7 @@ extension SearchView {
         NavigationView {
             VStack {
                 SearchHeader(teams: $teams, players: $players, searchText: $searchText, selectedTab: $selectedTab, apiService: apiService)
-                    .padding(.top, __designTimeInteger("#1041.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8)) // Adjust top padding to align with navigation bar
+                    .padding(.top, __designTimeInteger("#10249.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8)) // Adjust top padding to align with navigation bar
                 TabView(selection: $selectedTab) {
                     // Tab 1: Equipos
                     VStack {
@@ -219,7 +219,7 @@ extension SearchView {
                             }
                         }
                     }
-                    .tag(__designTimeInteger("#1041.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
+                    .tag(__designTimeInteger("#10249.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
 
                     // Tab 2: Jugadores
                     VStack {
@@ -234,7 +234,7 @@ extension SearchView {
                             }
                         }
                     }
-                    .tag(__designTimeInteger("#1041.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
+                    .tag(__designTimeInteger("#10249.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .onChange(of: selectedTab) { newValue, oldValue in
@@ -242,7 +242,7 @@ extension SearchView {
                         await search()
                     }
                 }
-                .padding(.top, __designTimeInteger("#1041.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[1].value", fallback: -8)) // Adjust negative top padding to align content properly
+                .padding(.top, __designTimeInteger("#10249.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].modifier[2].arg[1].value", fallback: -8)) // Adjust negative top padding to align content properly
             }
             .onAppear {
                 Task {

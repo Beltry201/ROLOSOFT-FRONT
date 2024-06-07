@@ -24,5 +24,5 @@ struct LeaderBoardTeamData: Decodable {
     let goalsAgainst: Int
     let goalDifference: Int
     let gamesPlayed: Int
-    let photoUrl: String
+    let photoUrl: String //cambiar a ShieldFileName
 }
