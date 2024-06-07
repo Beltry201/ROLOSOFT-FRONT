@@ -102,17 +102,18 @@ struct LoginView: View {
                         }
                     }){
                         Text("Iniciar sesión")
-                            .font(.headline)
+                            .font(.title3)
+                            .fontWeight(.semibold)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
-                            .padding()
+                            .padding(.vertical, 20)
                             .background(Color(red: 0.906, green: 0.078, blue: 0.161))
-                            .cornerRadius(8)
+                            .cornerRadius(.infinity)
                     }
                     .padding(.top, 48)
                 
             }
-            .padding()
+            .padding(.horizontal, 24)
             .navigationTitle("Login")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true) // Hide back button
