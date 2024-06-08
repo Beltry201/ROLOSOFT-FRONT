@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultCard: View {
-    var data: DetailTeamResultCardData
+    var data: PlayedMatchResult
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,8 +20,8 @@ struct ResultCard: View {
                 }
                 HStack {
                     VStack {
-                        if let url = data.teamA.logoUrl {
-                            AsyncImage(url: url) { image in
+                        if let imageUrl = URL(string: data.teamA.fullTeamPictureUrl) {
+                            AsyncImage(url: imageUrl) { image in
                                 image
                                     .resizable()
                                     .scaledToFill()
@@ -42,20 +42,31 @@ struct ResultCard: View {
                             .multilineTextAlignment(.center)
                             .fontWeight(.light)
                             .fixedSize(horizontal: false, vertical: true)
+                        
+                        // Display goals for team A
+                        if !data.teamA.goals.isEmpty {
+                            VStack(spacing: 4) {
+                                ForEach(data.teamA.goals) { goal in
+                                    Text("\(goal.name) \(goal.lastName) - \(goal.minute)'")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
                     }
                     Spacer()
-                    Text(String(data.teamA.score))
+                    Text("\(data.teamA.goals.count)")
                         .font(.title)
                     Spacer()
                     Text("-")
                         .font(.title)
                     Spacer()
-                    Text(String(data.teamB.score))
+                    Text("\(data.teamB.goals.count)")
                         .font(.title)
                     Spacer()
                     VStack {
-                        if let url = data.teamB.logoUrl {
-                            AsyncImage(url: url) { image in
+                        if let imageUrl = URL(string: data.teamB.fullTeamPictureUrl) {
+                            AsyncImage(url: imageUrl) { image in
                                 image
                                     .resizable()
                                     .scaledToFill()
@@ -76,6 +87,17 @@ struct ResultCard: View {
                             .multilineTextAlignment(.center)
                             .fontWeight(.light)
                             .fixedSize(horizontal: false, vertical: true)
+                        
+                        // Display goals for team B
+                        if !data.teamB.goals.isEmpty {
+                            VStack(spacing: 4) {
+                                ForEach(data.teamB.goals) { goal in
+                                    Text("\(goal.name) \(goal.lastName) - \(goal.minute)'")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -88,26 +110,29 @@ struct ResultCard: View {
     }
 }
 
-struct DetailTeamResultCardData {
-    var teamA: ResultCardTeamData
-    var teamB: ResultCardTeamData
-    var dateString: String
-}
-
-struct ResultCardTeamData {
-    var name: String
-    var logoUrl: URL?
-    var score: Int
-}
-
 #Preview {
-    ResultCard(data: DetailTeamResultCardData(
-                    teamA: ResultCardTeamData(
-                        name: "EquipoA",
-                        logoUrl: URL(string: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-                        score: 4),
-                    teamB: ResultCardTeamData(
-                        name: "EquipoB",
-                        logoUrl: URL(string: "https://www.pikpng.com/pngl/m/430-4309067_escudo-del-club-independiente-santa-fe-cardenales-primer.png"),
-                        score: 2), dateString: "Viernes 12 - 4:00 PM"))
+    ResultCard(
+        data: PlayedMatchResult(
+            id: "1",
+            dateTimeStart: Date(),
+            dateTimeEnd: Date(),
+            teamA: TeamDetailData(
+                id: "1",
+                name: "Team A",
+                shieldFileName: "teamA.png",
+                goals: [
+                    GoalData(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
+                    GoalData(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+                ]
+            ),
+            teamB: TeamDetailData(
+                id: "2",
+                name: "Team B",
+                shieldFileName: "teamB.png",
+                goals: [
+                    GoalData(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
+                ]
+            )
+        )
+    )
 }

@@ -30,6 +30,7 @@
 		52CC57582C06C29D0019A55E /* ScoringTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC57572C06C29D0019A55E /* ScoringTable.swift */; };
 		52CE67872C054FC1001C5169 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67862C054FC1001C5169 /* School.swift */; };
 		52CE67892C05538E001C5169 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE67882C05538E001C5169 /* DateFormatter.swift */; };
+		52E6F6A62C13CEC700685773 /* PlayedMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F6A52C13CEC700685773 /* PlayedMatchResult.swift */; };
 		52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */; };
 		52FC48A02BF7EC2A0095EF4D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */; };
 		52FC48A22BF82B8C0095EF4D /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */; };
@@ -78,6 +79,7 @@
 		52CC57572C06C29D0019A55E /* ScoringTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringTable.swift; sourceTree = "<group>"; };
 		52CE67862C054FC1001C5169 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		52CE67882C05538E001C5169 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		52E6F6A52C13CEC700685773 /* PlayedMatchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedMatchResult.swift; sourceTree = "<group>"; };
 		52ECF2E52C056C1200B902F3 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		52FC489F2BF7EC2A0095EF4D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		52FC48A12BF82B8C0095EF4D /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				521FFE752C0FB84D00D091E7 /* TeamDetails.swift */,
 				521FFE772C0FC72C00D091E7 /* Search.swift */,
 				5202C0262C0FFC76007D0F11 /* GeneralTeamTable.swift */,
+				52E6F6A52C13CEC700685773 /* PlayedMatchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				52ECF2E62C056C1200B902F3 /* TeamDetailView.swift in Sources */,
 				523BF1E62BCE1E3E003138DC /* ContentView.swift in Sources */,
 				52FC48A52BF831BA0095EF4D /* SearchView.swift in Sources */,
+				52E6F6A62C13CEC700685773 /* PlayedMatchResult.swift in Sources */,
 				FEAB41FE2BEC5E9600170E54 /* ButtonModifier.swift in Sources */,
 				FE4E83702BF6E64200BE07E4 /* DetailTeamCard.swift in Sources */,
 				52CBB6F82BD5A39600DD0410 /* APIService.swift in Sources */,
