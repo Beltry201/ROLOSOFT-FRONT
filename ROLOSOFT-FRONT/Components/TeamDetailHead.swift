@@ -20,65 +20,97 @@ struct TeamDetailHead: View {
                     .font(.title)
             }
             .padding(.bottom, 24)
-            Grid(horizontalSpacing: 20, verticalSpacing: 20) {
-                GridRow {
-                    VStack {
-                        Text(String(teamDetails.goalDifference))
-                            .fontWeight(.bold)
-                        Text("DF")
-                            .font(.caption)
+            HStack {
+                VStack {
+                    Text("1º")
+                        .font(.system(size: 48, weight: .bold))
+                        .foregroundColor(.white)
+                        .fixedSize(horizontal: true, vertical: false)
+                    Text("Lugar")
+                        .foregroundColor(.white)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+                .padding(.horizontal, 48)
+                .padding(.vertical, 16)
+                .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.854, green: 0.000, blue: 0.176, opacity: 0.85), Color(red: 0.882, green: 0.341, blue: 0.008, opacity: 0.85)]), startPoint: .bottom, endPoint: .top))
+                .cornerRadius(8)
+                Grid(horizontalSpacing: 20, verticalSpacing: 20) {
+                    GridRow {
+                        VStack {
+                            Text(String(teamDetails.goalDifference))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("DF")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.gamesPlayed))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("JJ")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.victories))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("JG")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.points))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("PT")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
                     }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.gamesPlayed))
-                            .fontWeight(.bold)
-                        Text("JJ")
-                            .font(.caption)
-                    }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.victories))
-                            .fontWeight(.bold)
-                        Text("JG")
-                            .font(.caption)
-                    }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.points))
-                            .fontWeight(.bold)
-                        Text("PT")
-                            .font(.caption)
+                    GridRow {
+                        VStack {
+                            Text(String(teamDetails.draws))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("JE")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.defeats))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("JP")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.goalsFor))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("GF")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
+                        Divider()
+                        VStack {
+                            Text(String(teamDetails.goalsAgainst))
+                                .fontWeight(.bold)
+                                .fixedSize(horizontal: true, vertical: false)
+                            Text("GC")
+                                .font(.caption)
+                                .fixedSize(horizontal: true, vertical: false)
+                        }
                     }
                 }
-                GridRow {
-                    VStack {
-                        Text(String(teamDetails.draws))
-                            .fontWeight(.bold)
-                        Text("JE")
-                            .font(.caption)
-                    }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.defeats))
-                            .fontWeight(.bold)
-                        Text("JP")
-                            .font(.caption)
-                    }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.goalsFor))
-                            .fontWeight(.bold)
-                        Text("GF")
-                            .font(.caption)
-                    }
-                    Divider()
-                    VStack {
-                        Text(String(teamDetails.goalsAgainst))
-                            .fontWeight(.bold)
-                        Text("GC")
-                            .font(.caption)
-                    }
-                }
+                .padding(.leading, 24)
             }
         }
     }
