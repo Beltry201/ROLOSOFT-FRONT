@@ -40,10 +40,10 @@ struct TeamDetailView: View {
                 TabView(selection: $selectedTab) {
                     // Tab 1: Matches
                     VStack {
-                        Text("Matches content goes here")
-                            .foregroundColor(.gray)
-                            .padding()
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        ForEach(TeamDetailView_Previews.dummyPlayedMatchResults) { match in
+                            ResultCard(data: match)
+                                .padding(.vertical, 4)
+                        }
                     }
                     .tag(0)
 
@@ -93,7 +93,25 @@ struct TeamDetailView_Previews: PreviewProvider {
         )
         TeamDetailView(teamDetails: sampleTeamDetails)
     }
+    
+    static var dummyPlayedMatchResults: [PlayedMatchResult] {
+           let teamA = TeamDetailData(id: "e470f269-237c-4a2b-ba17-cdf74af01e64", name: "América", shieldFileName: "escudo-america.png", goals: [])
+           let teamB = TeamDetailData(id: "48b576c2-38ff-4828-8061-254b2bf8d883", name: "Santa Fe", shieldFileName: "escudo-santa-fe.png", goals: [])
+           
+           let goalA1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10)
+           let goalA2 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+           let goalB1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 15, playerNumber: 7)
+           
+           var match1 = PlayedMatchResult(id: "d5203e5e-6635-44ef-a81c-626111212c5e", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamA, teamB: teamB)
+           var match2 = PlayedMatchResult(id: "6386fb56-e79e-419d-b524-d8fb9a864f2f", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamB, teamB: teamA)
+           
+           match1.teamB.goals = [goalA1, goalA2]
+           match2.teamA.goals = [goalB1]
+           
+           return [match1, match2]
+       }
 }
+
 
 struct TeamTabBarButton: View {
     let title: String

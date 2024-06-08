@@ -10,6 +10,22 @@ import Foundation
 class APIService: ObservableObject {
     private let baseURL = URL(string: "http://34.118.243.66:3000")
     
+    func fetchTeamMatches(tournamentId: String, teamId: String, token: String, completion: @escaping (Result<[MatchEvent], Error>) -> Void) {
+        let endpoint = "/tournaments/\(tournamentId)/schools/\(teamId)/matches"
+        getRequest(endpoint: endpoint, token: token) { (result: Result<MatchEventResponse, Error>) in
+            switch result {
+            case .success(let response):
+                if response.success {
+                    completion(.success(response.data))
+                } else {
+                    completion(.failure(APIError.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func fetchTeamDetails(tournamentId: String, teamId: String,  token: String, completion: @escaping (Result<TeamDetails, Error>) -> Void) {
         let endpoint = "/tournaments/\(tournamentId)/schools/\(teamId)/general-table"
         getRequest(endpoint: endpoint, token: token) { (result: Result<TeamDetailsResponse, Error>) in
