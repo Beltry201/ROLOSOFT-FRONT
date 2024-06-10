@@ -145,7 +145,7 @@ extension TeamDetailView {
         #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/Team/TeamDetailView.swift", line: 16)
         if let teamDetails = teamDetails {
             VStack {
-                TeamDetailHead(teamDetails: teamDetails)
+                TeamDetailHead(teamDetails: teamDetails).padding(.horizontal, __designTimeInteger("#5437.[1].[3].property.[0].[0].[0].[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 20))
                     
                 HStack {
                     Spacer()

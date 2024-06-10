@@ -23,7 +23,7 @@ extension TeamDetailHead_Previews {
             goalDifference: __designTimeInteger("#5750.[2].[0].property.[0].[0].value.arg[8].value", fallback: 15),
             gamesPlayed: __designTimeInteger("#5750.[2].[0].property.[0].[0].value.arg[9].value", fallback: 10),
             points: __designTimeInteger("#5750.[2].[0].property.[0].[0].value.arg[10].value", fallback: 30),
-            position: __designTimeInteger("#5750.[2].[0].property.[0].[0].value.arg[11].value", fallback: 1),
+            position: __designTimeInteger("#5750.[2].[0].property.[0].[0].value.arg[11].value", fallback: 4),
             shieldFileName: __designTimeString("#5750.[2].[0].property.[0].[0].value.arg[12].value", fallback: "Escudo_de_Independiente_Santa_Fe.png")
         )
         TeamDetailHead(teamDetails: sampleTeamDetails)

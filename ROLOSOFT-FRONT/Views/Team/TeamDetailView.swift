@@ -15,7 +15,7 @@ struct TeamDetailView: View {
     var body: some View {
         if let teamDetails = teamDetails {
             VStack {
-                TeamDetailHead(teamDetails: teamDetails)
+                TeamDetailHead(teamDetails: teamDetails).padding(.horizontal, 20)
                     
                 HStack {
                     Spacer()

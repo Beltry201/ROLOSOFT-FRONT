@@ -34,7 +34,7 @@ struct TeamDetailHead: View {
                 .padding(.vertical, 16)
                 .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.854, green: 0.000, blue: 0.176, opacity: 0.85), Color(red: 0.882, green: 0.341, blue: 0.008, opacity: 0.85)]), startPoint: .bottom, endPoint: .top))
                 .cornerRadius(8)
-                Grid(horizontalSpacing: 20, verticalSpacing: 20) {
+                Grid(horizontalSpacing: 10, verticalSpacing: 20) {
                     GridRow {
                         VStack {
                             Text(String(teamDetails.goalDifference))

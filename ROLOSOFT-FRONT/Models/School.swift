@@ -11,7 +11,7 @@ import Foundation
 struct School: Decodable, Identifiable {
     let id: String
     let name: String
-    let number: Int
+    let position: Int
     let points: Int
     let shieldFileName: String
     
