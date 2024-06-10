@@ -18,6 +18,7 @@ struct SearchView: View {
         if searchText.isEmpty {
             return teams
         } else {
+            print("\n-- TEAMS: ",teams)
             return teams.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
@@ -34,7 +35,7 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 SearchHeader(teams: $teams, players: $players, searchText: $searchText, selectedTab: $selectedTab, apiService: apiService)
-                    .padding(.top, 8) // Adjust top padding to align with navigation bar
+                    .padding(.top, 8)
                 TabView(selection: $selectedTab) {
                     // Tab 1: Equipos
                     VStack {

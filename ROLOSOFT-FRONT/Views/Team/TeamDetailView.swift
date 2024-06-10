@@ -15,8 +15,7 @@ struct TeamDetailView: View {
         if let teamDetails = teamDetails {
             VStack {
                 TeamDetailHead(teamDetails: teamDetails)
-                    .padding(.top, 8) // Adjust top padding to align with navigation bar
-
+                    
                 HStack {
                     Spacer()
                     TeamTabBarButton(title: "Matches", isSelected: selectedTab == 0) {
@@ -39,13 +38,8 @@ struct TeamDetailView: View {
 
                 TabView(selection: $selectedTab) {
                     // Tab 1: Matches
-                    VStack {
-                        ForEach(TeamDetailView_Previews.dummyPlayedMatchResults) { match in
-                            ResultCard(data: match)
-                                .padding(.vertical, 4)
-                        }
-                    }
-                    .tag(0)
+                    MatchesList(matches: TeamDetailView_Previews.dummyPlayedMatchResults)
+                        .tag(0)
 
                     // Tab 2: Players
                     VStack {
@@ -66,10 +60,28 @@ struct TeamDetailView: View {
                     .tag(2)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .padding(.top, -8) // Adjust negative top padding to align content properly
+                .padding(.top, -8)
             }
         } else {
             Text("No team details available")
+        }
+    }
+}
+    
+struct MatchesList: View {
+    var matches: [PlayedMatchResult]
+
+    var body: some View {
+        List(matches) { match in
+            ResultCard(data: match)
+//                .listRowInsets(EdgeInsets())
+                .listRowInsets(.init(
+                    top: 0,
+                    leading: 0,
+                    bottom: 8,
+                    trailing: 0)
+                )
+                .background(.clear)
         }
     }
 }
@@ -95,23 +107,22 @@ struct TeamDetailView_Previews: PreviewProvider {
     }
     
     static var dummyPlayedMatchResults: [PlayedMatchResult] {
-           let teamA = TeamDetailData(id: "e470f269-237c-4a2b-ba17-cdf74af01e64", name: "América", shieldFileName: "escudo-america.png", goals: [])
-           let teamB = TeamDetailData(id: "48b576c2-38ff-4828-8061-254b2bf8d883", name: "Santa Fe", shieldFileName: "escudo-santa-fe.png", goals: [])
-           
-           let goalA1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10)
-           let goalA2 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
-           let goalB1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 15, playerNumber: 7)
-           
-           var match1 = PlayedMatchResult(id: "d5203e5e-6635-44ef-a81c-626111212c5e", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamA, teamB: teamB)
-           var match2 = PlayedMatchResult(id: "6386fb56-e79e-419d-b524-d8fb9a864f2f", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamB, teamB: teamA)
-           
-           match1.teamB.goals = [goalA1, goalA2]
-           match2.teamA.goals = [goalB1]
-           
-           return [match1, match2]
-       }
+        let teamA = TeamDetailData(id: "e470f269-237c-4a2b-ba17-cdf74af01e64", name: "América", shieldFileName: "escudo-america.png", goals: [])
+        let teamB = TeamDetailData(id: "48b576c2-38ff-4828-8061-254b2bf8d883", name: "Santa Fe", shieldFileName: "escudo-santa-fe.png", goals: [])
+        
+        let goalA1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10)
+        let goalA2 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+        let goalB1 = GoalData(id: "741d8594-9dc0-4e2f-8ced-ee6c8f5ed5eb", name: "David", lastName: "Beltran", minute: 15, playerNumber: 7)
+        
+        var match1 = PlayedMatchResult(id: "d5203e5e-6635-44ef-a81c-626111212c5e", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamA, teamB: teamB)
+        var match2 = PlayedMatchResult(id: "6386fb56-e79e-419d-b524-d8fb9a864f2f", dateTimeStart: Date(), dateTimeEnd: Date(), teamA: teamB, teamB: teamA)
+        
+        match1.teamB.goals = [goalA1, goalA2]
+        match2.teamA.goals = [goalB1]
+        
+        return [match1, match2]
+    }
 }
-
 
 struct TeamTabBarButton: View {
     let title: String
@@ -134,3 +145,4 @@ struct TeamTabBarButton: View {
         }
     }
 }
+
