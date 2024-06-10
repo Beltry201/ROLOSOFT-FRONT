@@ -18,28 +18,46 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
-                VStack {
-                    Text("Login")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 20)
-
+                Image("frisa-logox4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 224)
+                    .clipped()
+                    .padding(.bottom, 48)
+                
+                
+                    Text("Correo electrónico")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 0)
+                    
                     TextField("Correo electrónico", text: $username)
-                        .modifier(TextFieldModifier())
-                        .padding(.bottom, 8)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
                     
                     if let emailErrorMessage = emailErrorMessage {
                         Text(emailErrorMessage)
                             .foregroundColor(.red)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
+                            .padding(.top, 2)
                             .font(.subheadline)
                     }
 
+                    Text("Contraseña")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .padding(.top, 16)
+                    
                     SecureField("Contraseña", text: $password)
-                        .modifier(TextFieldModifier())
-                        .padding(.bottom, 8)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
                     
                     // Password error message
                     if let passwordErrorMessage = passwordErrorMessage {
@@ -47,6 +65,7 @@ struct LoginView: View {
                             .foregroundColor(.red)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
+                            .padding(.top, 2)
                             .font(.subheadline)
                     }
                     
@@ -82,19 +101,23 @@ struct LoginView: View {
                             }
                         }
                     }){
-                        Text("Login")
-                            .modifier(ButtonModifier())
+                        Text("Iniciar sesión")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 20)
+                            .background(Color(red: 0.906, green: 0.078, blue: 0.161))
+                            .cornerRadius(.infinity)
                     }
-                    .padding(.top, 8)
-                }
-                .padding()
-                .navigationTitle("Login")
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true) // Hide back button
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.top, 48)
                 
-                Spacer()
             }
+            .padding(.horizontal, 24)
+            .navigationTitle("Login")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true) // Hide back button
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
