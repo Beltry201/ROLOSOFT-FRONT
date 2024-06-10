@@ -18,7 +18,6 @@ struct SearchView: View {
         if searchText.isEmpty {
             return teams
         } else {
-            print("\n-- TEAMS: ",teams)
             return teams.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
@@ -68,7 +67,7 @@ struct SearchView: View {
                     .tag(1)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .onChange(of: selectedTab) { newValue, oldValue in
+                .onChange(of: selectedTab) { _ in
                     Task {
                         await search()
                     }
@@ -92,7 +91,6 @@ struct SearchView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    print("\n-- INITIAL SEARCH DATA: ", data)
                     self.teams = data.schools
                     self.players = data.students
                 case .failure(let error):
@@ -212,34 +210,60 @@ struct TabBarButton: View {
 
 struct TeamRow: View {
     let team: School
+    @State private var teamDetails: TeamDetails?
 
     var body: some View {
-        HStack {
-            URLImage(url: team.logoUrl)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50)
+        NavigationLink(destination: TeamDetailView(teamDetails: teamDetails)) {
+            HStack {
+                URLImage(url: team.fullTeamPictureUrl)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50)
 
-            Spacer()
+                Spacer()
 
-            Text(team.name)
+                Text(team.name)
 
-            Spacer()
+                Spacer()
 
-            VStack(alignment: .center) {
-                Text("\(team.points)") // Convert points to string
-                Text("puntos")
-                    .font(.caption)
+                VStack(alignment: .center) {
+                    Text("\(team.points)")
+                    Text("puntos")
+                        .font(.caption)
+                }
+            }
+        }
+        .onTapGesture {
+            fetchTeamDetails()
+        }
+    }
+
+    private func fetchTeamDetails() {
+        guard let tournamentId = UserDefaults.standard.string(forKey: "tournamentId"),
+              let token = UserDefaults.standard.string(forKey: "jwtToken") else {
+            print("Tournament ID or token not found in UserDefaults")
+            return
+        }
+        
+        // Fetch Team Details
+        APIService().fetchTeamDetails(tournamentId: tournamentId, teamId: team.id, token: token) { result in
+            switch result {
+            case .success(let teamDetails):
+                print("Fetched Team Details: \(teamDetails)")
+                self.teamDetails = teamDetails
+            case .failure(let error):
+                print("Error fetching team details: \(error)")
             }
         }
     }
 }
+
 
 struct PlayerRow: View {
     let player: Student
 
     var body: some View {
         HStack {
-            URLImage(url: player.studentPhotoUrl)
+            URLImage(url: player.fullPictureUrl)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
 

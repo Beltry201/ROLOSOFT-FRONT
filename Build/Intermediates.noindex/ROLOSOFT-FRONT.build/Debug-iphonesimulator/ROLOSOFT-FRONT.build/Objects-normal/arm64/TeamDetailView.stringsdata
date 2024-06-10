@@ -4,7 +4,15 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Hello, World!"
+        "key": "No team details available"
+      },
+      {
+        "comment": "",
+        "key": "Players content goes here"
+      },
+      {
+        "comment": "",
+        "key": "Photos content goes here"
       }
     ]
   },

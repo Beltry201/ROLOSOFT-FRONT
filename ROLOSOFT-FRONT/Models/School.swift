@@ -13,7 +13,12 @@ struct School: Decodable, Identifiable {
     let name: String
     let number: Int
     let points: Int
-    let logoUrl: String
+    let shieldFileName: String
+    
+    var fullTeamPictureUrl: String {
+        return baseUrl + shieldFileName
+    }
+    
 }
 
 struct Student: Decodable, Identifiable {
@@ -21,8 +26,17 @@ struct Student: Decodable, Identifiable {
     let firstName: String
     let lastName: String
     let teamId: String
-    let teamLogoUrl: String
-    let studentPhotoUrl: String
+    let shieldFileName: String
+    let photoFileName: String
     let goals: Int
     let greenCards: Int
+    
+    var fullTeamPictureUrl: String {
+        return baseUrl + shieldFileName
+    }
+    
+    var fullPictureUrl: String {
+        return baseUrl + photoFileName
+    }
+    
 }

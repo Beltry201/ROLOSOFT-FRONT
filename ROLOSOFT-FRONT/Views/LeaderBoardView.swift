@@ -86,7 +86,7 @@ struct LeaderBoardView: View {
                     fetchedTeams = teamData.map { team in
                         GeneralTableTeam(
                             name: team.team,
-                            logo: team.photoUrl,
+                            logo: "http://34.118.243.66:3000/static/\(team.shieldFileName)",
                             d: team.defeats,
                             e: team.draws,
                             v: team.victories,
@@ -107,10 +107,10 @@ struct LeaderBoardView: View {
                 case .success(let tableData):
                     fetchedPlayers = tableData.map { playerData in
                         GoalTablePlayer(
-                            imgUrl: playerData.playerPhotoUrl,
+                            imgUrl: "http://34.118.243.66:3000/static/\(playerData.photoFileName)",
                             name: "\(playerData.firstName) \(playerData.lastName)",
                             goals: playerData.goals,
-                            teamImgUrl: playerData.teamPhotoUrl
+                            teamImgUrl: "http://34.118.243.66:3000/static/\(playerData.shieldFileName)"
                         )
                     }
                 case .failure(let error):

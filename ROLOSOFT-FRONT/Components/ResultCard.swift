@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ResultCard: View {
-    var data: PlayedMatchResult
+    var match: MatchEvent
     
     var body: some View {
         VStack {
-            Text(data.dateString)
+            Text(dateString(from: match.dateTimeStart))
                 .foregroundColor(.gray)
                 .font(.caption)
             
             HStack {
                 VStack {
-                    if let imageUrl = URL(string: data.teamA.fullTeamPictureUrl) {
+                    if let imageUrl = URL(string: match.teamA.shieldImg ?? "") {
                         AsyncImage(url: imageUrl) { image in
                             image
                                 .resizable()
@@ -34,16 +34,16 @@ struct ResultCard: View {
                             .frame(width: 60, height: 60)
                             .cornerRadius(8)
                     }
-                    Text(data.teamA.name)
+                    Text(match.teamA.name)
                         .frame(maxWidth: 70)
                         .font(.caption2)
                         .multilineTextAlignment(.center)
                         .fontWeight(.light)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    if !data.teamA.goals.isEmpty {
+                    if !match.teamA.goals.isEmpty {
                         VStack(spacing: 4) {
-                            ForEach(data.teamA.goals) { goal in
+                            ForEach(match.teamA.goals) { goal in
                                 Text("\(goal.name) \(goal.lastName) - \(goal.minute)'")
                                     .font(.caption)
                                     .foregroundColor(.gray)
@@ -52,17 +52,17 @@ struct ResultCard: View {
                     }
                 }
                 Spacer()
-                Text("\(data.teamA.goals.count)")
+                Text("\(match.teamA.goals.count)")
                     .font(.title)
                 Spacer()
                 Text("-")
                     .font(.title)
                 Spacer()
-                Text("\(data.teamB.goals.count)")
+                Text("\(match.teamB.goals.count)")
                     .font(.title)
                 Spacer()
                 VStack {
-                    if let imageUrl = URL(string: data.teamB.fullTeamPictureUrl) {
+                    if let imageUrl = URL(string: match.teamB.shieldImg ?? "") {
                         AsyncImage(url: imageUrl) { image in
                             image
                                 .resizable()
@@ -78,16 +78,16 @@ struct ResultCard: View {
                             .frame(width: 60, height: 60)
                             .cornerRadius(8)
                     }
-                    Text(data.teamB.name)
+                    Text(match.teamB.name)
                         .frame(maxWidth: 70)
                         .font(.caption2)
                         .multilineTextAlignment(.center)
                         .fontWeight(.light)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    if !data.teamB.goals.isEmpty {
+                    if !match.teamB.goals.isEmpty {
                         VStack(spacing: 4) {
-                            ForEach(data.teamB.goals) { goal in
+                            ForEach(match.teamB.goals) { goal in
                                 Text("\(goal.name) \(goal.lastName) - \(goal.minute)'")
                                     .font(.caption)
                                     .foregroundColor(.gray)
@@ -102,29 +102,39 @@ struct ResultCard: View {
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
     }
+    
+    private func dateString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
 }
 
 #Preview {
     ResultCard(
-        data: PlayedMatchResult(
+        match: MatchEvent(
             id: "1",
             dateTimeStart: Date(),
             dateTimeEnd: Date(),
-            teamA: TeamDetailData(
+            isPlaying: false,
+            teamA: MatchEvent.Team(
                 id: "1",
                 name: "Team A",
-                shieldFileName: "teamA.png",
+                points: 3,
+                shieldImg: "teamA.png",
                 goals: [
-                    GoalData(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
-                    GoalData(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+                    MatchEvent.Team.Goal(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
+                    MatchEvent.Team.Goal(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
                 ]
             ),
-            teamB: TeamDetailData(
+            teamB: MatchEvent.Team(
                 id: "2",
                 name: "Team B",
-                shieldFileName: "teamB.png",
+                points: 1,
+                shieldImg: "teamB.png",
                 goals: [
-                    GoalData(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
+                    MatchEvent.Team.Goal(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
                 ]
             )
         )

@@ -22,7 +22,7 @@ struct MatchEvent: Identifiable, Decodable {
         let shieldImg: String?
         let goals: [Goal]
         
-        struct Goal: Decodable {
+        struct Goal: Decodable, Identifiable {
             let id: String
             let name: String
             let lastName: String

@@ -10,6 +10,8 @@ import Foundation
 let baseUrl = "http://34.118.243.66:3000/static/"
 
 struct TeamDetails: Decodable {
+    var id: String { schoolId }
+    
     let tournamentId: String
     let schoolId: String
     let schoolName: String

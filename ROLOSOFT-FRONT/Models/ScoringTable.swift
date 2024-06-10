@@ -31,6 +31,6 @@ struct ScoringTableRow: Decodable {
     let position: Int
     let points: Int
     let schoolId: String
-    let playerPhotoUrl: String
-    let teamPhotoUrl: String
+    let photoFileName: String
+    let shieldFileName: String
 }

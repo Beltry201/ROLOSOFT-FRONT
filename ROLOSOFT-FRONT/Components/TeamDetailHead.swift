@@ -22,7 +22,7 @@ struct TeamDetailHead: View {
             .padding(.bottom, 24)
             HStack {
                 VStack {
-                    Text("1º")
+                    Text("\(teamDetails.position)º")
                         .font(.system(size: 48, weight: .bold))
                         .foregroundColor(.white)
                         .fixedSize(horizontal: true, vertical: false)
@@ -130,7 +130,7 @@ struct TeamDetailHead_Previews: PreviewProvider {
             goalDifference: 15,
             gamesPlayed: 10,
             points: 30,
-            position: 1,
+            position: 4,
             shieldFileName: "Escudo_de_Independiente_Santa_Fe.png"
         )
         TeamDetailHead(teamDetails: sampleTeamDetails)

@@ -4,6 +4,14 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "%lldº"
+      },
+      {
+        "comment": "",
+        "key": "Lugar"
+      },
+      {
+        "comment": "",
         "key": "DF"
       },
       {

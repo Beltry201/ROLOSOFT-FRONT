@@ -17,7 +17,6 @@ struct ContentView: View {
     }
 
     var body: some View {
-        // Use ZStack to overlay loading screen over the main content
         ZStack {
             // Main content
             if authService.isAuthenticated {
