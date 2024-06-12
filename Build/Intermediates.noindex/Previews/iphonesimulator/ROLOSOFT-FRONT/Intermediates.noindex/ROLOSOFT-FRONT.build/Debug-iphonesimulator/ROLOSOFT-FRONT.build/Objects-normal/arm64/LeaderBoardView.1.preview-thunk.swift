@@ -10,8 +10,45 @@ import SwiftUI
 
 extension LeaderBoardView_Previews {
     @_dynamicReplacement(for: previews) private static var __preview__previews: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 177)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 190)
         LeaderBoardView()
+    
+#sourceLocation()
+    }
+}
+
+extension GeneralTableRow {
+    @_dynamicReplacement(for: body) private var __preview__body: some View {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 156)
+        NavigationLink(destination: TeamDetailView(teamId: team.id)) {
+            HStack {
+                URLImage(url: team.logo)
+                    .frame(width: __designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[0].arg[0].value", fallback: 30), height: __designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 30))
+                    .cornerRadius(__designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[0].modifier[1].arg[0].value", fallback: 8))
+                    .clipped()
+                Text(team.name)
+                    .font(.headline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                Spacer()
+                Text("\(team.d)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, __designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[3].modifier[2].arg[1].value", fallback: 18))
+                Spacer()
+                Text("\(team.e)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, __designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[5].modifier[2].arg[1].value", fallback: 18))
+                Spacer()
+                Text("\(team.v)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, __designTimeInteger("#9285.[3].[1].property.[0].[0].arg[1].value.[0].arg[0].value.[7].modifier[2].arg[1].value", fallback: 18))
+            }
+        }
+        .padding(.vertical, __designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[0].arg[1].value", fallback: 8))
+        .cornerRadius(__designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[1].arg[0].value", fallback: 8))
+        .listRowInsets(EdgeInsets(top: __designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[2].arg[0].value.arg[0].value", fallback: 0), leading: __designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[2].arg[0].value.arg[1].value", fallback: 0), bottom: __designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[2].arg[0].value.arg[2].value", fallback: 10), trailing: __designTimeInteger("#9285.[3].[1].property.[0].[0].modifier[2].arg[0].value.arg[3].value", fallback: 0)))
     
 #sourceLocation()
     }
@@ -19,46 +56,22 @@ extension LeaderBoardView_Previews {
 
 extension LeaderBoardHeader {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 156)
-        VStack(alignment: .leading, spacing: __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[1].value", fallback: 0)) {
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 133)
+        VStack(alignment: .leading, spacing: __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[1].value", fallback: 0)) {
             HStack {
                 Spacer()
-                TabBarButton(title: __designTimeString("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[0].value", fallback: "Tabla general"), isSelected: selectedTab == __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
-                    selectedTab = __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
+                TabBarButton(title: __designTimeString("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[0].value", fallback: "Tabla general"), isSelected: selectedTab == __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[1].value.[0]", fallback: 0)) {
+                    selectedTab = __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].arg[2].value.[0].[0]", fallback: 0)
                 }
-                .padding(.horizontal, __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[1].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
-                TabBarButton(title: __designTimeString("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[0].value", fallback: "Tabla de goleo"), isSelected: selectedTab == __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
-                    selectedTab = __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
+                TabBarButton(title: __designTimeString("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[0].value", fallback: "Tabla de goleo"), isSelected: selectedTab == __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[1].value.[0]", fallback: 1)) {
+                    selectedTab = __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].arg[2].value.[0].[0]", fallback: 1)
                 }
-                .padding(.horizontal, __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
+                .padding(.horizontal, __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].arg[0].value.[3].modifier[0].arg[1].value", fallback: 16))
                 Spacer()
             }
-            .padding(.top, __designTimeInteger("#14109.[2].[1].property.[0].[0].arg[2].value.[0].modifier[0].arg[1].value", fallback: 8))
-        }
-    
-#sourceLocation()
-    }
-}
-
-extension LeaderBoardView {
-    @_dynamicReplacement(for: fetchTeamDetail(teamId:)) private func __preview__fetchTeamDetail(teamId: String) {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 131)
-        
-        print("\n-- LOOKING FOR TEAM: \(teamId)")
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#14109.[1].[9].[1].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#14109.[1].[9].[1].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#14109.[1].[9].[2].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#14109.[1].[9].[2].value.[1]", fallback: "")
-
-        apiService.fetchTeamDetails(tournamentId: tournamentId, teamId: teamId, token: token) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let teamDetail):
-                    self.selectedTeamDetail = teamDetail
-                    self.showTeamDetail = __designTimeBoolean("#14109.[1].[9].[3].modifier[0].arg[3].value.[0].modifier[0].arg[0].value.[0].[0].[1].[0]", fallback: true)
-                case .failure(let error):
-                    print("Error fetching team details: \(error)")
-                }
-            }
+            .padding(.top, __designTimeInteger("#9285.[2].[1].property.[0].[0].arg[2].value.[0].modifier[0].arg[1].value", fallback: 8))
         }
     
 #sourceLocation()
@@ -67,43 +80,37 @@ extension LeaderBoardView {
 
 extension LeaderBoardView {
     @_dynamicReplacement(for: loadData()) private func __preview__loadData() {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 73)
-        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#14109.[1].[8].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#14109.[1].[8].[0].value.[1]", fallback: "")
-        let token = UserDefaults.standard.string(forKey: __designTimeString("#14109.[1].[8].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#14109.[1].[8].[1].value.[1]", fallback: "")
-        
-        let group = DispatchGroup()
-        
-        var fetchedTeams: [GeneralTableTeam] = []
-        var fetchedPlayers: [GoalTablePlayer] = []
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 83)
+        let tournamentId = UserDefaults.standard.string(forKey: __designTimeString("#9285.[1].[7].[0].value.[0]", fallback: "tournamentId")) ?? __designTimeString("#9285.[1].[7].[0].value.[1]", fallback: "")
+        let token = UserDefaults.standard.string(forKey: __designTimeString("#9285.[1].[7].[1].value.[0]", fallback: "jwtToken")) ?? __designTimeString("#9285.[1].[7].[1].value.[1]", fallback: "")
 
-        group.enter()
         apiService.fetchLeaderBoard(tournamentId: tournamentId, token: token) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let teamData):
-                    fetchedTeams = teamData.map { team in
+                    self.generalTeams = teamData.map { team in
                         GeneralTableTeam(
+                            id: team.schoolId,
                             name: team.team,
                             logo: "http://34.118.243.66:3000/static/\(team.shieldFileName)",
                             d: team.defeats,
                             e: team.draws,
                             v: team.victories,
-                            isMyTeam: __designTimeBoolean("#14109.[1].[8].[6].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[0].[1]", fallback: false)
+                            isMyTeam: __designTimeBoolean("#9285.[1].[7].[2].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[0].[1]", fallback: false)
                         )
                     }
+                    self.isDataLoaded = __designTimeBoolean("#9285.[1].[7].[2].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[1].[0]", fallback: true)
                 case .failure(let error):
                     print("Error fetching leaderboard: \(error)")
                 }
-                group.leave()
             }
         }
 
-        group.enter()
         apiService.fetchScoringTable(tournamentId: tournamentId, token: token) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let tableData):
-                    fetchedPlayers = tableData.map { playerData in
+                    self.scoringTable = tableData.map { playerData in
                         GoalTablePlayer(
                             imgUrl: "http://34.118.243.66:3000/static/\(playerData.photoFileName)",
                             name: "\(playerData.firstName) \(playerData.lastName)",
@@ -111,17 +118,11 @@ extension LeaderBoardView {
                             teamImgUrl: "http://34.118.243.66:3000/static/\(playerData.shieldFileName)"
                         )
                     }
+                    self.isDataLoaded = __designTimeBoolean("#9285.[1].[7].[3].modifier[0].arg[2].value.[0].modifier[0].arg[0].value.[0].[0].[1].[0]", fallback: true)
                 case .failure(let error):
                     print("Error fetching scoring table: \(error)")
                 }
-                group.leave()
             }
-        }
-        
-        group.notify(queue: .main) {
-            self.generalTeams = fetchedTeams
-            self.scoringTable = fetchedPlayers
-            self.isDataLoaded = __designTimeBoolean("#14109.[1].[8].[9].modifier[0].arg[1].value.[2].[0]", fallback: true)
         }
     
 #sourceLocation()
@@ -130,32 +131,48 @@ extension LeaderBoardView {
 
 extension LeaderBoardView {
     @_dynamicReplacement(for: body) private var __preview__body: some View {
-        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 20)
+        #sourceLocation(file: "/Users/David/Documents/Tec/Semestre 5/Ciberseguridad - swift/reto/ROLOSOFT-FRONT/ROLOSOFT-FRONT/Views/LeaderBoardView.swift", line: 19)
         NavigationView {
             VStack {
                 LeaderBoardHeader(selectedTab: $selectedTab)
-                    .padding(.top, __designTimeInteger("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8))
+                    .padding(.top, __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[0].modifier[0].arg[1].value", fallback: 8))
                 if isDataLoaded {
                     TabView(selection: $selectedTab) {
                         // Tab 1: GeneralTable
                         VStack {
                             if generalTeams.isEmpty {
-                                Text(__designTimeString("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
+                                Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
                                     .foregroundColor(.gray)
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
                             } else {
-                                GeneralTable(teams: generalTeams) { team in
-                                    fetchTeamDetail(teamId: team.id.uuidString)
+                                List {
+                                    // Header Row
+                                    HStack {
+                                        Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[0].arg[0].value", fallback: "Equipo")).padding()
+                                        Spacer()
+                                        Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[2].arg[0].value", fallback: "D")).padding(.horizontal, __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[2].modifier[0].arg[1].value", fallback: 18))
+                                        Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[3].arg[0].value", fallback: "E")).padding(.horizontal, __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[3].modifier[0].arg[1].value", fallback: 18))
+                                        Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[4].arg[0].value", fallback: "V")).padding(.horizontal, __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].arg[0].value.[4].modifier[0].arg[1].value", fallback: 18))
+                                    }
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                    .listRowInsets(EdgeInsets(top: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[0].value", fallback: 10), leading: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[1].value", fallback: 0), bottom: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[2].value", fallback: 0), trailing: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[0].modifier[2].arg[0].value.arg[3].value", fallback: 0)))
+
+                                    // Data Rows
+                                    ForEach(generalTeams) { team in
+                                        GeneralTableRow(team: team).padding()
+                                    }
+                                    .listRowInsets(EdgeInsets(top: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[1].modifier[0].arg[0].value.arg[0].value", fallback: 0), leading: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[1].modifier[0].arg[0].value.arg[1].value", fallback: 0), bottom: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[1].modifier[0].arg[0].value.arg[2].value", fallback: 10), trailing: __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].arg[0].value.[0].[1].[0].arg[0].value.[1].modifier[0].arg[0].value.arg[3].value", fallback: 0)))
                                 }
                             }
                         }
-                        .tag(__designTimeInteger("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
-                        
+                        .tag(__designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[0].modifier[0].arg[0].value", fallback: 0))
+
                         // Tab 2: GoalTable
                         VStack {
                             if scoringTable.isEmpty {
-                                Text(__designTimeString("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
+                                Text(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].arg[0].value.[0].[0].[0].arg[0].value", fallback: "No encontramos información"))
                                     .foregroundColor(.gray)
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
@@ -163,21 +180,16 @@ extension LeaderBoardView {
                                 GoalTable(players: scoringTable)
                             }
                         }
-                        .tag(__designTimeInteger("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
+                        .tag(__designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].arg[1].value.[1].modifier[0].arg[0].value", fallback: 1))
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                    .padding(.top, __designTimeInteger("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].modifier[1].arg[1].value", fallback: -8))
+                    .padding(.top, __designTimeInteger("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[0].[0].modifier[1].arg[1].value", fallback: -8))
                 } else {
-                    ProgressView(__designTimeString("#14109.[1].[7].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: "Loading data..."))
+                    ProgressView(__designTimeString("#9285.[1].[6].property.[0].[0].arg[0].value.[0].arg[0].value.[1].[1].[0].arg[0].value", fallback: "Loading data..."))
                 }
             }
             .onAppear {
                 loadData()
-            }
-            .sheet(isPresented: $showTeamDetail) {
-                if let teamDetail = selectedTeamDetail {
-                    TeamDetailView(teamDetails: teamDetail)
-                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -188,5 +200,6 @@ extension LeaderBoardView {
 
 import struct ROLOSOFT_FRONT.LeaderBoardView
 import struct ROLOSOFT_FRONT.LeaderBoardHeader
+import struct ROLOSOFT_FRONT.GeneralTableRow
 import struct ROLOSOFT_FRONT.LeaderBoardView_Previews
 

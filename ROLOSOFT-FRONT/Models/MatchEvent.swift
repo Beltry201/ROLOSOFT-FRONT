@@ -19,7 +19,12 @@ struct MatchEvent: Identifiable, Decodable {
         let id: String
         let name: String
         let points: Int
-        let shieldImg: String?
+        let shieldFileName: String
+        
+        var fullTeamPictureUrl: String {
+            return baseUrl + shieldFileName
+        }
+        
         let goals: [Goal]
         
         struct Goal: Decodable, Identifiable {

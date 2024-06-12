@@ -18,7 +18,7 @@ struct ResultCard: View {
             
             HStack {
                 VStack {
-                    if let imageUrl = URL(string: match.teamA.shieldImg ?? "") {
+                    if let imageUrl = URL(string: match.teamA.fullTeamPictureUrl) {
                         AsyncImage(url: imageUrl) { image in
                             image
                                 .resizable()
@@ -52,17 +52,37 @@ struct ResultCard: View {
                     }
                 }
                 Spacer()
-                Text("\(match.teamA.goals.count)")
-                    .font(.title)
-                Spacer()
-                Text("-")
-                    .font(.title)
-                Spacer()
-                Text("\(match.teamB.goals.count)")
-                    .font(.title)
+                if Date() < match.dateTimeStart {
+                    Text("-")
+                        .font(.title)
+                    Spacer()
+                    Text("-")
+                        .font(.title)
+                    Spacer()
+                    Text("-")
+                        .font(.title)
+                } else if Date() > match.dateTimeEnd {
+                    Text("\(match.teamA.goals.count)")
+                        .font(.title)
+                    Spacer()
+                    Text("-")
+                        .font(.title)
+                    Spacer()
+                    Text("\(match.teamB.goals.count)")
+                        .font(.title)
+                } else {
+                    Text("-")
+                        .font(.title)
+                    Spacer()
+                    Text("-")
+                        .font(.title)
+                    Spacer()
+                    Text("-")
+                        .font(.title)
+                }
                 Spacer()
                 VStack {
-                    if let imageUrl = URL(string: match.teamB.shieldImg ?? "") {
+                    if let imageUrl = URL(string: match.teamB.fullTeamPictureUrl) {
                         AsyncImage(url: imageUrl) { image in
                             image
                                 .resizable()
@@ -105,9 +125,9 @@ struct ResultCard: View {
     
     private func dateString(from date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
+        formatter.locale = Locale(identifier: "es_ES")
+        formatter.dateFormat = "EEEE d h:mm a"
+        return formatter.string(from: date).capitalized
     }
 }
 
@@ -115,14 +135,14 @@ struct ResultCard: View {
     ResultCard(
         match: MatchEvent(
             id: "1",
-            dateTimeStart: Date(),
-            dateTimeEnd: Date(),
+            dateTimeStart: Date().addingTimeInterval(-3600),
+            dateTimeEnd: Date().addingTimeInterval(-1800),
             isPlaying: false,
             teamA: MatchEvent.Team(
                 id: "1",
                 name: "Team A",
                 points: 3,
-                shieldImg: "teamA.png",
+                shieldFileName: "teamA.png",
                 goals: [
                     MatchEvent.Team.Goal(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
                     MatchEvent.Team.Goal(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
@@ -132,7 +152,7 @@ struct ResultCard: View {
                 id: "2",
                 name: "Team B",
                 points: 1,
-                shieldImg: "teamB.png",
+                shieldFileName: "teamB.png",
                 goals: [
                     MatchEvent.Team.Goal(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
                 ]

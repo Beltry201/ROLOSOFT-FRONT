@@ -20,7 +20,7 @@ struct MatchCard: View {
                 .font(.caption)
             
             HStack(alignment: .top) {
-                TeamBox(name: teamA.name, logoUrl: teamA.shieldImg ?? "", isMyMatch: isMyMatch!)
+                TeamBox(name: teamA.name, logoUrl: teamA.fullTeamPictureUrl, isMyMatch: isMyMatch!)
                 
                 Spacer()
                 
@@ -33,7 +33,7 @@ struct MatchCard: View {
                 
                 Spacer()
                 
-                TeamBox(name: teamB.name, logoUrl: teamB.shieldImg ?? "", isMyMatch: isMyMatch)
+                TeamBox(name: teamB.name, logoUrl: teamB.fullTeamPictureUrl, isMyMatch: isMyMatch)
             }
         }
         .padding()

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TeamDetailView: View {
-    let teamDetails: TeamDetails?
+    let teamId: String
+    @State private var teamDetails: TeamDetails?
     @State private var selectedTab = 0
     @State private var matches: [MatchEvent] = []
 
     var body: some View {
-        if let teamDetails = teamDetails {
-            VStack {
+        VStack {
+            if let teamDetails = teamDetails {
                 TeamDetailHead(teamDetails: teamDetails).padding(.horizontal, 20)
                     
                 HStack {
@@ -62,18 +63,42 @@ struct TeamDetailView: View {
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .padding(.top, -8)
+            } else {
+                Text("Loading team details...")
+                    .onAppear {
+                        fetchTeamDetails()
+                    }
             }
-            .onAppear {
+        }
+        .onAppear {
+            if teamDetails != nil {
                 fetchMatches()
             }
-        } else {
-            Text("No team details available")
         }
     }
     
+    private func fetchTeamDetails() {
+        guard let tournamentId = UserDefaults.standard.string(forKey: "tournamentId"),
+              let token = UserDefaults.standard.string(forKey: "jwtToken") else {
+            print("Tournament ID or token not found in UserDefaults")
+            return
+        }
+        
+        APIService().fetchTeamDetails(tournamentId: tournamentId, teamId: teamId, token: token) { result in
+            switch result {
+            case .success(let teamDetails):
+                print("Fetched Team Details: \(teamDetails)")
+                self.teamDetails = teamDetails
+                fetchMatches()
+            case .failure(let error):
+                print("Error fetching team details: \(error)")
+            }
+        }
+    }
+
     private func fetchMatches() {
         guard let tournamentId = UserDefaults.standard.string(forKey: "tournamentId"),
-              let token = UserDefaults.standard.string(forKey: "token"),
+              let token = UserDefaults.standard.string(forKey: "jwtToken"),
               let teamId = teamDetails?.schoolId else {
             print("Tournament ID, token, or team ID not found in UserDefaults")
             return
@@ -82,7 +107,7 @@ struct TeamDetailView: View {
         APIService().fetchTeamMatches(tournamentId: tournamentId, teamId: teamId, token: token) { result in
             switch result {
             case .success(let fetchedMatches):
-                matches = fetchedMatches
+                matches = fetchedMatches.sorted(by: { $0.dateTimeStart < $1.dateTimeStart })
             case .failure(let error):
                 print("Error fetching matches: \(error)")
             }
@@ -90,7 +115,6 @@ struct TeamDetailView: View {
     }
 }
 
-    
 struct MatchesList: View {
     var matches: [MatchEvent]
 
@@ -105,69 +129,6 @@ struct MatchesList: View {
                 )
                 .background(.clear)
         }
-    }
-}
-
-
-struct TeamDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        let sampleTeamDetails = TeamDetails(
-            tournamentId: "1",
-            schoolId: "1",
-            schoolName: "Sample Team",
-            defeats: 2,
-            draws: 3,
-            victories: 5,
-            goalsFor: 15,
-            goalsAgainst: 10,
-            goalDifference: 5,
-            gamesPlayed: 10,
-            points: 18,
-            position: 2,
-            shieldFileName: "sample_team.png"
-        )
-        TeamDetailView(teamDetails: sampleTeamDetails)
-    }
-    
-    static var dummyMatchEvents: [MatchEvent] {
-        let teamA = MatchEvent.Team(
-            id: "e470f269-237c-4a2b-ba17-cdf74af01e64",
-            name: "América",
-            points: 3,
-            shieldImg: "escudo-america.png",
-            goals: [
-                MatchEvent.Team.Goal(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
-                MatchEvent.Team.Goal(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
-            ]
-        )
-        let teamB = MatchEvent.Team(
-            id: "48b576c2-38ff-4828-8061-254b2bf8d883",
-            name: "Santa Fe",
-            points: 1,
-            shieldImg: "escudo-santa-fe.png",
-            goals: [
-                MatchEvent.Team.Goal(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
-            ]
-        )
-        
-        let match1 = MatchEvent(
-            id: "d5203e5e-6635-44ef-a81c-626111212c5e",
-            dateTimeStart: Date(),
-            dateTimeEnd: Date(),
-            isPlaying: false,
-            teamA: teamA,
-            teamB: teamB
-        )
-        let match2 = MatchEvent(
-            id: "6386fb56-e79e-419d-b524-d8fb9a864f2f",
-            dateTimeStart: Date(),
-            dateTimeEnd: Date(),
-            isPlaying: false,
-            teamA: teamB,
-            teamB: teamA
-        )
-        
-        return [match1, match2]
     }
 }
 
@@ -194,3 +155,94 @@ struct TeamTabBarButton: View {
     }
 }
 
+// Sample Data Preview
+struct TeamDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        TeamDetailPreviewWrapper()
+    }
+}
+
+struct TeamDetailPreviewWrapper: View {
+    @State private var teamDetails: TeamDetails? = TeamDetails(
+        tournamentId: "1",
+        schoolId: "1",
+        schoolName: "Sample Team",
+        defeats: 2,
+        draws: 3,
+        victories: 5,
+        goalsFor: 15,
+        goalsAgainst: 10,
+        goalDifference: 5,
+        gamesPlayed: 10,
+        points: 18,
+        position: 2,
+        shieldFileName: "sample_team.png"
+    )
+    @State private var matches: [MatchEvent] = [
+        MatchEvent(
+            id: "1",
+            dateTimeStart: Date(),
+            dateTimeEnd: Date(),
+            isPlaying: false,
+            teamA: MatchEvent.Team(
+                id: "1",
+                name: "Team A",
+                points: 3,
+                shieldFileName: "teamA.png",
+                goals: [
+                    MatchEvent.Team.Goal(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
+                    MatchEvent.Team.Goal(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+                ]
+            ),
+            teamB: MatchEvent.Team(
+                id: "2",
+                name: "Team B",
+                points: 1,
+                shieldFileName: "teamB.png",
+                goals: [
+                    MatchEvent.Team.Goal(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
+                ]
+            )
+        ),
+        MatchEvent(
+            id: "2",
+            dateTimeStart: Date(),
+            dateTimeEnd: Date(),
+            isPlaying: false,
+            teamA: MatchEvent.Team(
+                id: "2",
+                name: "Team B",
+                points: 1,
+                shieldFileName: "teamB.png",
+                goals: [
+                    MatchEvent.Team.Goal(id: "3", name: "Juan", lastName: "Bedoya", minute: 15, playerNumber: 7)
+                ]
+            ),
+            teamB: MatchEvent.Team(
+                id: "1",
+                name: "Team A",
+                points: 3,
+                shieldFileName: "teamA.png",
+                goals: [
+                    MatchEvent.Team.Goal(id: "1", name: "David", lastName: "Beltran", minute: 10, playerNumber: 10),
+                    MatchEvent.Team.Goal(id: "2", name: "David", lastName: "Beltran", minute: 20, playerNumber: 10)
+                ]
+            )
+        )
+    ]
+
+    var body: some View {
+        TeamDetailView(teamId: "1")
+            .environmentObject(PreviewDataProvider(teamDetails: $teamDetails, matches: $matches))
+    }
+}
+
+class PreviewDataProvider: ObservableObject {
+    @Binding var teamDetails: TeamDetails?
+    @Binding var matches: [MatchEvent]
+
+    init(teamDetails: Binding<TeamDetails?>, matches: Binding<[MatchEvent]>) {
+        _teamDetails = teamDetails
+        _matches = matches
+    }
+}

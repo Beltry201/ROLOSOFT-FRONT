@@ -4,11 +4,31 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
         "key": "Loading data..."
       },
       {
         "comment": "",
         "key": "No encontramos información"
+      },
+      {
+        "comment": "",
+        "key": "Equipo"
+      },
+      {
+        "comment": "",
+        "key": "D"
+      },
+      {
+        "comment": "",
+        "key": "E"
+      },
+      {
+        "comment": "",
+        "key": "V"
       }
     ]
   },

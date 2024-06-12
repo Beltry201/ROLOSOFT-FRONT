@@ -8,7 +8,7 @@
 import Foundation
 
 struct GeneralTableTeam: Identifiable {
-    let id = UUID()
+    let id: String
     let name: String
     let logo: String
     let d: Int

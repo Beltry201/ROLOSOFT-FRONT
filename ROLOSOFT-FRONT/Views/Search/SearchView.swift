@@ -210,10 +210,9 @@ struct TabBarButton: View {
 
 struct TeamRow: View {
     let team: School
-    @State private var teamDetails: TeamDetails?
 
     var body: some View {
-        NavigationLink(destination: TeamDetailView(teamDetails: teamDetails)) {
+        NavigationLink(destination: TeamDetailView(teamId: team.id)) {
             HStack {
                 URLImage(url: team.fullTeamPictureUrl)
                     .aspectRatio(contentMode: .fit)
@@ -232,30 +231,9 @@ struct TeamRow: View {
                 }
             }
         }
-        .onTapGesture {
-            fetchTeamDetails()
-        }
-    }
-
-    private func fetchTeamDetails() {
-        guard let tournamentId = UserDefaults.standard.string(forKey: "tournamentId"),
-              let token = UserDefaults.standard.string(forKey: "jwtToken") else {
-            print("Tournament ID or token not found in UserDefaults")
-            return
-        }
-        
-        // Fetch Team Details
-        APIService().fetchTeamDetails(tournamentId: tournamentId, teamId: team.id, token: token) { result in
-            switch result {
-            case .success(let teamDetails):
-                print("Fetched Team Details: \(teamDetails)")
-                self.teamDetails = teamDetails
-            case .failure(let error):
-                print("Error fetching team details: \(error)")
-            }
-        }
     }
 }
+
 
 
 struct PlayerRow: View {

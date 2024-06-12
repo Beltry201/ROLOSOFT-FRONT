@@ -14,7 +14,6 @@ struct LeaderBoardView: View {
     @State private var scoringTable: [GoalTablePlayer] = []
     @State private var isDataLoaded = false
     @State private var selectedTeamDetail: TeamDetails?
-    @State private var showTeamDetail = false
 
     var body: some View {
         NavigationView {
@@ -31,13 +30,29 @@ struct LeaderBoardView: View {
                                     .padding()
                                     .frame(maxWidth: .infinity, alignment: .center)
                             } else {
-                                GeneralTable(teams: generalTeams) { team in
-                                    fetchTeamDetail(teamId: team.id.uuidString)
+                                List {
+                                    // Header Row
+                                    HStack {
+                                        Text("Equipo").padding()
+                                        Spacer()
+                                        Text("D").padding(.horizontal, 18)
+                                        Text("E").padding(.horizontal, 18)
+                                        Text("V").padding(.horizontal, 18)
+                                    }
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                    .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+
+                                    // Data Rows
+                                    ForEach(generalTeams) { team in
+                                        GeneralTableRow(team: team).padding()
+                                    }
+                                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                                 }
                             }
                         }
                         .tag(0)
-                        
+
                         // Tab 2: GoalTable
                         VStack {
                             if scoringTable.isEmpty {
@@ -60,11 +75,6 @@ struct LeaderBoardView: View {
             .onAppear {
                 loadData()
             }
-            .sheet(isPresented: $showTeamDetail) {
-                if let teamDetail = selectedTeamDetail {
-                    TeamDetailView(teamDetails: teamDetail)
-                }
-            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -72,19 +82,14 @@ struct LeaderBoardView: View {
     private func loadData() {
         let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
         let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
-        
-        let group = DispatchGroup()
-        
-        var fetchedTeams: [GeneralTableTeam] = []
-        var fetchedPlayers: [GoalTablePlayer] = []
 
-        group.enter()
         apiService.fetchLeaderBoard(tournamentId: tournamentId, token: token) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let teamData):
-                    fetchedTeams = teamData.map { team in
+                    self.generalTeams = teamData.map { team in
                         GeneralTableTeam(
+                            id: team.schoolId,
                             name: team.team,
                             logo: "http://34.118.243.66:3000/static/\(team.shieldFileName)",
                             d: team.defeats,
@@ -93,19 +98,18 @@ struct LeaderBoardView: View {
                             isMyTeam: false
                         )
                     }
+                    self.isDataLoaded = true
                 case .failure(let error):
                     print("Error fetching leaderboard: \(error)")
                 }
-                group.leave()
             }
         }
 
-        group.enter()
         apiService.fetchScoringTable(tournamentId: tournamentId, token: token) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let tableData):
-                    fetchedPlayers = tableData.map { playerData in
+                    self.scoringTable = tableData.map { playerData in
                         GoalTablePlayer(
                             imgUrl: "http://34.118.243.66:3000/static/\(playerData.photoFileName)",
                             name: "\(playerData.firstName) \(playerData.lastName)",
@@ -113,41 +117,14 @@ struct LeaderBoardView: View {
                             teamImgUrl: "http://34.118.243.66:3000/static/\(playerData.shieldFileName)"
                         )
                     }
+                    self.isDataLoaded = true
                 case .failure(let error):
                     print("Error fetching scoring table: \(error)")
-                }
-                group.leave()
-            }
-        }
-        
-        group.notify(queue: .main) {
-            self.generalTeams = fetchedTeams
-            self.scoringTable = fetchedPlayers
-            self.isDataLoaded = true
-        }
-    }
-
-    private func fetchTeamDetail(teamId: String) {
-        
-        print("\n-- LOOKING FOR TEAM: \(teamId)")
-        let tournamentId = UserDefaults.standard.string(forKey: "tournamentId") ?? ""
-        let token = UserDefaults.standard.string(forKey: "jwtToken") ?? ""
-
-        apiService.fetchTeamDetails(tournamentId: tournamentId, teamId: teamId, token: token) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let teamDetail):
-                    self.selectedTeamDetail = teamDetail
-                    self.showTeamDetail = true
-                case .failure(let error):
-                    print("Error fetching team details: \(error)")
                 }
             }
         }
     }
 }
-
-
 
 struct LeaderBoardHeader: View {
     @Binding var selectedTab: Int
@@ -169,6 +146,42 @@ struct LeaderBoardHeader: View {
             }
             .padding(.top, 8)
         }
+    }
+}
+
+struct GeneralTableRow: View {
+    var team: GeneralTableTeam
+
+    var body: some View {
+        NavigationLink(destination: TeamDetailView(teamId: team.id)) {
+            HStack {
+                URLImage(url: team.logo)
+                    .frame(width: 30, height: 30)
+                    .cornerRadius(8)
+                    .clipped()
+                Text(team.name)
+                    .font(.headline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                Spacer()
+                Text("\(team.d)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, 18)
+                Spacer()
+                Text("\(team.e)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, 18)
+                Spacer()
+                Text("\(team.v)")
+                    .font(.subheadline)
+                    .foregroundColor(team.isMyTeam ? .white : .black)
+                    .padding(.horizontal, 18)
+            }
+        }
+        .padding(.vertical, 8)
+        .cornerRadius(8)
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
     }
 }
 

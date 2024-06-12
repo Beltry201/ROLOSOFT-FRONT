@@ -14,6 +14,7 @@ struct LeaderBoardResponse: Decodable {
 }
 
 struct LeaderBoardTeamData: Decodable {
+    let schoolId: String
     let team: String
     let victories: Int
     let draws: Int
