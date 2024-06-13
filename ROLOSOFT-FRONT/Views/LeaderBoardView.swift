@@ -35,13 +35,18 @@ struct LeaderBoardView: View {
                                     HStack {
                                         Text("Equipo").padding()
                                         Spacer()
-                                        Text("D").padding(.horizontal, 18)
-                                        Text("E").padding(.horizontal, 18)
-                                        Text("V").padding(.horizontal, 18)
+                                        Grid(horizontalSpacing: 28) {
+                                            GridRow {
+                                                Text("D")//.padding(.horizontal, 18)
+                                                Text("E")//.padding(.horizontal, 18)
+                                                Text("V")//.padding(.horizontal, 18)
+                                            }
+                                        }
+                                        .padding(.trailing, 8)
                                     }
                                     .font(.headline)
                                     .foregroundColor(.black)
-                                    .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+                                    //.listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
 
                                     // Data Rows
                                     ForEach(generalTeams) { team in
@@ -163,20 +168,21 @@ struct GeneralTableRow: View {
                     .font(.headline)
                     .foregroundColor(team.isMyTeam ? .white : .black)
                 Spacer()
-                Text("\(team.d)")
-                    .font(.subheadline)
-                    .foregroundColor(team.isMyTeam ? .white : .black)
-                    .padding(.horizontal, 18)
-                Spacer()
-                Text("\(team.e)")
-                    .font(.subheadline)
-                    .foregroundColor(team.isMyTeam ? .white : .black)
-                    .padding(.horizontal, 18)
-                Spacer()
-                Text("\(team.v)")
-                    .font(.subheadline)
-                    .foregroundColor(team.isMyTeam ? .white : .black)
-                    .padding(.horizontal, 18)
+                Grid(horizontalSpacing: 28) {
+                    GridRow {
+                        Text("\(team.d)")
+                            .font(.subheadline)
+                            .foregroundColor(team.isMyTeam ? .white : .black)
+                            //.padding(.horizontal, 18)
+                        Text("\(team.e)")
+                            .font(.subheadline)
+                            .foregroundColor(team.isMyTeam ? .white : .black)
+                        Text("\(team.v)")
+                            .font(.subheadline)
+                            .foregroundColor(team.isMyTeam ? .white : .black)
+                    }
+                    
+                }
             }
         }
         .padding(.vertical, 8)
