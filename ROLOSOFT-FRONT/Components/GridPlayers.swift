@@ -29,10 +29,8 @@ struct GridPlayer: View {
                     .frame(width: (UIScreen.main.bounds.width / 3) - 1, height: (UIScreen.main.bounds.width / 3) - 1)
             }
             Text(String(shirtNumber))
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.bold)
-            Text(name)
-                .font(.title2)
         }
     }
 }
@@ -57,7 +55,7 @@ struct GridPlayers: View {
 
 #Preview {
     GridPlayers(players: [
-        GridPlayer(name: "Nombre", shirtNumber: 10, imgUrl: nil),
+        GridPlayer(name: "Nombre mas largo", shirtNumber: 10, imgUrl: nil),
         GridPlayer(name: "Nombre", shirtNumber: 10, imgUrl: nil),
         GridPlayer(name: "Nombre", shirtNumber: 10, imgUrl: nil),
         GridPlayer(name: "Nombre", shirtNumber: 10, imgUrl: nil)

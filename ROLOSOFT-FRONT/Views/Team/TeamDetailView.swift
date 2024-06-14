@@ -45,19 +45,41 @@ struct TeamDetailView: View {
 
                     // Tab 2: Players
                     VStack {
-                        Text("Players content goes here")
-                            .foregroundColor(.gray)
-                            .padding()
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        ScrollView {
+                            GridPlayers(players: [
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil),
+                                GridPlayer(name: "Jugador 1", shirtNumber: 10, imgUrl: nil)
+                            ])
+                        }
                     }
                     .tag(1)
 
                     // Tab 3: Photos
                     VStack {
-                        Text("Photos content goes here")
-                            .foregroundColor(.gray)
-                            .padding()
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        ScrollView {
+                            GridPhotos(photos: [
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil),
+                                GridPhoto(url: nil)
+                            ])
+                        }
                     }
                     .tag(2)
                 }
@@ -83,6 +105,24 @@ struct TeamDetailView: View {
             print("Tournament ID or token not found in UserDefaults")
             return
         }
+        
+        self.teamDetails = TeamDetails(
+            tournamentId: "1",
+            schoolId: "1",
+            schoolName: "Sample Team",
+            defeats: 2,
+            draws: 3,
+            victories: 5,
+            goalsFor: 15,
+            goalsAgainst: 10,
+            goalDifference: 5,
+            gamesPlayed: 10,
+            points: 18,
+            position: 2,
+            shieldFileName: "sample_team.png"
+        )
+        
+        return
         
         APIService().fetchTeamDetails(tournamentId: tournamentId, teamId: teamId, token: token) { result in
             switch result {
